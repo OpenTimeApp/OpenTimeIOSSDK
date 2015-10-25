@@ -34,6 +34,12 @@ Initialize OpenTime before you use it anywhere
     
     OpenTimeSDK.initSession("Your really awesome test key goes here", inTestMode: true);
     
+Set the credentials for the user like so: 
+
+    OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
+    
+Get the current user's availability like so:
+    
     AvailabilityAPI.getAllMyAvailability { (response: GetAllMyAvailabilityResponse) -> Void in
         if(response.success == true){
             print("Yippee!")
@@ -43,3 +49,7 @@ Initialize OpenTime before you use it anywhere
 When you're done testing you can take inTestMode off like so: 
     
     OpenTimeSDK.initSession("Your really awesome live key goes here");
+    
+If you want to change the server use: 
+
+    OpenTimeSDK.session.setServer("https://myotherawesomeserver.opentimeapp.com")
