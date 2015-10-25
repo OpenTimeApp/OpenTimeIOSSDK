@@ -16,8 +16,13 @@ You must use frameworks in your Pods file spec like so:
 
 If you get an error about common crypto check module.map file at CommonCrypto/module.map
 Make sure the path pointing to the CommonCrypto library is valid. If it is not then find out where it is on your computer and update the path. 
-The paths could be slightly different but should be very similiar
+The paths could be slightly different but should be very similiar. For example this path exists on my machine: 
 
+    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/usr/include/CommonCrypto/
+
+Make sure it exists on yours
+
+### Add the library folders
 To use the library add a reference to all the files in the OpenTimeSDK folder. 
 
 ### Get an API key
