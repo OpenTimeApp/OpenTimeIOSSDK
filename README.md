@@ -32,11 +32,14 @@ The best way to get started is to run the tests to make sure everything is worki
 ### Example
 Initialize OpenTime before you use it anywhere
     
-    OpenTimeSDK.initSession("Your really awesome key goes here", inTestMode: true);
+    OpenTimeSDK.initSession("Your really awesome test key goes here", inTestMode: true);
     
     AvailabilityAPI.getAllMyAvailability { (response: GetAllMyAvailabilityResponse) -> Void in
         if(response.success == true){
             print("Yippee!")
         }
     }
-
+    
+When you're done testing you can take inTestMode off like so: 
+    
+    OpenTimeSDK.initSession("Your really awesome live key goes here");
