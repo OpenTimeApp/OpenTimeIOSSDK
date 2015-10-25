@@ -53,7 +53,7 @@ public class GetConnectionsWithContactInfoData {
         for contact in list {
             let contactPhones = contact.getCellPhones()
             for phone in contactPhones {
-                if(list.contains(phone) == false) {
+                if(list.has(phone) == false) {
                     appendToList.append(phone);
                 }
             }

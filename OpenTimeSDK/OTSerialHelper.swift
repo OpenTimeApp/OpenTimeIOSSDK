@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct SerialHelper {
+public struct OTSerialHelper {
     
     /**
     Safely tests if a key value exists in the given object.

@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		03A136991BDC57F00005A721 /* OpenTimeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A136981BDC57F00005A721 /* OpenTimeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03A136A01BDC57F00005A721 /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A136951BDC57F00005A721 /* OpenTimeSDK.framework */; settings = {ASSET_TAGS = (); }; };
-		03A136FA1BDC622A0005A721 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* OTStringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FC1BDC65DB0005A721 /* OTConstant.swift */; settings = {ASSET_TAGS = (); }; };
-		03A136FF1BDC66D40005A721 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FE1BDC66D40005A721 /* ArrayExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		03A136FF1BDC66D40005A721 /* OTArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FE1BDC66D40005A721 /* OTArrayExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		03A1370C1BDD15680005A721 /* AvailabilityAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */; settings = {ASSET_TAGS = (); }; };
 		03A137131BDD159E0005A721 /* ConnectionAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */; settings = {ASSET_TAGS = (); }; };
 		03A137141BDD159E0005A721 /* DeviceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370F1BDD159E0005A721 /* DeviceAPITest.swift */; settings = {ASSET_TAGS = (); }; };
@@ -36,7 +36,7 @@
 		03A137581BDD23E20005A721 /* PersonValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137351BDD23E20005A721 /* PersonValidationHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		03A1375A1BDD23E20005A721 /* RegisterPersonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137371BDD23E20005A721 /* RegisterPersonResponse.swift */; settings = {ASSET_TAGS = (); }; };
 		03A1375B1BDD23E20005A721 /* RemoveOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137381BDD23E20005A721 /* RemoveOneTimeAvailability.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375C1BDD23E20005A721 /* SerialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137391BDD23E20005A721 /* SerialHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375C1BDD23E20005A721 /* OTSerialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137391BDD23E20005A721 /* OTSerialHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		03A1375D1BDD23E20005A721 /* SetConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373A1BDD23E20005A721 /* SetConnectionData.swift */; settings = {ASSET_TAGS = (); }; };
 		03A1375E1BDD23E20005A721 /* SetConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373B1BDD23E20005A721 /* SetConnectionResponse.swift */; settings = {ASSET_TAGS = (); }; };
 		03A1375F1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373C1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift */; settings = {ASSET_TAGS = (); }; };
@@ -47,14 +47,14 @@
 		03F294DB1BDD435700B8DBB0 /* PasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DA1BDD435700B8DBB0 /* PasswordHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294E41BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E01BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294E51BDD467F00B8DBB0 /* APIRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E11BDD467F00B8DBB0 /* APIRawResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294E61BDD467F00B8DBB0 /* APIRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E21BDD467F00B8DBB0 /* APIRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294E71BDD467F00B8DBB0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E31BDD467F00B8DBB0 /* APIResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294E91BDD476400B8DBB0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E81BDD476400B8DBB0 /* Reachability.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294EB1BDD477D00B8DBB0 /* OpenTimeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294EA1BDD477D00B8DBB0 /* OpenTimeSDK.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294ED1BDD4BD500B8DBB0 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294EC1BDD4BD500B8DBB0 /* TestHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294EF1BDD4DDE00B8DBB0 /* DeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294EE1BDD4DDE00B8DBB0 /* DeviceAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		03F2950C1BDD547100B8DBB0 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2950B1BDD547100B8DBB0 /* TestHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03F2953B1BDD60CB00B8DBB0 /* APIAuthorizedRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295341BDD60CB00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		03F2953C1BDD60CB00B8DBB0 /* APIRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295351BDD60CB00B8DBB0 /* APIRawResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03F2953D1BDD60CB00B8DBB0 /* APIRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295361BDD60CB00B8DBB0 /* APIRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		03F2953E1BDD60CB00B8DBB0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295371BDD60CB00B8DBB0 /* APIResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03F2953F1BDD60CB00B8DBB0 /* DeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295381BDD60CB00B8DBB0 /* DeviceAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		03F295401BDD60CB00B8DBB0 /* OpenTimeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295391BDD60CB00B8DBB0 /* OpenTimeSDK.swift */; settings = {ASSET_TAGS = (); }; };
+		03F295411BDD60CB00B8DBB0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2953A1BDD60CB00B8DBB0 /* Reachability.swift */; settings = {ASSET_TAGS = (); }; };
 		CED1E0DC3E80C1E296E9214A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B846C29894A963F70CE79683 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,9 +74,9 @@
 		03A1369A1BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A1369F1BDC57F00005A721 /* OpenTimeSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTimeSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A136A61BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03A136F91BDC622A0005A721 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		03A136F91BDC622A0005A721 /* OTStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTStringExtension.swift; sourceTree = "<group>"; };
 		03A136FC1BDC65DB0005A721 /* OTConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConstant.swift; path = OpenTimeSDK/OTConstant.swift; sourceTree = "<group>"; };
-		03A136FE1BDC66D40005A721 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		03A136FE1BDC66D40005A721 /* OTArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTArrayExtension.swift; sourceTree = "<group>"; };
 		03A1370A1BDD15680005A721 /* OpenTimeSDKTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenTimeSDKTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityAPITest.swift; sourceTree = "<group>"; };
 		03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionAPITest.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		03A137351BDD23E20005A721 /* PersonValidationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonValidationHelper.swift; path = OpenTimeSDK/PersonValidationHelper.swift; sourceTree = "<group>"; };
 		03A137371BDD23E20005A721 /* RegisterPersonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPersonResponse.swift; path = OpenTimeSDK/RegisterPersonResponse.swift; sourceTree = "<group>"; };
 		03A137381BDD23E20005A721 /* RemoveOneTimeAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveOneTimeAvailability.swift; path = OpenTimeSDK/RemoveOneTimeAvailability.swift; sourceTree = "<group>"; };
-		03A137391BDD23E20005A721 /* SerialHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialHelper.swift; sourceTree = "<group>"; };
+		03A137391BDD23E20005A721 /* OTSerialHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTSerialHelper.swift; sourceTree = "<group>"; };
 		03A1373A1BDD23E20005A721 /* SetConnectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetConnectionData.swift; path = OpenTimeSDK/SetConnectionData.swift; sourceTree = "<group>"; };
 		03A1373B1BDD23E20005A721 /* SetConnectionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetConnectionResponse.swift; path = OpenTimeSDK/SetConnectionResponse.swift; sourceTree = "<group>"; };
 		03A1373C1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetOneTimeAvailabilityData.swift; path = OpenTimeSDK/SetOneTimeAvailabilityData.swift; sourceTree = "<group>"; };
@@ -113,14 +113,14 @@
 		03F294DA1BDD435700B8DBB0 /* PasswordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordHelper.swift; sourceTree = "<group>"; };
 		03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPhoneHelper.swift; sourceTree = "<group>"; };
 		03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTStringHelper.swift; sourceTree = "<group>"; };
-		03F294E01BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIAuthorizedRequestOperationManager.swift; path = ../OpenTimeRefactor1/OpenTime/APIAuthorizedRequestOperationManager.swift; sourceTree = "<group>"; };
-		03F294E11BDD467F00B8DBB0 /* APIRawResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRawResponse.swift; path = ../OpenTimeRefactor1/OpenTime/APIRawResponse.swift; sourceTree = "<group>"; };
-		03F294E21BDD467F00B8DBB0 /* APIRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestOperationManager.swift; path = ../OpenTimeRefactor1/OpenTime/APIRequestOperationManager.swift; sourceTree = "<group>"; };
-		03F294E31BDD467F00B8DBB0 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIResponse.swift; path = ../OpenTimeRefactor1/OpenTime/APIResponse.swift; sourceTree = "<group>"; };
-		03F294E81BDD476400B8DBB0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../OpenTimeRefactor1/OpenTime/Reachability.swift; sourceTree = "<group>"; };
-		03F294EA1BDD477D00B8DBB0 /* OpenTimeSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTimeSDK.swift; sourceTree = "<group>"; };
-		03F294EC1BDD4BD500B8DBB0 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = ../OpenTimeRefactor1/OpenTime/TestHelper.swift; sourceTree = "<group>"; };
-		03F294EE1BDD4DDE00B8DBB0 /* DeviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceAPI.swift; path = ../OpenTimeRefactor1/OpenTime/DeviceAPI.swift; sourceTree = "<group>"; };
+		03F2950B1BDD547100B8DBB0 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = OpenTimeSDK/TestHelper.swift; sourceTree = "<group>"; };
+		03F295341BDD60CB00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIAuthorizedRequestOperationManager.swift; path = OpenTimeSDK/APIAuthorizedRequestOperationManager.swift; sourceTree = "<group>"; };
+		03F295351BDD60CB00B8DBB0 /* APIRawResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRawResponse.swift; path = OpenTimeSDK/APIRawResponse.swift; sourceTree = "<group>"; };
+		03F295361BDD60CB00B8DBB0 /* APIRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestOperationManager.swift; path = OpenTimeSDK/APIRequestOperationManager.swift; sourceTree = "<group>"; };
+		03F295371BDD60CB00B8DBB0 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIResponse.swift; path = OpenTimeSDK/APIResponse.swift; sourceTree = "<group>"; };
+		03F295381BDD60CB00B8DBB0 /* DeviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceAPI.swift; path = OpenTimeSDK/DeviceAPI.swift; sourceTree = "<group>"; };
+		03F295391BDD60CB00B8DBB0 /* OpenTimeSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenTimeSDK.swift; path = OpenTimeSDK/OpenTimeSDK.swift; sourceTree = "<group>"; };
+		03F2953A1BDD60CB00B8DBB0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = OpenTimeSDK/Reachability.swift; sourceTree = "<group>"; };
 		B846C29894A963F70CE79683 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DD28808AF859999D505CC26A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,15 +317,15 @@
 		03A136F51BDC5AC50005A721 /* api */ = {
 			isa = PBXGroup;
 			children = (
-				03F294EE1BDD4DDE00B8DBB0 /* DeviceAPI.swift */,
-				03F294EC1BDD4BD500B8DBB0 /* TestHelper.swift */,
-				03F294E81BDD476400B8DBB0 /* Reachability.swift */,
-				03F294E01BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */,
-				03F294E11BDD467F00B8DBB0 /* APIRawResponse.swift */,
-				03F294E21BDD467F00B8DBB0 /* APIRequestOperationManager.swift */,
-				03F294E31BDD467F00B8DBB0 /* APIResponse.swift */,
+				03F295341BDD60CB00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */,
+				03F295351BDD60CB00B8DBB0 /* APIRawResponse.swift */,
+				03F295361BDD60CB00B8DBB0 /* APIRequestOperationManager.swift */,
+				03F295371BDD60CB00B8DBB0 /* APIResponse.swift */,
+				03F295381BDD60CB00B8DBB0 /* DeviceAPI.swift */,
+				03F295391BDD60CB00B8DBB0 /* OpenTimeSDK.swift */,
+				03F2953A1BDD60CB00B8DBB0 /* Reachability.swift */,
+				03F2950B1BDD547100B8DBB0 /* TestHelper.swift */,
 				03A136FC1BDC65DB0005A721 /* OTConstant.swift */,
-				03F294EA1BDD477D00B8DBB0 /* OpenTimeSDK.swift */,
 			);
 			name = api;
 			path = ..;
@@ -334,8 +334,8 @@
 		03A136FB1BDC62310005A721 /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				03A136F91BDC622A0005A721 /* StringExtension.swift */,
-				03A136FE1BDC66D40005A721 /* ArrayExtension.swift */,
+				03A136F91BDC622A0005A721 /* OTStringExtension.swift */,
+				03A136FE1BDC66D40005A721 /* OTArrayExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 		03A1371A1BDD16270005A721 /* helper */ = {
 			isa = PBXGroup;
 			children = (
-				03A137391BDD23E20005A721 /* SerialHelper.swift */,
+				03A137391BDD23E20005A721 /* OTSerialHelper.swift */,
 				03F294DA1BDD435700B8DBB0 /* PasswordHelper.swift */,
 				03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */,
 				03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */,
@@ -534,42 +534,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A1374F1BDD23E20005A721 /* GetConnectionsAvailabilityResponse.swift in Sources */,
+				03F2953C1BDD60CB00B8DBB0 /* APIRawResponse.swift in Sources */,
+				03F295411BDD60CB00B8DBB0 /* Reachability.swift in Sources */,
 				03A1375A1BDD23E20005A721 /* RegisterPersonResponse.swift in Sources */,
-				03F294E51BDD467F00B8DBB0 /* APIRawResponse.swift in Sources */,
 				03A137501BDD23E20005A721 /* GetConnectionsWithContactInfoData.swift in Sources */,
 				03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */,
-				03F294E71BDD467F00B8DBB0 /* APIResponse.swift in Sources */,
 				03A137451BDD23E20005A721 /* ConnectionAPI.swift in Sources */,
-				03F294E61BDD467F00B8DBB0 /* APIRequestOperationManager.swift in Sources */,
 				03A1375F1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift in Sources */,
 				03A1375E1BDD23E20005A721 /* SetConnectionResponse.swift in Sources */,
+				03F295401BDD60CB00B8DBB0 /* OpenTimeSDK.swift in Sources */,
 				03A137491BDD23E20005A721 /* DeserializedConnection.swift in Sources */,
 				03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */,
 				03A137581BDD23E20005A721 /* PersonValidationHelper.swift in Sources */,
 				03A1374A1BDD23E20005A721 /* DeserializedConnectionAvailability.swift in Sources */,
-				03F294EF1BDD4DDE00B8DBB0 /* DeviceAPI.swift in Sources */,
 				03A137461BDD23E20005A721 /* ConnectionsResponse.swift in Sources */,
 				03A1374B1BDD23E20005A721 /* DeserializedOneTimeAvailability.swift in Sources */,
 				03A1375D1BDD23E20005A721 /* SetConnectionData.swift in Sources */,
 				03A137571BDD23E20005A721 /* PersonAPI.swift in Sources */,
 				03A1374E1BDD23E20005A721 /* GetAllMyAvailabilityResponse.swift in Sources */,
-				03F294EB1BDD477D00B8DBB0 /* OpenTimeSDK.swift in Sources */,
 				03F294DB1BDD435700B8DBB0 /* PasswordHelper.swift in Sources */,
 				03A137611BDD23E20005A721 /* SigninResponse.swift in Sources */,
 				03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */,
-				03A1375C1BDD23E20005A721 /* SerialHelper.swift in Sources */,
+				03F2953D1BDD60CB00B8DBB0 /* APIRequestOperationManager.swift in Sources */,
+				03F2953B1BDD60CB00B8DBB0 /* APIAuthorizedRequestOperationManager.swift in Sources */,
+				03A1375C1BDD23E20005A721 /* OTSerialHelper.swift in Sources */,
 				03A137511BDD23E20005A721 /* NewPersonData.swift in Sources */,
 				03A137471BDD23E20005A721 /* ConnectionStatusOption.swift in Sources */,
 				03A1375B1BDD23E20005A721 /* RemoveOneTimeAvailability.swift in Sources */,
-				03A136FA1BDC622A0005A721 /* StringExtension.swift in Sources */,
+				03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */,
 				03A137441BDD23E20005A721 /* AvailabilityAPI.swift in Sources */,
-				03F294ED1BDD4BD500B8DBB0 /* TestHelper.swift in Sources */,
-				03F294E91BDD476400B8DBB0 /* Reachability.swift in Sources */,
+				03F2953E1BDD60CB00B8DBB0 /* APIResponse.swift in Sources */,
 				03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */,
-				03A136FF1BDC66D40005A721 /* ArrayExtension.swift in Sources */,
+				03A136FF1BDC66D40005A721 /* OTArrayExtension.swift in Sources */,
+				03F2950C1BDD547100B8DBB0 /* TestHelper.swift in Sources */,
+				03F2953F1BDD60CB00B8DBB0 /* DeviceAPI.swift in Sources */,
 				03A1374C1BDD23E20005A721 /* DeserializedPerson.swift in Sources */,
 				03A137481BDD23E20005A721 /* ContactInfoData.swift in Sources */,
-				03F294E41BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift in Sources */,
 				03A137601BDD23E20005A721 /* SigninData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -679,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = "";

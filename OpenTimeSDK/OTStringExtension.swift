@@ -26,8 +26,5 @@ public extension String {
         let final = withWhiteSpace.stringByReplacingOccurrencesOfString(" ", withString: "");
         return final as String;
     }
-    
-    public func trim() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet());
-    }
+
 }
