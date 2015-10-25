@@ -25,6 +25,7 @@ To get an API key please email josh.woodcock@opentimeapp.com
 
 ### Run the tests
 The best way to get started is to run the tests to make sure everything is working: 
+
 1. Open OpenTimeSDKTests/Config.plist
 2. Set the value of OPENTIME_KEY to your test key. It won't work with your live key.
 3. Run the tests
@@ -46,7 +47,7 @@ Get the current user's availability like so:
         }
     }
     
-When you're done testing you can take inTestMode off like so: 
+When you're done testing you can take test mode off like so: 
     
     OpenTimeSDK.initSession("Your really awesome live key goes here");
     
