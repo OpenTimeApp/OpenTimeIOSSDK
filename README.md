@@ -23,7 +23,7 @@ The paths could be slightly different but should be very similiar. For example t
 Make sure it exists on yours
 
 ### Add the library folders
-To use the library add a reference to all the files in the OpenTimeSDK folder. 
+To use the library add a reference to [all the files in the OpenTimeSDK folder](https://github.com/OpenTimeApp/OpenTimeIOSSDK/tree/master/OpenTimeSDK). 
 
 ### Get an API key
 To get an API key please email josh.woodcock@opentimeapp.com
