@@ -31,6 +31,7 @@ The best way to get started is to run the tests to make sure everything is worki
 
 ### Example
 Initialize OpenTime before you use it anywhere
+    
     OpenTimeSDK.initSession("Your really awesome key goes here", inTestMode: true);
     
     AvailabilityAPI.getAllMyAvailability { (response: GetAllMyAvailabilityResponse) -> Void in
