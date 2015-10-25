@@ -9,7 +9,53 @@
 /* Begin PBXBuildFile section */
 		03A136991BDC57F00005A721 /* OpenTimeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A136981BDC57F00005A721 /* OpenTimeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03A136A01BDC57F00005A721 /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A136951BDC57F00005A721 /* OpenTimeSDK.framework */; settings = {ASSET_TAGS = (); }; };
-		03A136A51BDC57F00005A721 /* OpenTimeSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136A41BDC57F00005A721 /* OpenTimeSDKTests.swift */; };
+		03A136FA1BDC622A0005A721 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FC1BDC65DB0005A721 /* OTConstant.swift */; settings = {ASSET_TAGS = (); }; };
+		03A136FF1BDC66D40005A721 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FE1BDC66D40005A721 /* ArrayExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1370C1BDD15680005A721 /* AvailabilityAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137131BDD159E0005A721 /* ConnectionAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137141BDD159E0005A721 /* DeviceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370F1BDD159E0005A721 /* DeviceAPITest.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137151BDD159E0005A721 /* MeetingAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137101BDD159E0005A721 /* MeetingAPITest.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137161BDD159E0005A721 /* MeetingAttendeeAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137111BDD159E0005A721 /* MeetingAttendeeAPITest.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137171BDD159E0005A721 /* PersonAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137121BDD159E0005A721 /* PersonAPITest.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137441BDD23E20005A721 /* AvailabilityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137211BDD23E20005A721 /* AvailabilityAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137451BDD23E20005A721 /* ConnectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137221BDD23E20005A721 /* ConnectionAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137461BDD23E20005A721 /* ConnectionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137231BDD23E20005A721 /* ConnectionsResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137471BDD23E20005A721 /* ConnectionStatusOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137241BDD23E20005A721 /* ConnectionStatusOption.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137481BDD23E20005A721 /* ContactInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137251BDD23E20005A721 /* ContactInfoData.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137491BDD23E20005A721 /* DeserializedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137261BDD23E20005A721 /* DeserializedConnection.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1374A1BDD23E20005A721 /* DeserializedConnectionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137271BDD23E20005A721 /* DeserializedConnectionAvailability.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1374B1BDD23E20005A721 /* DeserializedOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137281BDD23E20005A721 /* DeserializedOneTimeAvailability.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1374C1BDD23E20005A721 /* DeserializedPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137291BDD23E20005A721 /* DeserializedPerson.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1374E1BDD23E20005A721 /* GetAllMyAvailabilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372B1BDD23E20005A721 /* GetAllMyAvailabilityResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1374F1BDD23E20005A721 /* GetConnectionsAvailabilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372C1BDD23E20005A721 /* GetConnectionsAvailabilityResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137501BDD23E20005A721 /* GetConnectionsWithContactInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372D1BDD23E20005A721 /* GetConnectionsWithContactInfoData.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137511BDD23E20005A721 /* NewPersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372E1BDD23E20005A721 /* NewPersonData.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372F1BDD23E20005A721 /* OpenTimeAlias.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137571BDD23E20005A721 /* PersonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137341BDD23E20005A721 /* PersonAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137581BDD23E20005A721 /* PersonValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137351BDD23E20005A721 /* PersonValidationHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375A1BDD23E20005A721 /* RegisterPersonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137371BDD23E20005A721 /* RegisterPersonResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375B1BDD23E20005A721 /* RemoveOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137381BDD23E20005A721 /* RemoveOneTimeAvailability.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375C1BDD23E20005A721 /* SerialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137391BDD23E20005A721 /* SerialHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375D1BDD23E20005A721 /* SetConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373A1BDD23E20005A721 /* SetConnectionData.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375E1BDD23E20005A721 /* SetConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373B1BDD23E20005A721 /* SetConnectionResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03A1375F1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373C1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137601BDD23E20005A721 /* SigninData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373D1BDD23E20005A721 /* SigninData.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137611BDD23E20005A721 /* SigninResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373E1BDD23E20005A721 /* SigninResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137661BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		03A137681BDD2FEB0005A721 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A137671BDD2FEB0005A721 /* Config.plist */; settings = {ASSET_TAGS = (); }; };
+		03F294DB1BDD435700B8DBB0 /* PasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DA1BDD435700B8DBB0 /* PasswordHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294E41BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E01BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294E51BDD467F00B8DBB0 /* APIRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E11BDD467F00B8DBB0 /* APIRawResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294E61BDD467F00B8DBB0 /* APIRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E21BDD467F00B8DBB0 /* APIRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294E71BDD467F00B8DBB0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E31BDD467F00B8DBB0 /* APIResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294E91BDD476400B8DBB0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294E81BDD476400B8DBB0 /* Reachability.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294EB1BDD477D00B8DBB0 /* OpenTimeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294EA1BDD477D00B8DBB0 /* OpenTimeSDK.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294ED1BDD4BD500B8DBB0 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294EC1BDD4BD500B8DBB0 /* TestHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		03F294EF1BDD4DDE00B8DBB0 /* DeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294EE1BDD4DDE00B8DBB0 /* DeviceAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		CED1E0DC3E80C1E296E9214A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B846C29894A963F70CE79683 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +73,57 @@
 		03A136981BDC57F00005A721 /* OpenTimeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenTimeSDK.h; sourceTree = "<group>"; };
 		03A1369A1BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A1369F1BDC57F00005A721 /* OpenTimeSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTimeSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03A136A41BDC57F00005A721 /* OpenTimeSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTimeSDKTests.swift; sourceTree = "<group>"; };
 		03A136A61BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03A136F91BDC622A0005A721 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		03A136FC1BDC65DB0005A721 /* OTConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConstant.swift; path = OpenTimeSDK/OTConstant.swift; sourceTree = "<group>"; };
+		03A136FE1BDC66D40005A721 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		03A1370A1BDD15680005A721 /* OpenTimeSDKTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenTimeSDKTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityAPITest.swift; sourceTree = "<group>"; };
+		03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionAPITest.swift; sourceTree = "<group>"; };
+		03A1370F1BDD159E0005A721 /* DeviceAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAPITest.swift; sourceTree = "<group>"; };
+		03A137101BDD159E0005A721 /* MeetingAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingAPITest.swift; sourceTree = "<group>"; };
+		03A137111BDD159E0005A721 /* MeetingAttendeeAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingAttendeeAPITest.swift; sourceTree = "<group>"; };
+		03A137121BDD159E0005A721 /* PersonAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonAPITest.swift; sourceTree = "<group>"; };
+		03A137211BDD23E20005A721 /* AvailabilityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailabilityAPI.swift; path = OpenTimeSDK/AvailabilityAPI.swift; sourceTree = "<group>"; };
+		03A137221BDD23E20005A721 /* ConnectionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionAPI.swift; path = OpenTimeSDK/ConnectionAPI.swift; sourceTree = "<group>"; };
+		03A137231BDD23E20005A721 /* ConnectionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionsResponse.swift; path = OpenTimeSDK/ConnectionsResponse.swift; sourceTree = "<group>"; };
+		03A137241BDD23E20005A721 /* ConnectionStatusOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionStatusOption.swift; path = OpenTimeSDK/ConnectionStatusOption.swift; sourceTree = "<group>"; };
+		03A137251BDD23E20005A721 /* ContactInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactInfoData.swift; path = OpenTimeSDK/ContactInfoData.swift; sourceTree = "<group>"; };
+		03A137261BDD23E20005A721 /* DeserializedConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeserializedConnection.swift; path = OpenTimeSDK/DeserializedConnection.swift; sourceTree = "<group>"; };
+		03A137271BDD23E20005A721 /* DeserializedConnectionAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeserializedConnectionAvailability.swift; path = OpenTimeSDK/DeserializedConnectionAvailability.swift; sourceTree = "<group>"; };
+		03A137281BDD23E20005A721 /* DeserializedOneTimeAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeserializedOneTimeAvailability.swift; path = OpenTimeSDK/DeserializedOneTimeAvailability.swift; sourceTree = "<group>"; };
+		03A137291BDD23E20005A721 /* DeserializedPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeserializedPerson.swift; path = OpenTimeSDK/DeserializedPerson.swift; sourceTree = "<group>"; };
+		03A1372B1BDD23E20005A721 /* GetAllMyAvailabilityResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetAllMyAvailabilityResponse.swift; path = OpenTimeSDK/GetAllMyAvailabilityResponse.swift; sourceTree = "<group>"; };
+		03A1372C1BDD23E20005A721 /* GetConnectionsAvailabilityResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConnectionsAvailabilityResponse.swift; path = OpenTimeSDK/GetConnectionsAvailabilityResponse.swift; sourceTree = "<group>"; };
+		03A1372D1BDD23E20005A721 /* GetConnectionsWithContactInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetConnectionsWithContactInfoData.swift; path = OpenTimeSDK/GetConnectionsWithContactInfoData.swift; sourceTree = "<group>"; };
+		03A1372E1BDD23E20005A721 /* NewPersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPersonData.swift; path = OpenTimeSDK/NewPersonData.swift; sourceTree = "<group>"; };
+		03A1372F1BDD23E20005A721 /* OpenTimeAlias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTimeAlias.swift; sourceTree = "<group>"; };
+		03A137341BDD23E20005A721 /* PersonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonAPI.swift; path = OpenTimeSDK/PersonAPI.swift; sourceTree = "<group>"; };
+		03A137351BDD23E20005A721 /* PersonValidationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonValidationHelper.swift; path = OpenTimeSDK/PersonValidationHelper.swift; sourceTree = "<group>"; };
+		03A137371BDD23E20005A721 /* RegisterPersonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPersonResponse.swift; path = OpenTimeSDK/RegisterPersonResponse.swift; sourceTree = "<group>"; };
+		03A137381BDD23E20005A721 /* RemoveOneTimeAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveOneTimeAvailability.swift; path = OpenTimeSDK/RemoveOneTimeAvailability.swift; sourceTree = "<group>"; };
+		03A137391BDD23E20005A721 /* SerialHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialHelper.swift; sourceTree = "<group>"; };
+		03A1373A1BDD23E20005A721 /* SetConnectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetConnectionData.swift; path = OpenTimeSDK/SetConnectionData.swift; sourceTree = "<group>"; };
+		03A1373B1BDD23E20005A721 /* SetConnectionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetConnectionResponse.swift; path = OpenTimeSDK/SetConnectionResponse.swift; sourceTree = "<group>"; };
+		03A1373C1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetOneTimeAvailabilityData.swift; path = OpenTimeSDK/SetOneTimeAvailabilityData.swift; sourceTree = "<group>"; };
+		03A1373D1BDD23E20005A721 /* SigninData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninData.swift; path = OpenTimeSDK/SigninData.swift; sourceTree = "<group>"; };
+		03A1373E1BDD23E20005A721 /* SigninResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninResponse.swift; path = OpenTimeSDK/SigninResponse.swift; sourceTree = "<group>"; };
+		03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTimeSDKTestConstants.swift; sourceTree = "<group>"; };
+		03A137671BDD2FEB0005A721 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		03F294DA1BDD435700B8DBB0 /* PasswordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordHelper.swift; sourceTree = "<group>"; };
+		03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPhoneHelper.swift; sourceTree = "<group>"; };
+		03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTStringHelper.swift; sourceTree = "<group>"; };
+		03F294E01BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIAuthorizedRequestOperationManager.swift; path = ../OpenTimeRefactor1/OpenTime/APIAuthorizedRequestOperationManager.swift; sourceTree = "<group>"; };
+		03F294E11BDD467F00B8DBB0 /* APIRawResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRawResponse.swift; path = ../OpenTimeRefactor1/OpenTime/APIRawResponse.swift; sourceTree = "<group>"; };
+		03F294E21BDD467F00B8DBB0 /* APIRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIRequestOperationManager.swift; path = ../OpenTimeRefactor1/OpenTime/APIRequestOperationManager.swift; sourceTree = "<group>"; };
+		03F294E31BDD467F00B8DBB0 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIResponse.swift; path = ../OpenTimeRefactor1/OpenTime/APIResponse.swift; sourceTree = "<group>"; };
+		03F294E81BDD476400B8DBB0 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../OpenTimeRefactor1/OpenTime/Reachability.swift; sourceTree = "<group>"; };
+		03F294EA1BDD477D00B8DBB0 /* OpenTimeSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTimeSDK.swift; sourceTree = "<group>"; };
+		03F294EC1BDD4BD500B8DBB0 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = ../OpenTimeRefactor1/OpenTime/TestHelper.swift; sourceTree = "<group>"; };
+		03F294EE1BDD4DDE00B8DBB0 /* DeviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceAPI.swift; path = ../OpenTimeRefactor1/OpenTime/DeviceAPI.swift; sourceTree = "<group>"; };
+		B846C29894A963F70CE79683 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DD28808AF859999D505CC26A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED1E0DC3E80C1E296E9214A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +152,8 @@
 				03A136971BDC57F00005A721 /* OpenTimeSDK */,
 				03A136A31BDC57F00005A721 /* OpenTimeSDKTests */,
 				03A136961BDC57F00005A721 /* Products */,
+				7B9EBE0937C27DE369E18674 /* Pods */,
+				BB707A7C0B6250DD1C23A014 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +169,15 @@
 		03A136971BDC57F00005A721 /* OpenTimeSDK */ = {
 			isa = PBXGroup;
 			children = (
-				03A136981BDC57F00005A721 /* OpenTimeSDK.h */,
-				03A1369A1BDC57F00005A721 /* Info.plist */,
+				03A1371A1BDD16270005A721 /* helper */,
+				03A136FB1BDC62310005A721 /* extension */,
+				03A136E31BDC58FA0005A721 /* deserializers */,
+				03A136E41BDC59060005A721 /* availability */,
+				03A136E81BDC59860005A721 /* contact */,
+				03A136E91BDC59AA0005A721 /* connection */,
+				03A136EC1BDC59EA0005A721 /* person */,
+				03A136F51BDC5AC50005A721 /* api */,
+				03A1371B1BDD1A070005A721 /* config */,
 			);
 			path = OpenTimeSDK;
 			sourceTree = "<group>";
@@ -80,10 +185,208 @@
 		03A136A31BDC57F00005A721 /* OpenTimeSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				03A136A41BDC57F00005A721 /* OpenTimeSDKTests.swift */,
-				03A136A61BDC57F00005A721 /* Info.plist */,
+				03A1370D1BDD15770005A721 /* config */,
+				03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */,
+				03A1370F1BDD159E0005A721 /* DeviceAPITest.swift */,
+				03A137101BDD159E0005A721 /* MeetingAPITest.swift */,
+				03A137111BDD159E0005A721 /* MeetingAttendeeAPITest.swift */,
+				03A137121BDD159E0005A721 /* PersonAPITest.swift */,
+				03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */,
 			);
 			path = OpenTimeSDKTests;
+			sourceTree = "<group>";
+		};
+		03A136E31BDC58FA0005A721 /* deserializers */ = {
+			isa = PBXGroup;
+			children = (
+				03A137261BDD23E20005A721 /* DeserializedConnection.swift */,
+				03A137271BDD23E20005A721 /* DeserializedConnectionAvailability.swift */,
+				03A137281BDD23E20005A721 /* DeserializedOneTimeAvailability.swift */,
+				03A137291BDD23E20005A721 /* DeserializedPerson.swift */,
+			);
+			name = deserializers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		03A136E41BDC59060005A721 /* availability */ = {
+			isa = PBXGroup;
+			children = (
+				03A136E51BDC592A0005A721 /* remove */,
+				03A136E61BDC59330005A721 /* set */,
+				03A136E71BDC593A0005A721 /* get */,
+				03A137211BDD23E20005A721 /* AvailabilityAPI.swift */,
+			);
+			name = availability;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		03A136E51BDC592A0005A721 /* remove */ = {
+			isa = PBXGroup;
+			children = (
+				03A137381BDD23E20005A721 /* RemoveOneTimeAvailability.swift */,
+			);
+			name = remove;
+			sourceTree = "<group>";
+		};
+		03A136E61BDC59330005A721 /* set */ = {
+			isa = PBXGroup;
+			children = (
+				03A1373C1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift */,
+			);
+			name = set;
+			sourceTree = "<group>";
+		};
+		03A136E71BDC593A0005A721 /* get */ = {
+			isa = PBXGroup;
+			children = (
+				03A1372B1BDD23E20005A721 /* GetAllMyAvailabilityResponse.swift */,
+			);
+			name = get;
+			sourceTree = "<group>";
+		};
+		03A136E81BDC59860005A721 /* contact */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = contact;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		03A136E91BDC59AA0005A721 /* connection */ = {
+			isa = PBXGroup;
+			children = (
+				03A136EA1BDC59B90005A721 /* get */,
+				03A136EB1BDC59BE0005A721 /* set */,
+				03A137221BDD23E20005A721 /* ConnectionAPI.swift */,
+				03A137241BDD23E20005A721 /* ConnectionStatusOption.swift */,
+			);
+			name = connection;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		03A136EA1BDC59B90005A721 /* get */ = {
+			isa = PBXGroup;
+			children = (
+				03A137231BDD23E20005A721 /* ConnectionsResponse.swift */,
+				03A1372C1BDD23E20005A721 /* GetConnectionsAvailabilityResponse.swift */,
+				03A1372D1BDD23E20005A721 /* GetConnectionsWithContactInfoData.swift */,
+				03A137251BDD23E20005A721 /* ContactInfoData.swift */,
+			);
+			name = get;
+			sourceTree = "<group>";
+		};
+		03A136EB1BDC59BE0005A721 /* set */ = {
+			isa = PBXGroup;
+			children = (
+				03A1373A1BDD23E20005A721 /* SetConnectionData.swift */,
+				03A1373B1BDD23E20005A721 /* SetConnectionResponse.swift */,
+			);
+			name = set;
+			sourceTree = "<group>";
+		};
+		03A136EC1BDC59EA0005A721 /* person */ = {
+			isa = PBXGroup;
+			children = (
+				03A136ED1BDC59F40005A721 /* register */,
+				03A136EE1BDC59FC0005A721 /* signin */,
+				03A137351BDD23E20005A721 /* PersonValidationHelper.swift */,
+				03A137341BDD23E20005A721 /* PersonAPI.swift */,
+			);
+			name = person;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		03A136ED1BDC59F40005A721 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				03A1372E1BDD23E20005A721 /* NewPersonData.swift */,
+				03A137371BDD23E20005A721 /* RegisterPersonResponse.swift */,
+			);
+			name = register;
+			sourceTree = "<group>";
+		};
+		03A136EE1BDC59FC0005A721 /* signin */ = {
+			isa = PBXGroup;
+			children = (
+				03A1373D1BDD23E20005A721 /* SigninData.swift */,
+				03A1373E1BDD23E20005A721 /* SigninResponse.swift */,
+			);
+			name = signin;
+			sourceTree = "<group>";
+		};
+		03A136F51BDC5AC50005A721 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				03F294EE1BDD4DDE00B8DBB0 /* DeviceAPI.swift */,
+				03F294EC1BDD4BD500B8DBB0 /* TestHelper.swift */,
+				03F294E81BDD476400B8DBB0 /* Reachability.swift */,
+				03F294E01BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift */,
+				03F294E11BDD467F00B8DBB0 /* APIRawResponse.swift */,
+				03F294E21BDD467F00B8DBB0 /* APIRequestOperationManager.swift */,
+				03F294E31BDD467F00B8DBB0 /* APIResponse.swift */,
+				03A136FC1BDC65DB0005A721 /* OTConstant.swift */,
+				03F294EA1BDD477D00B8DBB0 /* OpenTimeSDK.swift */,
+			);
+			name = api;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		03A136FB1BDC62310005A721 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				03A136F91BDC622A0005A721 /* StringExtension.swift */,
+				03A136FE1BDC66D40005A721 /* ArrayExtension.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		03A1370D1BDD15770005A721 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				03A137671BDD2FEB0005A721 /* Config.plist */,
+				03A136A61BDC57F00005A721 /* Info.plist */,
+				03A1370A1BDD15680005A721 /* OpenTimeSDKTests-Bridging-Header.h */,
+				03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		03A1371A1BDD16270005A721 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				03A137391BDD23E20005A721 /* SerialHelper.swift */,
+				03F294DA1BDD435700B8DBB0 /* PasswordHelper.swift */,
+				03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */,
+				03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */,
+			);
+			name = helper;
+			sourceTree = "<group>";
+		};
+		03A1371B1BDD1A070005A721 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				03A1372F1BDD23E20005A721 /* OpenTimeAlias.swift */,
+				03A136981BDC57F00005A721 /* OpenTimeSDK.h */,
+				03A1369A1BDC57F00005A721 /* Info.plist */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		7B9EBE0937C27DE369E18674 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */,
+				DD28808AF859999D505CC26A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB707A7C0B6250DD1C23A014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B846C29894A963F70CE79683 /* Pods.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +407,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03A136A91BDC57F00005A721 /* Build configuration list for PBXNativeTarget "OpenTimeSDK" */;
 			buildPhases = (
+				9F1E31892A33DAEF5F77BE94 /* Check Pods Manifest.lock */,
 				03A136901BDC57F00005A721 /* Sources */,
 				03A136911BDC57F00005A721 /* Frameworks */,
 				03A136921BDC57F00005A721 /* Headers */,
 				03A136931BDC57F00005A721 /* Resources */,
+				FB7514E0F02D2525FBDDDEC7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,6 +447,7 @@
 		03A1368C1BDC57EF0005A721 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Connecting Open Time, LLC";
 				TargetAttributes = {
@@ -183,16 +489,88 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03A137681BDD2FEB0005A721 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F1E31892A33DAEF5F77BE94 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7514E0F02D2525FBDDDEC7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03A136901BDC57F00005A721 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03A1374F1BDD23E20005A721 /* GetConnectionsAvailabilityResponse.swift in Sources */,
+				03A1375A1BDD23E20005A721 /* RegisterPersonResponse.swift in Sources */,
+				03F294E51BDD467F00B8DBB0 /* APIRawResponse.swift in Sources */,
+				03A137501BDD23E20005A721 /* GetConnectionsWithContactInfoData.swift in Sources */,
+				03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */,
+				03F294E71BDD467F00B8DBB0 /* APIResponse.swift in Sources */,
+				03A137451BDD23E20005A721 /* ConnectionAPI.swift in Sources */,
+				03F294E61BDD467F00B8DBB0 /* APIRequestOperationManager.swift in Sources */,
+				03A1375F1BDD23E20005A721 /* SetOneTimeAvailabilityData.swift in Sources */,
+				03A1375E1BDD23E20005A721 /* SetConnectionResponse.swift in Sources */,
+				03A137491BDD23E20005A721 /* DeserializedConnection.swift in Sources */,
+				03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */,
+				03A137581BDD23E20005A721 /* PersonValidationHelper.swift in Sources */,
+				03A1374A1BDD23E20005A721 /* DeserializedConnectionAvailability.swift in Sources */,
+				03F294EF1BDD4DDE00B8DBB0 /* DeviceAPI.swift in Sources */,
+				03A137461BDD23E20005A721 /* ConnectionsResponse.swift in Sources */,
+				03A1374B1BDD23E20005A721 /* DeserializedOneTimeAvailability.swift in Sources */,
+				03A1375D1BDD23E20005A721 /* SetConnectionData.swift in Sources */,
+				03A137571BDD23E20005A721 /* PersonAPI.swift in Sources */,
+				03A1374E1BDD23E20005A721 /* GetAllMyAvailabilityResponse.swift in Sources */,
+				03F294EB1BDD477D00B8DBB0 /* OpenTimeSDK.swift in Sources */,
+				03F294DB1BDD435700B8DBB0 /* PasswordHelper.swift in Sources */,
+				03A137611BDD23E20005A721 /* SigninResponse.swift in Sources */,
+				03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */,
+				03A1375C1BDD23E20005A721 /* SerialHelper.swift in Sources */,
+				03A137511BDD23E20005A721 /* NewPersonData.swift in Sources */,
+				03A137471BDD23E20005A721 /* ConnectionStatusOption.swift in Sources */,
+				03A1375B1BDD23E20005A721 /* RemoveOneTimeAvailability.swift in Sources */,
+				03A136FA1BDC622A0005A721 /* StringExtension.swift in Sources */,
+				03A137441BDD23E20005A721 /* AvailabilityAPI.swift in Sources */,
+				03F294ED1BDD4BD500B8DBB0 /* TestHelper.swift in Sources */,
+				03F294E91BDD476400B8DBB0 /* Reachability.swift in Sources */,
+				03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */,
+				03A136FF1BDC66D40005A721 /* ArrayExtension.swift in Sources */,
+				03A1374C1BDD23E20005A721 /* DeserializedPerson.swift in Sources */,
+				03A137481BDD23E20005A721 /* ContactInfoData.swift in Sources */,
+				03F294E41BDD467F00B8DBB0 /* APIAuthorizedRequestOperationManager.swift in Sources */,
+				03A137601BDD23E20005A721 /* SigninData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +578,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03A136A51BDC57F00005A721 /* OpenTimeSDKTests.swift in Sources */,
+				03A137131BDD159E0005A721 /* ConnectionAPITest.swift in Sources */,
+				03A1370C1BDD15680005A721 /* AvailabilityAPITest.swift in Sources */,
+				03A137661BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift in Sources */,
+				03A137161BDD159E0005A721 /* MeetingAttendeeAPITest.swift in Sources */,
+				03A137151BDD159E0005A721 /* MeetingAPITest.swift in Sources */,
+				03A137141BDD159E0005A721 /* DeviceAPITest.swift in Sources */,
+				03A137171BDD159E0005A721 /* PersonAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +640,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -297,6 +682,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -306,7 +692,9 @@
 		};
 		03A136AA1BDC57F00005A721 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +705,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OpenTime.OpenTimeSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = CommonCrypto;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		03A136AB1BDC57F00005A721 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD28808AF859999D505CC26A /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -333,26 +725,32 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OpenTime.OpenTimeSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = CommonCrypto;
 			};
 			name = Release;
 		};
 		03A136AD1BDC57F00005A721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OpenTimeSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OpenTime.OpenTimeSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenTimeSDKTests/OpenTimeSDKTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		03A136AE1BDC57F00005A721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OpenTimeSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OpenTime.OpenTimeSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenTimeSDKTests/OpenTimeSDKTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -375,6 +773,7 @@
 				03A136AB1BDC57F00005A721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03A136AC1BDC57F00005A721 /* Build configuration list for PBXNativeTarget "OpenTimeSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +782,7 @@
 				03A136AE1BDC57F00005A721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
