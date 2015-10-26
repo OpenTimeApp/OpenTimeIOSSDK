@@ -34,7 +34,7 @@ class PersonAPITest: XCTestCase {
             let expectation = expectationWithDescription("Create Users");
             
             PersonAPI.make("Mr", lastName: "Tester", email: "tester1@app.opentimeapp.com", cellPhone: "+1 407-235-4361", password: "I love testing", confirmPassword: "I love testing", done: {
-                (response: APIResponse) -> () in
+                (response: OTAPIResponse) -> () in
                 XCTAssert(response.success == true);
                 XCTAssert(response.data != nil);
                 if(response.data != nil)
@@ -65,7 +65,7 @@ class PersonAPITest: XCTestCase {
             
             let location = Location(name: Word(text: "", gender: Word.Gender.Generic));
             
-            PersonAPI.getPeopleNearLocation(location, done: {(response: APIResponse) -> () in
+            PersonAPI.getPeopleNearLocation(location, done: {(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 
@@ -104,7 +104,7 @@ class PersonAPITest: XCTestCase {
             let email: String = "tester1@app.opentimeapp.com";
             let password: String = "I love testing";
             
-            PersonAPI.signIn(email, password: password, done:{(response: APIResponse)->Void in
+            PersonAPI.signIn(email, password: password, done:{(response: OTAPIResponse)->Void in
             
                 XCTAssertTrue(response.success == true);
                 

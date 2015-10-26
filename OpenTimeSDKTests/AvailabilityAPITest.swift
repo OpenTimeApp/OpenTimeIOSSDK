@@ -54,7 +54,7 @@ class AvailabilityAPITest: XCTestCase {
                 lastUpdated: lastUpdated
             );
             
-            AvailabilityAPI.setOneTimeAvailability(availability, done: {(response: APIResponse) -> () in
+            AvailabilityAPI.setOneTimeAvailability(availability, done: {(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 
@@ -65,7 +65,7 @@ class AvailabilityAPITest: XCTestCase {
             
             expectation = expectationWithDescription("Get my availability");
             
-            AvailabilityAPI.getAllMyAvailability({(response: APIResponse) -> () in
+            AvailabilityAPI.getAllMyAvailability({(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 
@@ -95,7 +95,7 @@ class AvailabilityAPITest: XCTestCase {
             
             availability.lastUpdated(availability.lastUpdated() + 1);
             
-            AvailabilityAPI.removeOneTimeAvailability(availability, done: {(response: APIResponse) -> () in
+            AvailabilityAPI.removeOneTimeAvailability(availability, done: {(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 
@@ -106,7 +106,7 @@ class AvailabilityAPITest: XCTestCase {
             
             expectation = expectationWithDescription("Get my updated availability");
             
-            AvailabilityAPI.getAllMyAvailability({(response: APIResponse) -> () in
+            AvailabilityAPI.getAllMyAvailability({(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 
@@ -152,7 +152,7 @@ class AvailabilityAPITest: XCTestCase {
             
             let expectation = expectationWithDescription("Set one time availability");
             
-            AvailabilityAPI.getConnectionsAvailability({(response: APIResponse) -> () in
+            AvailabilityAPI.getConnectionsAvailability({(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 

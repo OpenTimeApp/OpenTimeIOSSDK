@@ -20,8 +20,8 @@ class DeviceAPITest: XCTestCase {
     {
         let resetExpectation = expectationWithDescription("Setup test");
         
-        var keptResponse: APIResponse! = nil;
-        TestHelper.resetAPIData(["make_users"], done: {(response: APIResponse)->Void in
+        var keptResponse: OTAPIResponse! = nil;
+        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
             
             // Verify test data was setup correctly.
             XCTAssertTrue(response.success, response.message);
@@ -40,7 +40,7 @@ class DeviceAPITest: XCTestCase {
             
             let key: String = "9e548e83f56bd858cf5f3c7472cb98a1b553c7ebf8c3a747c68b817c2c201e17";
             
-            DeviceAPI.set(key, done: {(response: APIResponse) -> () in
+            OTDeviceAPI.set(key, done: {(response: OTAPIResponse) -> () in
                 
                 XCTAssertTrue(response.success == true);
                 

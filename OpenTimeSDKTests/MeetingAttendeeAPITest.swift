@@ -23,7 +23,7 @@ class MeetingAttendeeAPITest: XCTestCase {
     
     func testUpdate()
     {
-        let response: APIResponse = TestHelper.resetAPIData(["make_meetings","make_users"]);
+        let response: OTAPIResponse = TestHelper.resetAPIData(["make_meetings","make_users"]);
         
         XCTAssertTrue(response.success);
         if(response.success)
@@ -31,7 +31,7 @@ class MeetingAttendeeAPITest: XCTestCase {
             // Create an expectation to be fulfilled.
             let expectation = expectationWithDescription("Get a meeting");
             
-            MeetingAPI.getAll({(response: APIResponse)-> Void in
+            MeetingAPI.getAll({(response: OTAPIResponse)-> Void in
                 
                 XCTAssertTrue(response.success == true);
                 if(response.success == true)
@@ -48,9 +48,9 @@ class MeetingAttendeeAPITest: XCTestCase {
                         
                         attendee.status(MeetingAttendee.Status.Accepted);
                         
-                        MeetingAttendeeAPI.update(attendee, meetingID: meeting.id(), done: {(response: APIResponse)->Void in
+                        MeetingAttendeeAPI.update(attendee, meetingID: meeting.id(), done: {(response: OTAPIResponse)->Void in
                             
-                            MeetingAPI.getAll({(response: APIResponse)-> Void in
+                            MeetingAPI.getAll({(response: OTAPIResponse)-> Void in
                                 
                                 var updatedMeetings = response.data as! Array<Meeting>;
                                 

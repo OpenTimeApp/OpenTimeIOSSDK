@@ -42,7 +42,7 @@ class ConnectionAPITest: XCTestCase {
 
             let person2 = Person(id: 2);
             let connection = Connection(forUser: TestUser.userID, connection: person2, lastUpdated: Int(NSDate().timeIntervalSince1970), status: Connection.Status.Active);
-            ConnectionAPI.set(connection, done: {(response: APIResponse)-> () in
+            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
                
                 XCTAssertEqual(response.success, true);
                 
@@ -75,7 +75,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Create active connection.
             var expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.set(connection, done: {(response: APIResponse)-> () in
+            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -86,7 +86,7 @@ class ConnectionAPITest: XCTestCase {
             // Set active connection as inactive.
             expectation = expectationWithDescription("Set Active Connection as Inactive");
             connection.status(Connection.Status.Inactive);
-            ConnectionAPI.set(connection, done: {(response: APIResponse)-> () in
+            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -118,7 +118,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Create active connection.
             var expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.set(connection, done: {(response: APIResponse)-> () in
+            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -128,7 +128,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Set active connection as inactive.
             expectation = expectationWithDescription("Remove Active Connection");
-            ConnectionAPI.remove(Connection.Status.Removed, lastUpdated: Int(NSDate().timeIntervalSince1970), done: {(response: APIResponse)-> () in
+            ConnectionAPI.remove(Connection.Status.Removed, lastUpdated: Int(NSDate().timeIntervalSince1970), done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -156,7 +156,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Create active connection.
             var expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.set(connection, done: {(response: APIResponse)-> () in
+            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -166,7 +166,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Create active connection.
             expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.getAll({(response: APIResponse)-> () in
+            ConnectionAPI.getAll({(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -200,7 +200,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Create active connection.
             var expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.set(connection, done: {(response: APIResponse)-> () in
+            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -210,7 +210,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Create active connection.
             expectation = expectationWithDescription("Get connection list");
-            ConnectionAPI.getList([2], done: {(response: APIResponse)-> () in
+            ConnectionAPI.getList([2], done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -249,7 +249,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Query list of open time users based on contact information.
             let expectation = expectationWithDescription("Get connection list");
-            ConnectionAPI.getWithContactInfo(connections, contacts: contacts, done: {(response: APIResponse)-> () in
+            ConnectionAPI.getWithContactInfo(connections, contacts: contacts, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 

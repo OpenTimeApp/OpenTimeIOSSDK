@@ -50,7 +50,7 @@ class MeetingAPITest: XCTestCase {
             meeting.addAttendeePerson(Person(id: 2));
             
             // Send object to server.
-            MeetingAPI.create(meeting, done: {(response: APIResponse) -> () in
+            MeetingAPI.create(meeting, done: {(response: OTAPIResponse) -> () in
                 
                 // Verify the server responded with a success.
                 XCTAssert(response.success == true);
@@ -104,7 +104,7 @@ class MeetingAPITest: XCTestCase {
             // Create an expectation to be fulfilled.
             let expectation = expectationWithDescription("Get all my meetings");
             
-            MeetingAPI.getAll({(response: APIResponse)-> Void in
+            MeetingAPI.getAll({(response: OTAPIResponse)-> Void in
                 
                 XCTAssertTrue(response.success == true);
                 if(response.success == true)
