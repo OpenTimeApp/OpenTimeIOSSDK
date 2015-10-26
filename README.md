@@ -56,7 +56,7 @@ Get the current user's availability like so:
     
 When you're done testing you can take test mode off like so: 
     
-    OpenTimeSDK.initSession("Your really awesome live key goes here");
+    OpenTimeSDK.initSession("Your realy awesome live key goes here");
     
 If you want to change the server use: 
 
