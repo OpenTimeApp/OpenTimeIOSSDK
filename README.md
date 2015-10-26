@@ -47,12 +47,13 @@ Set the credentials for the user like so:
     OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     
 Get the current user's availability like so:
-    
+    ```swift
     AvailabilityAPI.getAllMyAvailability { (response: GetAllMyAvailabilityResponse) -> Void in
         if(response.success == true){
             print("Yippee!")
         }
     }
+    ```
     
 When you're done testing you can take test mode off like so: 
     
