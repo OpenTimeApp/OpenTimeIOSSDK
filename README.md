@@ -27,13 +27,14 @@ To use the library add a reference to [all the files in the OpenTimeSDK folder](
 
 ### Get an API key
 To get an API key please email josh.woodcock@opentimeapp.com
+1. Open OpenTimeSDKTests/Config.plist
+2. Set the value of OPENTIME_KEY to your test key. It won't work with your live key.
+3. If you are contributing to the project use the following to ignore changes to the file so you don't commit your own API key: 
+    
+    git update-index --assume-unchanged OpentimeSDKTests/Config.plist
 
 ### Run the tests
 The best way to get started is to run the tests to make sure everything is working: 
-
-1. Open OpenTimeSDKTests/Config.plist
-2. Set the value of OPENTIME_KEY to your test key. It won't work with your live key.
-3. Run the tests
 
 ### Example
 Initialize OpenTime before you use it anywhere
