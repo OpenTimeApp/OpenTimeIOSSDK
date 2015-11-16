@@ -14,4 +14,8 @@ public class OTSetConnectionResponse : OTAPIResponse {
         super.init(success: success, message: message);
         _connection = connectionData!;
     }
+    
+    public func getConnection() -> OTDeserializedConnection {
+        return self._connection;
+    }
 }
