@@ -61,4 +61,16 @@ public class OTNewPersonData {
         return _password;
     }
     
+    public func getFirstName() -> String {
+        return self._firstName;
+    }
+    
+    public func getLastName() -> String {
+        return self._lastName;
+    }
+    
+    public func getPhone() -> String {
+        return self._cellPhone;
+    }
+    
 }
