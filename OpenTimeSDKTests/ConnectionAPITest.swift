@@ -50,50 +50,45 @@ class ConnectionAPITest: XCTestCase {
             waitForExpectationsWithTimeout(5.0, handler:nil)
             
         }
-    }
+    }*/
     
     func testSetActiveConnectionAsInactive()
     {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users"]);
+        let resetExpectation = expectationWithDescription("Setup test");
         
-        // Verify test data was setup correctly.
-        XCTAssertTrue(response.success, response.message);
+        var keptResponse: OTAPIResponse! = nil;
+        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
+            
+            // Verify test data was setup correctly.
+            XCTAssertTrue(response.success, response.message);
+            keptResponse = response;
+            resetExpectation.fulfill();
+            }, clearCache: true);
         
-        if(response.success)
-        {
-            // Emulate that a user is signed in.
-            let person = Person(id: 1);
-            CurrentUser.sharedInstance().setUser(person);
-            CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        waitForExpectationsWithTimeout(5.0, handler:nil);
+        
+        if(keptResponse != nil && keptResponse.success) {
             
-            // Emulate user to be added as connection.
-            let person2 = Person(id: 2);
-            let connection = Connection(forUser: TestUser.userID, connection:  person2, lastUpdated: Int(NSDate().timeIntervalSince1970), status: Connection.Status.Active);
-            
-            // Create active connection.
-            var expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
-                
-                XCTAssertEqual(response.success, true);
-                
-                expectation.fulfill();
+            // Set a connection
+            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let setConnectionData = OTSetConnectionData(userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
+            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+                XCTAssertTrue(response.success);
+                expectToSetConnection.fulfill();
             });
             waitForExpectationsWithTimeout(5.0, handler:nil);
             
             // Set active connection as inactive.
-            expectation = expectationWithDescription("Set Active Connection as Inactive");
-            connection.status(Connection.Status.Inactive);
-            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
-                
-                XCTAssertEqual(response.success, true);
-                
-                expectation.fulfill();
+            let expectationToSetConnectionAsInactive = expectationWithDescription("Set Active Connection as Inactive");
+            let setInactiveConnectionData = OTSetConnectionData(userID: 2, status: OTConnectionStatusOption.Inactive, lastUpdated: Int(NSDate().timeIntervalSince1970));
+            OTConnectionAPI.set(setInactiveConnectionData, done: { (response: OTAPIResponse) -> Void in
+                XCTAssertTrue(response.success);
+                expectationToSetConnectionAsInactive.fulfill();
             });
+
             waitForExpectationsWithTimeout(5.0, handler:nil)
-            
         }
-    }*/
+    }
     
     func testRemoveConnection()
     {
