@@ -17,8 +17,7 @@ class DeviceAPITest: XCTestCase {
         OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
     }
     
-    func testSetDeviceKey()
-    {
+    func testSetDeviceKey() {
         let resetExpectation = expectationWithDescription("Setup test");
         
         var keptResponse: OTAPIResponse! = nil;

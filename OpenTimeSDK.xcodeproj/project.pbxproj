@@ -7,54 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031C701A1BFA218E00C79E28 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C70191BFA218E00C79E28 /* TestHelper.swift */; };
+		031C701C1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */; };
 		03A136991BDC57F00005A721 /* OpenTimeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A136981BDC57F00005A721 /* OpenTimeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03A136A01BDC57F00005A721 /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A136951BDC57F00005A721 /* OpenTimeSDK.framework */; settings = {ASSET_TAGS = (); }; };
-		03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* OTStringExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FC1BDC65DB0005A721 /* OTConstant.swift */; settings = {ASSET_TAGS = (); }; };
-		03A136FF1BDC66D40005A721 /* OTArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FE1BDC66D40005A721 /* OTArrayExtension.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1370C1BDD15680005A721 /* AvailabilityAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137131BDD159E0005A721 /* ConnectionAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137141BDD159E0005A721 /* DeviceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370F1BDD159E0005A721 /* DeviceAPITest.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137151BDD159E0005A721 /* MeetingAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137101BDD159E0005A721 /* MeetingAPITest.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137161BDD159E0005A721 /* MeetingAttendeeAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137111BDD159E0005A721 /* MeetingAttendeeAPITest.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137171BDD159E0005A721 /* PersonAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137121BDD159E0005A721 /* PersonAPITest.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137441BDD23E20005A721 /* OTAvailabilityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137211BDD23E20005A721 /* OTAvailabilityAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137451BDD23E20005A721 /* OTConnectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137221BDD23E20005A721 /* OTConnectionAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137461BDD23E20005A721 /* OTConnectionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137231BDD23E20005A721 /* OTConnectionsResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137471BDD23E20005A721 /* OTConnectionStatusOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137241BDD23E20005A721 /* OTConnectionStatusOption.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137481BDD23E20005A721 /* OTContactInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137251BDD23E20005A721 /* OTContactInfoData.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137491BDD23E20005A721 /* OTDeserializedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137261BDD23E20005A721 /* OTDeserializedConnection.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1374A1BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137271BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1374B1BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137281BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1374C1BDD23E20005A721 /* OTDeserializedPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137291BDD23E20005A721 /* OTDeserializedPerson.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1374E1BDD23E20005A721 /* OTGetAllMyAvailabilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372B1BDD23E20005A721 /* OTGetAllMyAvailabilityResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1374F1BDD23E20005A721 /* OTGetConnectionsAvailabilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372C1BDD23E20005A721 /* OTGetConnectionsAvailabilityResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137501BDD23E20005A721 /* OTGetConnectionsWithContactInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372D1BDD23E20005A721 /* OTGetConnectionsWithContactInfoData.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137511BDD23E20005A721 /* OTNewPersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372E1BDD23E20005A721 /* OTNewPersonData.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372F1BDD23E20005A721 /* OpenTimeAlias.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137571BDD23E20005A721 /* OTPersonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137341BDD23E20005A721 /* OTPersonAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137581BDD23E20005A721 /* OTPersonValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137351BDD23E20005A721 /* OTPersonValidationHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375A1BDD23E20005A721 /* OTRegisterPersonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137371BDD23E20005A721 /* OTRegisterPersonResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375B1BDD23E20005A721 /* OTRemoveOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137381BDD23E20005A721 /* OTRemoveOneTimeAvailability.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375C1BDD23E20005A721 /* OTSerialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137391BDD23E20005A721 /* OTSerialHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375D1BDD23E20005A721 /* OTSetConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373A1BDD23E20005A721 /* OTSetConnectionData.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375E1BDD23E20005A721 /* OTSetConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373B1BDD23E20005A721 /* OTSetConnectionResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03A1375F1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373C1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137601BDD23E20005A721 /* OTSigninData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373D1BDD23E20005A721 /* OTSigninData.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137611BDD23E20005A721 /* OTSigninResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373E1BDD23E20005A721 /* OTSigninResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137661BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */; settings = {ASSET_TAGS = (); }; };
-		03A137681BDD2FEB0005A721 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A137671BDD2FEB0005A721 /* Config.plist */; settings = {ASSET_TAGS = (); }; };
-		03F294DB1BDD435700B8DBB0 /* OTPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DA1BDD435700B8DBB0 /* OTPasswordHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03F2950C1BDD547100B8DBB0 /* OTTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2950B1BDD547100B8DBB0 /* OTTestHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		03F2953B1BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295341BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		03F2953C1BDD60CB00B8DBB0 /* OTAPIRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295351BDD60CB00B8DBB0 /* OTAPIRawResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03F2953D1BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295361BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift */; settings = {ASSET_TAGS = (); }; };
-		03F2953E1BDD60CB00B8DBB0 /* OTAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295371BDD60CB00B8DBB0 /* OTAPIResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		03F2953F1BDD60CB00B8DBB0 /* OTDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295381BDD60CB00B8DBB0 /* OTDeviceAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		03F295401BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295391BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift */; settings = {ASSET_TAGS = (); }; };
-		03F295411BDD60CB00B8DBB0 /* OTReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2953A1BDD60CB00B8DBB0 /* OTReachability.swift */; settings = {ASSET_TAGS = (); }; };
+		03A136A01BDC57F00005A721 /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A136951BDC57F00005A721 /* OpenTimeSDK.framework */; };
+		03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* OTStringExtension.swift */; };
+		03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FC1BDC65DB0005A721 /* OTConstant.swift */; };
+		03A136FF1BDC66D40005A721 /* OTArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136FE1BDC66D40005A721 /* OTArrayExtension.swift */; };
+		03A1370C1BDD15680005A721 /* AvailabilityAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */; };
+		03A137131BDD159E0005A721 /* ConnectionAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370E1BDD159E0005A721 /* ConnectionAPITest.swift */; };
+		03A137141BDD159E0005A721 /* DeviceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1370F1BDD159E0005A721 /* DeviceAPITest.swift */; };
+		03A137151BDD159E0005A721 /* MeetingAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137101BDD159E0005A721 /* MeetingAPITest.swift */; };
+		03A137161BDD159E0005A721 /* MeetingAttendeeAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137111BDD159E0005A721 /* MeetingAttendeeAPITest.swift */; };
+		03A137171BDD159E0005A721 /* PersonAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137121BDD159E0005A721 /* PersonAPITest.swift */; };
+		03A137441BDD23E20005A721 /* OTAvailabilityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137211BDD23E20005A721 /* OTAvailabilityAPI.swift */; };
+		03A137451BDD23E20005A721 /* OTConnectionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137221BDD23E20005A721 /* OTConnectionAPI.swift */; };
+		03A137461BDD23E20005A721 /* OTConnectionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137231BDD23E20005A721 /* OTConnectionsResponse.swift */; };
+		03A137471BDD23E20005A721 /* OTConnectionStatusOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137241BDD23E20005A721 /* OTConnectionStatusOption.swift */; };
+		03A137481BDD23E20005A721 /* OTContactInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137251BDD23E20005A721 /* OTContactInfoData.swift */; };
+		03A137491BDD23E20005A721 /* OTDeserializedConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137261BDD23E20005A721 /* OTDeserializedConnection.swift */; };
+		03A1374A1BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137271BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift */; };
+		03A1374B1BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137281BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift */; };
+		03A1374C1BDD23E20005A721 /* OTDeserializedPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137291BDD23E20005A721 /* OTDeserializedPerson.swift */; };
+		03A1374E1BDD23E20005A721 /* OTGetAllMyAvailabilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372B1BDD23E20005A721 /* OTGetAllMyAvailabilityResponse.swift */; };
+		03A1374F1BDD23E20005A721 /* OTGetConnectionsAvailabilityResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372C1BDD23E20005A721 /* OTGetConnectionsAvailabilityResponse.swift */; };
+		03A137501BDD23E20005A721 /* OTGetConnectionsWithContactInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372D1BDD23E20005A721 /* OTGetConnectionsWithContactInfoData.swift */; };
+		03A137511BDD23E20005A721 /* OTNewPersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372E1BDD23E20005A721 /* OTNewPersonData.swift */; };
+		03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1372F1BDD23E20005A721 /* OpenTimeAlias.swift */; };
+		03A137571BDD23E20005A721 /* OTPersonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137341BDD23E20005A721 /* OTPersonAPI.swift */; };
+		03A137581BDD23E20005A721 /* OTPersonValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137351BDD23E20005A721 /* OTPersonValidationHelper.swift */; };
+		03A1375A1BDD23E20005A721 /* OTRegisterPersonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137371BDD23E20005A721 /* OTRegisterPersonResponse.swift */; };
+		03A1375B1BDD23E20005A721 /* OTRemoveOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137381BDD23E20005A721 /* OTRemoveOneTimeAvailability.swift */; };
+		03A1375C1BDD23E20005A721 /* OTSerialHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137391BDD23E20005A721 /* OTSerialHelper.swift */; };
+		03A1375D1BDD23E20005A721 /* OTSetConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373A1BDD23E20005A721 /* OTSetConnectionData.swift */; };
+		03A1375E1BDD23E20005A721 /* OTSetConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373B1BDD23E20005A721 /* OTSetConnectionResponse.swift */; };
+		03A1375F1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373C1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift */; };
+		03A137601BDD23E20005A721 /* OTSigninData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373D1BDD23E20005A721 /* OTSigninData.swift */; };
+		03A137611BDD23E20005A721 /* OTSigninResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373E1BDD23E20005A721 /* OTSigninResponse.swift */; };
+		03A137661BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */; };
+		03A137681BDD2FEB0005A721 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A137671BDD2FEB0005A721 /* Config.plist */; };
+		03F294DB1BDD435700B8DBB0 /* OTPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DA1BDD435700B8DBB0 /* OTPasswordHelper.swift */; };
+		03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */; };
+		03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */; };
+		03F2950C1BDD547100B8DBB0 /* OTTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2950B1BDD547100B8DBB0 /* OTTestHelper.swift */; };
+		03F2953B1BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295341BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift */; };
+		03F2953C1BDD60CB00B8DBB0 /* OTAPIRawResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295351BDD60CB00B8DBB0 /* OTAPIRawResponse.swift */; };
+		03F2953D1BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295361BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift */; };
+		03F2953E1BDD60CB00B8DBB0 /* OTAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295371BDD60CB00B8DBB0 /* OTAPIResponse.swift */; };
+		03F2953F1BDD60CB00B8DBB0 /* OTDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295381BDD60CB00B8DBB0 /* OTDeviceAPI.swift */; };
+		03F295401BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295391BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift */; };
+		03F295411BDD60CB00B8DBB0 /* OTReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2953A1BDD60CB00B8DBB0 /* OTReachability.swift */; };
 		CED1E0DC3E80C1E296E9214A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B846C29894A963F70CE79683 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031C70191BFA218E00C79E28 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedRegisteredPersonData.swift; path = OpenTimeSDK/OTDeserializedRegisteredPersonData.swift; sourceTree = "<group>"; };
 		03A136951BDC57F00005A721 /* OpenTimeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTimeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A136981BDC57F00005A721 /* OpenTimeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenTimeSDK.h; sourceTree = "<group>"; };
 		03A1369A1BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				03A137111BDD159E0005A721 /* MeetingAttendeeAPITest.swift */,
 				03A137121BDD159E0005A721 /* PersonAPITest.swift */,
 				03A1370B1BDD15680005A721 /* AvailabilityAPITest.swift */,
+				031C70191BFA218E00C79E28 /* TestHelper.swift */,
 			);
 			path = OpenTimeSDKTests;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				03A137271BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift */,
 				03A137281BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift */,
 				03A137291BDD23E20005A721 /* OTDeserializedPerson.swift */,
+				031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */,
 			);
 			name = deserializers;
 			path = ..;
@@ -564,6 +570,7 @@
 				03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */,
 				03A137441BDD23E20005A721 /* OTAvailabilityAPI.swift in Sources */,
 				03F2953E1BDD60CB00B8DBB0 /* OTAPIResponse.swift in Sources */,
+				031C701C1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift in Sources */,
 				03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */,
 				03A136FF1BDC66D40005A721 /* OTArrayExtension.swift in Sources */,
 				03F2950C1BDD547100B8DBB0 /* OTTestHelper.swift in Sources */,
@@ -581,6 +588,7 @@
 				03A137131BDD159E0005A721 /* ConnectionAPITest.swift in Sources */,
 				03A1370C1BDD15680005A721 /* AvailabilityAPITest.swift in Sources */,
 				03A137661BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift in Sources */,
+				031C701A1BFA218E00C79E28 /* TestHelper.swift in Sources */,
 				03A137161BDD159E0005A721 /* MeetingAttendeeAPITest.swift in Sources */,
 				03A137151BDD159E0005A721 /* MeetingAPITest.swift in Sources */,
 				03A137141BDD159E0005A721 /* DeviceAPITest.swift in Sources */,

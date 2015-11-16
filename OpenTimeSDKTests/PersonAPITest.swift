@@ -9,45 +9,42 @@
 import UIKit
 import XCTest
 import OpenTimeSDK
-/*
+
 class PersonAPITest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        APIRequestOperationManager.disableCache();
-        
-        // Emulate that a user is signed in.
-        let person = Person(id: 1);
-        CurrentUser.sharedInstance().setUser(person);
-        CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
     }
     
-    func testCreateUser()
-    {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["clear_users"]);
+    
+    func testCreateUser() {
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["clear_users"], resetCache: true);
         
-        // Verify test data was setup correctly.
-        XCTAssertTrue(response.success, response.message);
-        if(response.success)
-        {
+        if(response.success) {
+            
             let expectation = expectationWithDescription("Create Users");
             
-            PersonAPI.make("Mr", lastName: "Tester", email: "tester1@app.opentimeapp.com", cellPhone: "+1 407-235-4361", password: "I love testing", confirmPassword: "I love testing", done: {
-                (response: OTAPIResponse) -> () in
+            let data = OTNewPersonData(
+                firstName: "Mr",
+                lastName: "Tester",
+                email: "tester1@app.opentimeapp.com",
+                cellPhone: "+1 407-235-4361",
+                password: "I love testing",
+                confirmPassword: "I love testing"
+            );
+            
+            OTPersonAPI.make(data, done: { (response: OTRegisterPersonResponse) -> Void in
+                
                 XCTAssert(response.success == true);
-                XCTAssert(response.data != nil);
-                if(response.data != nil)
-                {
-                    XCTAssertEqual(1, (response.data as! Person).getID());
-                }
+                XCTAssertEqual(1, response.getPerson().getUserID());
                 
                 expectation.fulfill();
             });
             
             waitForExpectationsWithTimeout(5.0, handler:nil)
         }
-    }
+    }/*
     
     
     func testGetPersonsNearLocation()
@@ -128,7 +125,7 @@ class PersonAPITest: XCTestCase {
     
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
-    }
+    }*/
     
 }
-*/
+

@@ -10,17 +10,17 @@ import UIKit
 
 public class OTRegisterPersonResponse : OTAPIResponse {
     
-    private var _person: OTDeserializedPerson!;
+    private var _registeredPersonData: OTDeserializedRegisteredPersonData!;
     
     public init(success: Bool, message: String, rawData: AnyObject?) {
         if(success == true && rawData != nil) {
-            self._person = OTDeserializedPerson(dictionary: rawData as! NSDictionary);
+            self._registeredPersonData = OTDeserializedRegisteredPersonData(dictionary: rawData as! NSDictionary);
         }
         
         super.init(success: success, message: message);
     }
     
-    public func getPerson() -> OTDeserializedPerson {
-        return self._person;
+    public func getPerson() -> OTDeserializedRegisteredPersonData {
+        return self._registeredPersonData;
     }
 }

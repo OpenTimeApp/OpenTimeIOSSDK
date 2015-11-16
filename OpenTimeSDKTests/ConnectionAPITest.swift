@@ -18,22 +18,10 @@ class ConnectionAPITest: XCTestCase {
         OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     }
     
-    func testAddActiveConnection()
-    {
-        let resetExpectation = expectationWithDescription("Setup test");
+    func testAddActiveConnection() {
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
         
-        var keptResponse: OTAPIResponse! = nil;
-        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
-            
-            // Verify test data was setup correctly.
-            XCTAssertTrue(response.success, response.message);
-            keptResponse = response;
-            resetExpectation.fulfill();
-            }, clearCache: true);
-        
-        waitForExpectationsWithTimeout(5.0, handler:nil);
-        
-        if(keptResponse != nil && keptResponse.success)
+        if(response.success)
         {
             // Set a connection
             let expectToSetConnection = expectationWithDescription("Will set connection")
@@ -46,22 +34,10 @@ class ConnectionAPITest: XCTestCase {
         }
     }
     
-    func testSetActiveConnectionAsInactive()
-    {
-        let resetExpectation = expectationWithDescription("Setup test");
+    func testSetActiveConnectionAsInactive() {
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
         
-        var keptResponse: OTAPIResponse! = nil;
-        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
-            
-            // Verify test data was setup correctly.
-            XCTAssertTrue(response.success, response.message);
-            keptResponse = response;
-            resetExpectation.fulfill();
-        }, clearCache: true);
-        
-        waitForExpectationsWithTimeout(5.0, handler:nil);
-        
-        if(keptResponse != nil && keptResponse.success) {
+        if(response.success) {
             
             // Set a connection
             let expectToSetConnection = expectationWithDescription("Will set connection")
@@ -84,22 +60,11 @@ class ConnectionAPITest: XCTestCase {
         }
     }
     
-    func testRemoveConnection()
-    {
-        let resetExpectation = expectationWithDescription("Setup test");
+    func testRemoveConnection() {
         
-        var keptResponse: OTAPIResponse! = nil;
-        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
-            
-            // Verify test data was setup correctly.
-            XCTAssertTrue(response.success, response.message);
-            keptResponse = response;
-            resetExpectation.fulfill();
-        }, clearCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
         
-        waitForExpectationsWithTimeout(5.0, handler:nil);
-        
-        if(keptResponse != nil && keptResponse.success) {
+        if(response.success) {
             
             // Set a connection
             let expectToSetConnection = expectationWithDescription("Will set connection")
@@ -121,24 +86,11 @@ class ConnectionAPITest: XCTestCase {
         }
     }
     
-    func testGetAll()
-    {
-        let resetExpectation = expectationWithDescription("Setup test");
+    func testGetAll() {
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
         
-        var keptResponse: OTAPIResponse! = nil;
-        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
-            
-            // Verify test data was setup correctly.
-            XCTAssertTrue(response.success, response.message);
-            keptResponse = response;
-            resetExpectation.fulfill();
-            }, clearCache: true);
-        
-        waitForExpectationsWithTimeout(5.0, handler:nil);
-        
-        if(keptResponse != nil && keptResponse.success) {
+        if(response.success) {
     
-            
             // Set a connection
             let expectToSetConnection = expectationWithDescription("Will set connection")
             let setConnectionData = OTSetConnectionData(userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
@@ -179,22 +131,11 @@ class ConnectionAPITest: XCTestCase {
         }
     }
     
-    func testGetWithList()
-    {
-        let resetExpectation = expectationWithDescription("Setup test");
+    func testGetWithList() {
         
-        var keptResponse: OTAPIResponse! = nil;
-        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
-            
-            // Verify test data was setup correctly.
-            XCTAssertTrue(response.success, response.message);
-            keptResponse = response;
-            resetExpectation.fulfill();
-        }, clearCache: false);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
         
-        waitForExpectationsWithTimeout(5.0, handler:nil);
-        
-        if(keptResponse.success) {
+        if(response.success) {
             
             // Set a connection
             let expectToSetConnection = expectationWithDescription("Will set connection")
@@ -218,22 +159,11 @@ class ConnectionAPITest: XCTestCase {
         }
     }
     
-    func testGetWithContactInfoList()
-    {
-        let resetExpectation = expectationWithDescription("Setup test");
+    func testGetWithContactInfoList() {
+
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
         
-        var keptResponse: OTAPIResponse! = nil;
-        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
-            
-            // Verify test data was setup correctly.
-            XCTAssertTrue(response.success, response.message);
-            keptResponse = response;
-            resetExpectation.fulfill();
-            }, clearCache: true);
-        
-        waitForExpectationsWithTimeout(5.0, handler:nil);
-        
-        if(keptResponse != nil && keptResponse.success) {
+        if(response.success) {
             
             let contactinfodata1 = OTContactInfoData(emails: ["tester1@app.opentimeapp.com"], cellPhones: []);
             let contactinfodata2 = OTContactInfoData(emails: ["tester2@app.opentimeapp.com"], cellPhones: []);
