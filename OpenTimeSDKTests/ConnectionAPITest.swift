@@ -10,18 +10,17 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-/*
+
 class ConnectionAPITest: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        
-        // Emulate that a user is signed in.
-        let person = Person(id: 1);
-        CurrentUser.sharedInstance().setUser(person);
-        CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     }
     
+    /*
+
     func testAddActiveConnection()
     {
         // Setup test data on server.
@@ -182,56 +181,52 @@ class ConnectionAPITest: XCTestCase {
             waitForExpectationsWithTimeout(5.0, handler:nil);
             
         }
-    }
+    }*/
     
     func testGetWithList()
     {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users"], clearCache: true);
+        let resetExpectation = expectationWithDescription("Setup test");
         
-        // Verify test data was setup correctly.
-        XCTAssertTrue(response.success, response.message);
-        
-        if(response.success)
-        {
-            // Emulate user to be added as connection.
-            let person2 = Person(id: 2);
-            let connection = Connection(forUser: TestUser.userID, connection:  person2, lastUpdated: Int(NSDate().timeIntervalSince1970) + 1, status: Connection.Status.Active);
+        var keptResponse: OTAPIResponse! = nil;
+        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
             
-            // Create active connection.
-            var expectation = expectationWithDescription("Set Active Connection");
-            ConnectionAPI.set(connection, done: {(response: OTAPIResponse)-> () in
-                
-                XCTAssertEqual(response.success, true);
-                
-                expectation.fulfill();
+            // Verify test data was setup correctly.
+            XCTAssertTrue(response.success, response.message);
+            keptResponse = response;
+            resetExpectation.fulfill();
+        }, clearCache: false);
+        
+        waitForExpectationsWithTimeout(5.0, handler:nil);
+        
+        if(keptResponse.success) {
+            
+            // Set a connection
+            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let setConnectionData = OTSetConnectionData(userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970) + 1);
+            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+                XCTAssertTrue(response.success);
+                expectToSetConnection.fulfill();
             });
             waitForExpectationsWithTimeout(5.0, handler:nil);
             
-            // Create active connection.
-            expectation = expectationWithDescription("Get connection list");
-            ConnectionAPI.getList([2], done: {(response: OTAPIResponse)-> () in
-                
-                XCTAssertEqual(response.success, true);
-                
-                if(response.success == true)
-                {
-                    let connections = response.data as! Array<Connection>;
-                    
-                    XCTAssert((connections.count > 0) == true);
+            // Get the connections to see if is there.
+            let expectToGetConnections = expectationWithDescription("Will get list of connections");
+            OTConnectionAPI.getList([2], done: { (response: OTConnectionsResponse) -> Void in
+                XCTAssertTrue(response.success);
+                if(response.success){
+                    XCTAssert(response.getConnections().count > 0);
                 }
-                
-                expectation.fulfill();
+                expectToGetConnections.fulfill();
             });
             waitForExpectationsWithTimeout(5.0, handler:nil);
-            
         }
     }
     
+   /*
     func testGetWithContactInfoList()
     {
         // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users"], clearCache: true);
+        let response = OTTestHelper.resetAPIData(["make_users"], clearCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
@@ -249,7 +244,7 @@ class ConnectionAPITest: XCTestCase {
             
             // Query list of open time users based on contact information.
             let expectation = expectationWithDescription("Get connection list");
-            ConnectionAPI.getWithContactInfo(connections, contacts: contacts, done: {(response: OTAPIResponse)-> () in
+            OTConnectionAPI.getWithContactInfo(connections, contacts: contacts, done: {(response: OTAPIResponse)-> () in
                 
                 XCTAssertEqual(response.success, true);
                 
@@ -276,7 +271,6 @@ class ConnectionAPITest: XCTestCase {
             });
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
-    }
+    }*/
 
 }
-*/

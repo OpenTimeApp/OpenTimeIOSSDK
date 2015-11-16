@@ -13,6 +13,7 @@ import OpenTimeSDK
 class DeviceAPITest: XCTestCase {
     
     override func setUp() {
+        super.setUp();
         OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
     }
     
@@ -31,7 +32,7 @@ class DeviceAPITest: XCTestCase {
         
         waitForExpectationsWithTimeout(5.0, handler:nil);
         
-        if(keptResponse.success)
+        if(keptResponse != nil && keptResponse.success)
         {
             // Emulate that a user is signed in.
             OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
