@@ -46,7 +46,6 @@ class PersonAPITest: XCTestCase {
         }
     }/*
     
-    
     func testGetPersonsNearLocation()
     {
         // Setup test data on server.

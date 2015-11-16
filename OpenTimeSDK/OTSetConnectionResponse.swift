@@ -8,14 +8,14 @@
 
 public class OTSetConnectionResponse : OTAPIResponse {
     
-    private var _connection: OTDeserializedConnection!
+    private var _connection: OTDeserializedConnection?
     
     public init(success: Bool, message: String, connectionData: OTDeserializedConnection?){
         super.init(success: success, message: message);
-        _connection = connectionData!;
+        _connection = connectionData;
     }
     
-    public func getConnection() -> OTDeserializedConnection {
+    public func getConnection() -> OTDeserializedConnection? {
         return self._connection;
     }
 }

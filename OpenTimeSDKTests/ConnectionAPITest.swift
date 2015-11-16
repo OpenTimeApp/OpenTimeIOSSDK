@@ -26,8 +26,16 @@ class ConnectionAPITest: XCTestCase {
             // Set a connection
             let expectToSetConnection = expectationWithDescription("Will set connection")
             let setConnectionData = OTSetConnectionData(userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
+            setConnectionData.shouldReturnConnection(true);
             OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
                 XCTAssertTrue(response.success);
+                
+                XCTAssertNotNil(response.getConnection());
+                
+                if(response.getConnection() != nil){
+                    XCTAssertEqual(2, response.getConnection()?.getPerson().getUserID());
+                }
+                
                 expectToSetConnection.fulfill();
             });
             waitForExpectationsWithTimeout(5.0, handler:nil);
