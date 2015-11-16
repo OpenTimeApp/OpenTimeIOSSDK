@@ -66,7 +66,7 @@ public class OTConnectionAPI: NSObject {
         );
     }
     
-    public class func getAll(done: (response: OTAPIResponse)->Void)
+    public class func getAll(done: (response: OTConnectionsResponse)->Void)
     {
         // Setup request manager
         let requestManager = OTAPIAuthorizedRequestOperationManager();
@@ -80,14 +80,12 @@ public class OTConnectionAPI: NSObject {
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                if(response.success == true) {
-                    
-                }
-                
-                done(response: response);
+                done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                requestManager.apiResult(operation, error: error, done: done);
+                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
+                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
+                });
             }
         );
     }
