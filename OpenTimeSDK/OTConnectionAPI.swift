@@ -103,7 +103,7 @@ public class OTConnectionAPI: NSObject {
         
         // Start the request
         requestManager.POST(OpenTimeSDK.getServer() + "/api/connection/withContactInfoList",
-            parameters: data,
+            parameters: data.getParameters(),
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);

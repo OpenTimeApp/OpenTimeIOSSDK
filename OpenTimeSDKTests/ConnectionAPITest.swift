@@ -222,44 +222,51 @@ class ConnectionAPITest: XCTestCase {
         }
     }
     
-   /*
+
     func testGetWithContactInfoList()
     {
-        // Setup test data on server.
-        let response = OTTestHelper.resetAPIData(["make_users"], clearCache: true);
+        let resetExpectation = expectationWithDescription("Setup test");
+        
+        var keptResponse: OTAPIResponse! = nil;
+        OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
+            
+            // Verify test data was setup correctly.
+            XCTAssertTrue(response.success, response.message);
+            keptResponse = response;
+            resetExpectation.fulfill();
+            }, clearCache: true);
+        
+        waitForExpectationsWithTimeout(5.0, handler:nil);
         
         // Verify test data was setup correctly.
-        XCTAssertTrue(response.success, response.message);
+        XCTAssertTrue(keptResponse.success, keptResponse.message);
         
-        if(response.success)
-        {
-            let person      = Person(id: 3);
-            person.addEmail("tester1@app.opentimeapp.com");
-            let connection1 = Connection(forUser: 1, connection: person, lastUpdated: 0, status: 0);
-            let contact1    = PhoneContact(recordID: 27);
-            contact1.addEmail("tester2@app.opentimeapp.com");
+        if(keptResponse != nil && keptResponse.success) {
             
-            let connections = [connection1];
-            let contacts    = [contact1];
+            let contactinfodata1 = OTContactInfoData(emails: ["tester1@app.opentimeapp.com"], cellPhones: []);
+            let contactinfodata2 = OTContactInfoData(emails: ["tester2@app.opentimeapp.com"], cellPhones: []);
             
-            // Query list of open time users based on contact information.
+            let data = OTGetConnectionsWithContactInfoData(
+                connections: [contactinfodata1],
+                contactsAlreadyInOpenTime: [contactinfodata2]
+            );
+            
             let expectation = expectationWithDescription("Get connection list");
-            OTConnectionAPI.getWithContactInfo(connections, contacts: contacts, done: {(response: OTAPIResponse)-> () in
-                
+            OTConnectionAPI.getWithContactInfo(data, done: { (response: OTConnectionsResponse) -> Void in
                 XCTAssertEqual(response.success, true);
                 
-                if(response.success == true)
-                {
-                    var connections = response.data as! Array<Connection>;
+                if(response.success == true) {
+                    
+                    var connections = response.getConnections();
                     
                     XCTAssert((connections.count > 0) == true);
                     
                     if(connections.count > 0) {
                         
-                        XCTAssertEqual("Mr", connections[0].person.getFirstName());
-                        XCTAssertEqual("Tester", connections[0].person.getLastName());
+                        XCTAssertEqual("Mr", connections[0].getPerson().getFirstName());
+                        XCTAssertEqual("Tester", connections[0].getPerson().getLastName());
                         
-                        var emails = connections[0].person.getEmails();
+                        var emails = connections[0].getPerson().getEmails();
                         XCTAssertEqual(1, emails.count);
                         if(emails.count == 1) {
                             XCTAssertEqual("tester2@app.opentimeapp.com", emails[0]);
@@ -269,8 +276,9 @@ class ConnectionAPITest: XCTestCase {
                 
                 expectation.fulfill();
             });
+        
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
-    }*/
+    }
 
 }
