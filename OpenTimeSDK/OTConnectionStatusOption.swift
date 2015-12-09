@@ -7,6 +7,7 @@
 //
 
 public class OTConnectionStatusOption {
+    public static let Unknown = -1;
     public static let Inactive = 0;
     public static let Active = 1;
     public static let Removed = 2;
