@@ -66,4 +66,4 @@ If you want to change the server use:
     
 ## License
 
-AFNetworking is released under the MIT license. See LICENSE for details.
+OpenTimeSDK is released under the MIT license. See LICENSE for details.
