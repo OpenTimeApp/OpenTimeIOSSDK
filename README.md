@@ -63,3 +63,7 @@ When you're done testing you can take test mode off like so:
 If you want to change the server use: 
 
     OpenTimeSDK.session.setServer("https://myotherawesomeserver.opentimeapp.com")
+    
+## License
+
+AFNetworking is released under the MIT license. See LICENSE for details.
