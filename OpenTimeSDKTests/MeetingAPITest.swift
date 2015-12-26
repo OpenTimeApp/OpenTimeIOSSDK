@@ -9,12 +9,13 @@
 import UIKit
 import XCTest
 import OpenTimeSDK
-/*
+
 class MeetingAPITest: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        MeetingAPI.testing = true;
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     }
     
     override func tearDown() {
@@ -24,18 +25,12 @@ class MeetingAPITest: XCTestCase {
     
     func testCreateMeeting()
     {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users", "make_meetings"]);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users", "make_meetings"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
         
-        if(response.success)
-        {
-            // Emulate that a user is signed in.
-            let person = Person(id: 1);
-            CurrentUser.sharedInstance().setUser(person);
-            CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        if(response.success) {
             
             // Create an expectation to be fulfilled.
             let expectation = expectationWithDescription("Create Meeting");
@@ -45,35 +40,25 @@ class MeetingAPITest: XCTestCase {
             let end        = start + 3600;
             
             // Create object to send to server.
-            let meeting = Meeting(creator: 1, start: start, end: end, lastUpdated: start);
-            meeting.addAttendeePerson(CurrentUser.sharedInstance().getUser());
-            meeting.addAttendeePerson(Person(id: 2));
+            let createMeetingData = OTCreateMeetingData(
+                creator: 1, start: start, end: end, lastUpdated: start, attendees: [1, 2]);
             
-            // Send object to server.
-            MeetingAPI.create(meeting, done: {(response: OTAPIResponse) -> () in
+            OTMeetingAPI.create(createMeetingData, done: { (response) -> Void in
+                XCTAssertTrue(response.success);
                 
-                // Verify the server responded with a success.
-                XCTAssert(response.success == true);
+                XCTAssertNotNil(response.getMeetingData());
                 
-                // Verify the response data isn't null.
-                XCTAssert(response.data != nil);
-                
-                // If the response was successful and the data isn't empty check whether the meeting object contains a meeting id.
-                if(response.success == true && response.data != nil)
-                {
-                    let meeting: Meeting = response.data as! Meeting;
-                    XCTAssertEqual(2, meeting.id());
+                if(response.success == true && response.getMeetingData() != nil){
+                    XCTAssertEqual(2, response.getMeetingData()?.getMeetingID());
                 }
                 
-                // Tell the test handler that the test is done.
                 expectation.fulfill();
             });
             
-            // Start waiting for the test to be fulfilled for 5 seconds.
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectationsWithTimeout(5.0, handler: nil);
         }
     }
-    
+    /*
     // TODO: Incomplete
     func testUpdateMeeting()
     {
@@ -154,6 +139,5 @@ class MeetingAPITest: XCTestCase {
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
     }
-
-}
 */
+}

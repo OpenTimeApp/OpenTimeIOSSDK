@@ -6,10 +6,9 @@
 //  Copyright (c) 2014-2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-import UIKit
 import AFNetworking
 
-public class OTConnectionAPI: NSObject {
+public class OTConnectionAPI {
    
     public class func set(connectionData: OTSetConnectionData, done: (response: OTSetConnectionResponse)->Void)
     {

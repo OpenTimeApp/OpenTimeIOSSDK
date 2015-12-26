@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		031C701A1BFA218E00C79E28 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C70191BFA218E00C79E28 /* TestHelper.swift */; };
 		031C701C1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */; };
+		032A715A1C2BA2DC00217B03 /* OTCreateMeetingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71591C2BA2DC00217B03 /* OTCreateMeetingData.swift */; };
+		032A715F1C2BAB0F00217B03 /* OTMeetingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */; };
+		032A71611C2BAEB400217B03 /* OTCreateMeetingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */; };
+		032A71631C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71621C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift */; };
 		03A136991BDC57F00005A721 /* OpenTimeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A136981BDC57F00005A721 /* OpenTimeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03A136A01BDC57F00005A721 /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A136951BDC57F00005A721 /* OpenTimeSDK.framework */; };
 		03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* OTStringExtension.swift */; };
@@ -73,6 +77,10 @@
 /* Begin PBXFileReference section */
 		031C70191BFA218E00C79E28 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedRegisteredPersonData.swift; path = OpenTimeSDK/OTDeserializedRegisteredPersonData.swift; sourceTree = "<group>"; };
+		032A71591C2BA2DC00217B03 /* OTCreateMeetingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCreateMeetingData.swift; sourceTree = "<group>"; };
+		032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMeetingAPI.swift; sourceTree = "<group>"; };
+		032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCreateMeetingResponse.swift; sourceTree = "<group>"; };
+		032A71621C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedCreateMeetingResponse.swift; path = OpenTimeSDK/OTDeserializedCreateMeetingResponse.swift; sourceTree = "<group>"; };
 		03A136951BDC57F00005A721 /* OpenTimeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTimeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A136981BDC57F00005A721 /* OpenTimeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenTimeSDK.h; sourceTree = "<group>"; };
 		03A1369A1BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +158,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032A71581C2BA2B900217B03 /* meeting */ = {
+			isa = PBXGroup;
+			children = (
+				032A715B1C2BA34D00217B03 /* create */,
+				032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */,
+			);
+			name = meeting;
+			sourceTree = "<group>";
+		};
+		032A715B1C2BA34D00217B03 /* create */ = {
+			isa = PBXGroup;
+			children = (
+				032A71591C2BA2DC00217B03 /* OTCreateMeetingData.swift */,
+				032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */,
+			);
+			name = create;
+			sourceTree = "<group>";
+		};
 		03A1368B1BDC57EF0005A721 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +205,7 @@
 				03A136E41BDC59060005A721 /* availability */,
 				03A136E81BDC59860005A721 /* contact */,
 				03A136E91BDC59AA0005A721 /* connection */,
+				032A71581C2BA2B900217B03 /* meeting */,
 				03A136EC1BDC59EA0005A721 /* person */,
 				03A136F51BDC5AC50005A721 /* api */,
 				03A1371B1BDD1A070005A721 /* config */,
@@ -204,6 +231,7 @@
 		03A136E31BDC58FA0005A721 /* deserializers */ = {
 			isa = PBXGroup;
 			children = (
+				032A71621C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift */,
 				03A137261BDD23E20005A721 /* OTDeserializedConnection.swift */,
 				03A137271BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift */,
 				03A137281BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift */,
@@ -554,13 +582,17 @@
 				03A137581BDD23E20005A721 /* OTPersonValidationHelper.swift in Sources */,
 				03A1374A1BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift in Sources */,
 				03A137461BDD23E20005A721 /* OTConnectionsResponse.swift in Sources */,
+				032A71631C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift in Sources */,
 				03A1374B1BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift in Sources */,
 				03A1375D1BDD23E20005A721 /* OTSetConnectionData.swift in Sources */,
+				032A715F1C2BAB0F00217B03 /* OTMeetingAPI.swift in Sources */,
 				03A137571BDD23E20005A721 /* OTPersonAPI.swift in Sources */,
+				032A71611C2BAEB400217B03 /* OTCreateMeetingResponse.swift in Sources */,
 				03A1374E1BDD23E20005A721 /* OTGetAllMyAvailabilityResponse.swift in Sources */,
 				03F294DB1BDD435700B8DBB0 /* OTPasswordHelper.swift in Sources */,
 				03A137611BDD23E20005A721 /* OTSigninResponse.swift in Sources */,
 				03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */,
+				032A715A1C2BA2DC00217B03 /* OTCreateMeetingData.swift in Sources */,
 				03F2953D1BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift in Sources */,
 				03F2953B1BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift in Sources */,
 				03A1375C1BDD23E20005A721 /* OTSerialHelper.swift in Sources */,
