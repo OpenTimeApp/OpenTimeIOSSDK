@@ -13,6 +13,12 @@
 		032A715F1C2BAB0F00217B03 /* OTMeetingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */; };
 		032A71611C2BAEB400217B03 /* OTCreateMeetingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */; };
 		032A71631C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71621C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift */; };
+		032A71651C2EFCBC00217B03 /* OTGetAllMyMeetingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71641C2EFCBC00217B03 /* OTGetAllMyMeetingsResponse.swift */; };
+		032A71681C2EFFA900217B03 /* OTDeserializedMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71671C2EFFA900217B03 /* OTDeserializedMeeting.swift */; };
+		032A716A1C2F00AA00217B03 /* OTDeserializedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71691C2F00AA00217B03 /* OTDeserializedLocation.swift */; };
+		032A716C1C2F019300217B03 /* OTDeserializedMeetingAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A716B1C2F019300217B03 /* OTDeserializedMeetingAttendee.swift */; };
+		032A716E1C2F42F400217B03 /* OTMeetingStatusOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A716D1C2F42F400217B03 /* OTMeetingStatusOption.swift */; };
+		032A71711C2F43DE00217B03 /* MeetingAttendeeStatusOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71701C2F43DE00217B03 /* MeetingAttendeeStatusOption.swift */; };
 		03A136991BDC57F00005A721 /* OpenTimeSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 03A136981BDC57F00005A721 /* OpenTimeSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		03A136A01BDC57F00005A721 /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A136951BDC57F00005A721 /* OpenTimeSDK.framework */; };
 		03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A136F91BDC622A0005A721 /* OTStringExtension.swift */; };
@@ -81,6 +87,12 @@
 		032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMeetingAPI.swift; sourceTree = "<group>"; };
 		032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCreateMeetingResponse.swift; sourceTree = "<group>"; };
 		032A71621C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedCreateMeetingResponse.swift; path = OpenTimeSDK/OTDeserializedCreateMeetingResponse.swift; sourceTree = "<group>"; };
+		032A71641C2EFCBC00217B03 /* OTGetAllMyMeetingsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTGetAllMyMeetingsResponse.swift; sourceTree = "<group>"; };
+		032A71671C2EFFA900217B03 /* OTDeserializedMeeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTDeserializedMeeting.swift; sourceTree = "<group>"; };
+		032A71691C2F00AA00217B03 /* OTDeserializedLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTDeserializedLocation.swift; sourceTree = "<group>"; };
+		032A716B1C2F019300217B03 /* OTDeserializedMeetingAttendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTDeserializedMeetingAttendee.swift; sourceTree = "<group>"; };
+		032A716D1C2F42F400217B03 /* OTMeetingStatusOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMeetingStatusOption.swift; sourceTree = "<group>"; };
+		032A71701C2F43DE00217B03 /* MeetingAttendeeStatusOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingAttendeeStatusOption.swift; sourceTree = "<group>"; };
 		03A136951BDC57F00005A721 /* OpenTimeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTimeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A136981BDC57F00005A721 /* OpenTimeSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenTimeSDK.h; sourceTree = "<group>"; };
 		03A1369A1BDC57F00005A721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,8 +173,11 @@
 		032A71581C2BA2B900217B03 /* meeting */ = {
 			isa = PBXGroup;
 			children = (
+				032A716F1C2F43C500217B03 /* attendee */,
+				032A71661C2EFF1400217B03 /* get */,
 				032A715B1C2BA34D00217B03 /* create */,
 				032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */,
+				032A716D1C2F42F400217B03 /* OTMeetingStatusOption.swift */,
 			);
 			name = meeting;
 			sourceTree = "<group>";
@@ -174,6 +189,22 @@
 				032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */,
 			);
 			name = create;
+			sourceTree = "<group>";
+		};
+		032A71661C2EFF1400217B03 /* get */ = {
+			isa = PBXGroup;
+			children = (
+				032A71641C2EFCBC00217B03 /* OTGetAllMyMeetingsResponse.swift */,
+			);
+			name = get;
+			sourceTree = "<group>";
+		};
+		032A716F1C2F43C500217B03 /* attendee */ = {
+			isa = PBXGroup;
+			children = (
+				032A71701C2F43DE00217B03 /* MeetingAttendeeStatusOption.swift */,
+			);
+			name = attendee;
 			sourceTree = "<group>";
 		};
 		03A1368B1BDC57EF0005A721 = {
@@ -237,6 +268,9 @@
 				03A137281BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift */,
 				03A137291BDD23E20005A721 /* OTDeserializedPerson.swift */,
 				031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */,
+				032A71671C2EFFA900217B03 /* OTDeserializedMeeting.swift */,
+				032A71691C2F00AA00217B03 /* OTDeserializedLocation.swift */,
+				032A716B1C2F019300217B03 /* OTDeserializedMeetingAttendee.swift */,
 			);
 			name = deserializers;
 			path = ..;
@@ -570,8 +604,10 @@
 				03A1374F1BDD23E20005A721 /* OTGetConnectionsAvailabilityResponse.swift in Sources */,
 				03F2953C1BDD60CB00B8DBB0 /* OTAPIRawResponse.swift in Sources */,
 				03F295411BDD60CB00B8DBB0 /* OTReachability.swift in Sources */,
+				032A71681C2EFFA900217B03 /* OTDeserializedMeeting.swift in Sources */,
 				03A1375A1BDD23E20005A721 /* OTRegisterPersonResponse.swift in Sources */,
 				03A137501BDD23E20005A721 /* OTGetConnectionsWithContactInfoData.swift in Sources */,
+				032A71711C2F43DE00217B03 /* MeetingAttendeeStatusOption.swift in Sources */,
 				03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */,
 				03A137451BDD23E20005A721 /* OTConnectionAPI.swift in Sources */,
 				03A1375F1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift in Sources */,
@@ -581,6 +617,7 @@
 				03A136FD1BDC65DB0005A721 /* OTConstant.swift in Sources */,
 				03A137581BDD23E20005A721 /* OTPersonValidationHelper.swift in Sources */,
 				03A1374A1BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift in Sources */,
+				032A716E1C2F42F400217B03 /* OTMeetingStatusOption.swift in Sources */,
 				03A137461BDD23E20005A721 /* OTConnectionsResponse.swift in Sources */,
 				032A71631C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift in Sources */,
 				03A1374B1BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift in Sources */,
@@ -589,6 +626,7 @@
 				03A137571BDD23E20005A721 /* OTPersonAPI.swift in Sources */,
 				032A71611C2BAEB400217B03 /* OTCreateMeetingResponse.swift in Sources */,
 				03A1374E1BDD23E20005A721 /* OTGetAllMyAvailabilityResponse.swift in Sources */,
+				032A716C1C2F019300217B03 /* OTDeserializedMeetingAttendee.swift in Sources */,
 				03F294DB1BDD435700B8DBB0 /* OTPasswordHelper.swift in Sources */,
 				03A137611BDD23E20005A721 /* OTSigninResponse.swift in Sources */,
 				03A137521BDD23E20005A721 /* OpenTimeAlias.swift in Sources */,
@@ -602,11 +640,13 @@
 				03A136FA1BDC622A0005A721 /* OTStringExtension.swift in Sources */,
 				03A137441BDD23E20005A721 /* OTAvailabilityAPI.swift in Sources */,
 				03F2953E1BDD60CB00B8DBB0 /* OTAPIResponse.swift in Sources */,
+				032A716A1C2F00AA00217B03 /* OTDeserializedLocation.swift in Sources */,
 				031C701C1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift in Sources */,
 				03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */,
 				03A136FF1BDC66D40005A721 /* OTArrayExtension.swift in Sources */,
 				03F2950C1BDD547100B8DBB0 /* OTTestHelper.swift in Sources */,
 				03F2953F1BDD60CB00B8DBB0 /* OTDeviceAPI.swift in Sources */,
+				032A71651C2EFCBC00217B03 /* OTGetAllMyMeetingsResponse.swift in Sources */,
 				03A1374C1BDD23E20005A721 /* OTDeserializedPerson.swift in Sources */,
 				03A137481BDD23E20005A721 /* OTContactInfoData.swift in Sources */,
 				03A137601BDD23E20005A721 /* OTSigninData.swift in Sources */,

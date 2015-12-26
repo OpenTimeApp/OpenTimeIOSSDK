@@ -9,4 +9,8 @@
 public typealias OpenTimeUserID = Int;
 public typealias OpenTimeTimeStamp = Int;
 public typealias ConnectionStatus = Int;
+public typealias MeetingStatus = Int;
+public typealias MeetingAttendeeStatus = Int;
+public typealias OpenTimeOrgID = Int;
+public typealias OpenTimeMeetingID = Int;
 public typealias AvailabilityStatus = Int;

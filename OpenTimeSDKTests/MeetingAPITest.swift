@@ -58,86 +58,62 @@ class MeetingAPITest: XCTestCase {
             waitForExpectationsWithTimeout(5.0, handler: nil);
         }
     }
-    /*
-    // TODO: Incomplete
-    func testUpdateMeeting()
-    {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_meetings"], clearCache: true);
-        
-        // Verify test data was setup correctly.
-        XCTAssertTrue(response.success, response.message);
-    }
     
-    func testGetAllMyMeetings()
-    {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users", "make_meetings"], clearCache: true);
+    func testGetAllMyMeetings() {
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users", "make_meetings"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
         
-        if(response.success)
-        {
-            // Emulate that a user is signed in.
-            let person = Person(id: 1);
-            let person2 = Person(id: 2);
-            CurrentUser.sharedInstance().setUser(person);
-            CurrentUser.sharedInstance().getUser().getConnections().setPersonInRamAndStorage(person2, withStatus: Connection.Status.Active);
-            CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        if(response.success) {
             
             // Create an expectation to be fulfilled.
             let expectation = expectationWithDescription("Get all my meetings");
             
-            MeetingAPI.getAll({(response: OTAPIResponse)-> Void in
+            OTMeetingAPI.getAllMyMeetings({ (response: OTGetAllMyMeetingsResponse) -> Void in
+                XCTAssertTrue(response.success);
+                XCTAssertEqual(1, response.getMeetings().count);
                 
-                XCTAssertTrue(response.success == true);
-                if(response.success == true)
-                {
-                    var meetings = response.data as! Array<Meeting>;
+                if(response.success && response.getMeetings().count == 1){
                     
-                    XCTAssertEqual(1, meetings.count);
+                    let meetings = response.getMeetings();
                     
-                    if(meetings.count > 0)
-                    {
-                        let meeting: Meeting = meetings[0] as Meeting;
+                    let meeting: OTDeserializedMeeting = meetings[0] as OTDeserializedMeeting;
+                    
+                    XCTAssertEqual(2060020800, meeting.getStart());
+                    XCTAssertEqual(2060028000, meeting.getEnd());
+                    
+                    XCTAssertNotNil(meeting.getLocation());
+                    if(meeting.getLocation() != nil){
+                        XCTAssertEqual(12.123456, meeting.getLocation()?.getLatitude());
+                        XCTAssertEqual(123.123456, meeting.getLocation()?.getLongitude());
+                        XCTAssertEqual("123 main street, Dallas, TX 75248", meeting.getLocation()?.getAddress());
+                    }
+                    
+                    // We always want the create date to show as 0 so that the app will use the meeting id to coordinate storage.
+                    // The use of the create data is a temporary way to store the meeting in case the user is offline.
+                    XCTAssertNotEqual(0, meeting.getCreatedTimestamp());
+                    XCTAssertEqual(OTMeetingStatusOption.Active, meeting.getStatus());
+                    XCTAssertEqual(1427845204, meeting.getLastUpdated());
+                    XCTAssertEqual(1, meeting.getCreator());
+                    
+                    XCTAssertEqual(2, meeting.getMeetingAttendees().count);
+                    
+                    if(meeting.getMeetingAttendees().count >= 2) {
+                        var attendees = meeting.getMeetingAttendees();
+                        let attendee1 = attendees[0] as OTDeserializedMeetingAttendee;
                         
-                        XCTAssertEqual(2060020800, meeting.start());
-                        XCTAssertEqual(2060028000, meeting.end());
-                        XCTAssertEqual(12.123456, meeting.location().lat());
-                        XCTAssertEqual(123.123456, meeting.location().long());
-                        XCTAssertEqual("123 main street, Dallas, TX 75248", meeting.location().address());
-                        
-                        // We always want the create date to show as 0 so that the app will use the meeting id to coordinate storage.
-                        // The use of the create data is a temporary way to store the meeting in case the user is offline.
-                        XCTAssertNotEqual(0, meeting.created());
-                        XCTAssertEqual(SyncItem.Status.Active, meeting.status());
-                        XCTAssertEqual(1427845204, meeting.lastUpdated());
-                        XCTAssertEqual(1, meeting.creator());
-                        
-                        XCTAssertEqual(2, meeting.getAttendees().count);
-                        
-                        if(meeting.getParticipants().count >= 2)
-                        {
-                            var attendees = meeting.getAttendees();
-                            let attendee1 = attendees[0] as MeetingAttendee;
-                            
-                            XCTAssertEqual(1, attendee1.attendee().getID());
-                            XCTAssertEqual(MeetingAttendee.Status.Accepted, attendee1.status());
-                            /// TODO implement attendee titles
-                            //XCTAssertEqual("A meeting with Chris", attendee1.title());
-                            XCTAssertEqual(1427845204, attendee1.lastUpdated());
-                        }
+                        XCTAssertEqual(1, attendee1.getUserID());
+                        XCTAssertEqual(MeetingAttendeeStatusOption.Accepted, attendee1.getStatus());
+
+                        XCTAssertEqual(1427845204, attendee1.getLastUpdated());
                     }
                 }
                 
-                // Tell the test handler that the test is done.
                 expectation.fulfill();
             });
             
-            // Start waiting for the test to be fulfilled for 5 seconds.
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
     }
-*/
 }
