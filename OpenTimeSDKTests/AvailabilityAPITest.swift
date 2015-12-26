@@ -9,20 +9,17 @@
 import UIKit
 import XCTest
 import OpenTimeSDK
-/*
+
 class AvailabilityAPITest: XCTestCase {
 
     override func setUp() {
         super.setUp()
-
-        APIRequestOperationManager.disableCache();
-        AvailabilityStorage.clearAllAvailabilityFromStorage();
+        OTAPIRequestOperationManager.disableCache();
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    /*
     
     func testSetOneTimeAvailability()
     {
@@ -134,44 +131,38 @@ class AvailabilityAPITest: XCTestCase {
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
     }
+    */
     
-    func testGetConnectionsAvailability()
-    {
+    func testGetConnectionsAvailability() {
         // Setup test data on server.
-        let response = TestHelper.resetAPIData(["setup_connection_availability"], clearCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["setup_connection_availability"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
         
-        if(response.success)
-        {
-            // Emulate that a user is signed in.
-            let person = Person(id: 1);
-            CurrentUser.sharedInstance().setUser(person);
-            CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        if(response.success) {
             
             let expectation = expectationWithDescription("Set one time availability");
             
-            AvailabilityAPI.getConnectionsAvailability({(response: OTAPIResponse) -> () in
+            OTAvailabilityAPI.getConnectionsAvailability({ (response: OTGetConnectionsAvailabilityResponse) -> Void in
+                XCTAssertTrue(response.success);
                 
-                XCTAssertTrue(response.success == true);
-                
-                if(response.success == true)
-                {
-                    var connections = response.data as! Array<[String: AnyObject]>;
+                if(response.success) {
+                    let connections: Array<OTDeserializedConnectionAvailability> = response.getList();
                     
                     XCTAssertEqual(1, connections.count);
-                    if(connections.count > 0)
-                    {
-                        var oneTimeAvailabilityList = connections[0]["one_time"] as! Array<OneTimeAvailability>;
+                    
+                    if(connections.count > 0) {
+                        let connection: OTDeserializedConnectionAvailability = connections[0];
+                        var oneTimeAvailabilityList = connection.getOneTimeAvailabilityList();
                         
-                        let oneTimeAvailability:OneTimeAvailability = oneTimeAvailabilityList[0] as OneTimeAvailability;
+                        let oneTimeAvailability:OTDeserializedOneTimeAvailability = oneTimeAvailabilityList[0] as OTDeserializedOneTimeAvailability;
                         
-                        XCTAssertEqual(2058674400, oneTimeAvailability.start());
-                        XCTAssertEqual(2058678000, oneTimeAvailability.end());
-                        XCTAssertEqual(1427238491, oneTimeAvailability.created());
-                        XCTAssertEqual(1427238491, oneTimeAvailability.lastUpdated());
-                        XCTAssertEqual(SyncItem.Status.Active, oneTimeAvailability.status());
+                        XCTAssertEqual(2058674400, oneTimeAvailability.getStart());
+                        XCTAssertEqual(2058678000, oneTimeAvailability.getEnd());
+                        XCTAssertEqual(1427238491, oneTimeAvailability.getCreatedTimestamp());
+                        XCTAssertEqual(1427238491, oneTimeAvailability.getLastUpdated());
+                        XCTAssertEqual(AvailabilityStatusOption.Active, oneTimeAvailability.getStatus());
                     }
                 }
                 
@@ -183,4 +174,3 @@ class AvailabilityAPITest: XCTestCase {
     }
 
 }
-*/

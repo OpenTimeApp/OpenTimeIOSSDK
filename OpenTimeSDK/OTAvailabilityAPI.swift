@@ -66,7 +66,7 @@ public class OTAvailabilityAPI: NSObject
         );
     }
     
-    public class func getConnectionsAvailability(currentUserID: OpenTimeUserID, done: (response: OTGetConnectionsAvailabilityResponse)->Void)
+    public class func getConnectionsAvailability(done: (response: OTGetConnectionsAvailabilityResponse)->Void)
     {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         

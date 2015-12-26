@@ -25,4 +25,12 @@ public class OTDeserializedConnectionAvailability{
             self._oneTime.append(oneTimeAvailability);
         }
     }
+    
+    public func getOneTimeAvailabilityList() -> Array<OTDeserializedOneTimeAvailability> {
+        return self._oneTime;
+    }
+    
+    public func getUserID() -> OpenTimeUserID {
+        return self._userID;
+    }
 }
