@@ -9,75 +9,80 @@
 import UIKit
 import XCTest
 import OpenTimeSDK
-/*
+
 class MeetingAttendeeAPITest: XCTestCase {
 
     override func setUp() {
         super.setUp();
         
         // Emulate that a user is signed in.
-        let person = Person(id: 1);
-        CurrentUser.sharedInstance().setUser(person);
-        CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     }
     
-    func testUpdate()
-    {
-        let response: OTAPIResponse = TestHelper.resetAPIData(["make_meetings","make_users"]);
+    func testUpdate() {
+        
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_meetings","make_users"], resetCache: true);
         
         XCTAssertTrue(response.success);
-        if(response.success)
-        {
+        if(response.success) {
+            
             // Create an expectation to be fulfilled.
             let expectation = expectationWithDescription("Get a meeting");
             
-            MeetingAPI.getAll({(response: OTAPIResponse)-> Void in
+            OTMeetingAPI.getAllMyMeetings({ (response) -> Void in
                 
                 XCTAssertTrue(response.success == true);
-                if(response.success == true)
-                {
-                    var meetings = response.data as! Array<Meeting>;
+                if(response.success == true) {
+                    
+                    var meetings = response.getMeetings()
                     
                     XCTAssertEqual(1, meetings.count);
                     
-                    if(meetings.count > 0)
-                    {
-                        let meeting: Meeting = meetings[0] as Meeting;
+                    if(meetings.count > 0) {
                         
-                        let attendee = meeting.getAttendees()[1];
+                        let meeting: OTDeserializedMeeting = meetings[0] as OTDeserializedMeeting;
                         
-                        attendee.status(MeetingAttendee.Status.Accepted);
+                        let attendees = meeting.getMeetingAttendees();
+                        let attendee = attendees[0];
                         
-                        MeetingAttendeeAPI.update(attendee, meetingID: meeting.id(), done: {(response: OTAPIResponse)->Void in
+                        let attendeeStatusUpdateData = OTSetMeetingAttendeeData(
+                            meetingID: meeting.getMeetingID(),
+                            attendeeUserID: attendee.getUserID(),
+                            status: MeetingAttendeeStatusOption.Accepted,
+                            lastUpdated: attendee.getLastUpdated() + 1);
+                        
+                        OTMeetingAttendeeAPI.set(attendeeStatusUpdateData, done: { (response: OTSetMeetingAttendeeResponse) -> Void in
                             
-                            MeetingAPI.getAll({(response: OTAPIResponse)-> Void in
+                            OTMeetingAPI.getAllMyMeetings({ (response: OTGetAllMyMeetingsResponse) -> Void in
+                                var updatedMeetings = response.getMeetings();
                                 
-                                var updatedMeetings = response.data as! Array<Meeting>;
+                                XCTAssertTrue(updatedMeetings.count > 0);
                                 
                                 if(updatedMeetings.count > 0)
                                 {
-                                    let updatedMeeting: Meeting = updatedMeetings[0] as Meeting;
+                                    let updatedMeeting: OTDeserializedMeeting = updatedMeetings[0] as OTDeserializedMeeting;
                                     
-                                    let updatedAttendee = updatedMeeting.getAttendees()[1];
+                                    let updatedAttendees = updatedMeeting.getMeetingAttendees();
+                                    let updatedAttendee = updatedAttendees[0];
                                     
-                                    XCTAssertEqual(MeetingAttendee.Status.Accepted, updatedAttendee.status());
+                                    XCTAssertEqual(MeetingAttendeeStatusOption.Accepted, updatedAttendee.getStatus());
                                 }
                                 
                                 // Tell the test handler that the test is done.
                                 expectation.fulfill();
                             });
-                        });
+                        })
+                        
                     }else{
                         // Tell the test handler that the test is done.
                         expectation.fulfill();
                     }
                 }
-            });
+            })
             
             // Start waiting for the test to be fulfilled for 5 seconds.
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
     }
-
 }
-*/
