@@ -90,10 +90,8 @@ class AvailabilityAPITest: XCTestCase {
         
         XCTAssertTrue(response.success);
         
-        var expectation = expectationWithDescription("Remove availability");
+        let expectation = expectationWithDescription("Remove availability");
         
-        let start = Int(2058314400);
-        let end   = Int(2058314400 + (3600 * 2));
         let created = 1427162923;
         let lastUpdated = 1427162939;
         

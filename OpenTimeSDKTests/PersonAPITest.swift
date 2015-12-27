@@ -46,47 +46,6 @@ class PersonAPITest: XCTestCase {
         }
     }
     
-    /*
-    
-    func testGetPersonsNearLocation()
-    {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users"], clearCache: true);
-        
-        // Verify test data was setup correctly.
-        XCTAssertTrue(response.success, response.message);
-        
-        if(response.success)
-        {
-            
-            let expectation = expectationWithDescription("Search Nearby Users");
-            
-            let location = Location(name: Word(text: "", gender: Word.Gender.Generic));
-            
-            PersonAPI.getPeopleNearLocation(location, done: {(response: OTAPIResponse) -> () in
-                
-                XCTAssertTrue(response.success == true);
-                
-                if(response.success == true)
-                {
-                    var array:Array<AnyObject> = response.data as! Array<AnyObject>;
-                    
-                    XCTAssertEqual(1, array.count);
-                    if(array.count == 1)
-                    {
-                        XCTAssertEqual("Tester", array[0][2] as? String);
-                    }
-                }
-
-                expectation.fulfill();
-
-            });
-            
-            waitForExpectationsWithTimeout(10.0, handler:nil)
-        }
-    }
-    */
-    
     func testSignIn() {
         
         // Setup test data on server.

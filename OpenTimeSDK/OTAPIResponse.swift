@@ -159,7 +159,7 @@ public class OTAPIResponse {
     */
     private class func _getUserMessage(errorType: OTAPIResponse.ErrorType, serverMessage: String) -> String {
         // Setup message scope.
-        var message: String;
+        var message: String = serverMessage;
     
         // Map the user message from the error type.
         switch (errorType) {
@@ -173,9 +173,6 @@ public class OTAPIResponse {
                 message = NSLocalizedString("message_no_network", comment: "") as String;
                 break;
             case .AuthenticationFailed, .None:
-                message = serverMessage;
-                break;
-            default:
                 message = serverMessage;
                 break;
         }
