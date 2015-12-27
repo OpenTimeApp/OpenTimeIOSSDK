@@ -49,7 +49,7 @@ Set the credentials for the user like so:
     
 Get the current user's availability like so:
     
-    AvailabilityAPI.getAllMyAvailability { (response: GetAllMyAvailabilityResponse) -> Void in
+    OTAvailabilityAPI.getAllMyAvailability { (response: GetAllMyAvailabilityResponse) -> Void in
         if(response.success == true){
             print("Yippee!")
         }
