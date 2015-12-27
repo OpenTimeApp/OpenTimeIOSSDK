@@ -59,10 +59,10 @@ public struct OTPersonAPI {
     
         - returns: void
     */
-    public static func signIn(loginData: OTSigninData, done: (response: OTSigninResponse)->Void) {
+    public static func signIn(signinData: OTSigninData, done: (response: OTSigninResponse)->Void) {
         
         // Validate inputs.
-        let inputsValid = loginData.checkInputs();
+        let inputsValid = signinData.checkInputs();
         
         if(inputsValid.success == false) {
             // Return response.
@@ -75,7 +75,7 @@ public struct OTPersonAPI {
         
         // Run query.
         requestManager.GET(OpenTimeSDK.getServer() +  "/api/person/signInWithEmail",
-            parameters: loginData.getParameters(),
+            parameters: signinData.getParameters(),
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 
                 // Parse response.

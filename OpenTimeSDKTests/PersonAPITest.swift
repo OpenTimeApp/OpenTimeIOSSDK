@@ -44,7 +44,9 @@ class PersonAPITest: XCTestCase {
             
             waitForExpectationsWithTimeout(5.0, handler:nil)
         }
-    }/*
+    }
+    
+    /*
     
     func testGetPersonsNearLocation()
     {
@@ -83,12 +85,13 @@ class PersonAPITest: XCTestCase {
             waitForExpectationsWithTimeout(10.0, handler:nil)
         }
     }
+    */
     
-    func testSignIn()
-    {
-        // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users"], clearCache: true);
+    func testSignIn() {
         
+        // Setup test data on server.
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
         
@@ -100,13 +103,14 @@ class PersonAPITest: XCTestCase {
             let email: String = "tester1@app.opentimeapp.com";
             let password: String = "I love testing";
             
-            PersonAPI.signIn(email, password: password, done:{(response: OTAPIResponse)->Void in
+            let signinData = OTSigninData(email: email, password: password);
             
+            OTPersonAPI.signIn(signinData, done: { (response) -> Void in
                 XCTAssertTrue(response.success == true);
                 
                 if(response.success == true)
                 {
-                    let user: Person! = response.data as! Person!;
+                    let user: OTDeserializedPerson! = response.getPerson();
                     
                     XCTAssertTrue(user != nil);
                     
@@ -114,17 +118,16 @@ class PersonAPITest: XCTestCase {
                     {
                         XCTAssertEqual("Mr", user.getFirstName());
                         XCTAssertEqual("Tester", user.getLastName());
-                        XCTAssertEqual(1, user.getID());
+                        XCTAssertEqual(1, user.getUserID());
                     }
                 }
                 
                 expectation.fulfill();
-            
             });
     
             waitForExpectationsWithTimeout(5.0, handler:nil);
         }
-    }*/
+    }
     
 }
 
