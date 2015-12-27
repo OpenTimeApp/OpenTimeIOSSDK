@@ -19,22 +19,16 @@ class AvailabilityAPITest: XCTestCase {
         OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
     }
     
-    /*
-    
     func testSetOneTimeAvailability()
     {
+        
         // Setup test data on server.
-        let response = TestHelper.resetAPIData(["make_users","clear_availability"]);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users","clear_availability"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
         
-        if(response.success)
-        {
-            // Emulate that a user is signed in.
-            let person = Person(id: 1);
-            CurrentUser.sharedInstance().setUser(person);
-            CurrentUser.sharedInstance().storeUser("tester1@app.opentimeapp.com", password: "I love testing", person: person);
+        if(response.success) {
             
             var expectation = expectationWithDescription("Set one time availability");
             
@@ -43,16 +37,13 @@ class AvailabilityAPITest: XCTestCase {
             let created = 1427162923;
             let lastUpdated = 1427162939;
             
-            let availability = OneTimeAvailability(
-                userID: person.getID(),
+            let setOneTimeAvailabilityData = OTSetOneTimeAvailabilityData(
+                lastUpdated: lastUpdated,
+                createdTimestamp: created,
                 start: start,
-                end: end,
-                created: created,
-                lastUpdated: lastUpdated
-            );
+                end: end);
             
-            AvailabilityAPI.setOneTimeAvailability(availability, done: {(response: OTAPIResponse) -> () in
-                
+            OTAvailabilityAPI.setOneTimeAvailability(setOneTimeAvailabilityData, done: { (response) -> Void in
                 XCTAssertTrue(response.success == true);
                 
                 expectation.fulfill();
@@ -62,78 +53,66 @@ class AvailabilityAPITest: XCTestCase {
             
             expectation = expectationWithDescription("Get my availability");
             
-            AvailabilityAPI.getAllMyAvailability({(response: OTAPIResponse) -> () in
-                
+            OTAvailabilityAPI.getAllMyAvailability({ (response: OTGetAllMyAvailabilityResponse) -> Void in
                 XCTAssertTrue(response.success == true);
                 
                 if(response.success == true)
                 {
-                    var availability = response.data as! Array<IAvailabilityItem>;
+                    var availability = response.getList();
                     
                     XCTAssertEqual(1, availability.count);
-                    if(availability.count > 0)
-                    {
-                        let availability:OneTimeAvailability = availability[0] as! OneTimeAvailability;
+                    
+                    if(availability.count > 0) {
                         
-                        XCTAssertEqual(start, availability.start());
-                        XCTAssertEqual(end, availability.end());
-                        XCTAssertEqual(created, availability.created());
-                        XCTAssertEqual(lastUpdated, availability.lastUpdated());
-                        XCTAssertEqual(SyncItem.Status.Active, availability.status());
+                        let availability:OTDeserializedOneTimeAvailability = availability[0];
+                        
+                        XCTAssertEqual(start, availability.getStart());
+                        XCTAssertEqual(end, availability.getEnd());
+                        XCTAssertEqual(created, availability.getCreatedTimestamp());
+                        XCTAssertEqual(lastUpdated, availability.getLastUpdated());
+                        XCTAssertEqual(AvailabilityStatusOption.Active, availability.getStatus());
                     }
                 }
                 
                 expectation.fulfill();
+                
             });
             
             waitForExpectationsWithTimeout(5.0, handler:nil);
             
-            expectation = expectationWithDescription("Remove an availability");
-            
-            availability.lastUpdated(availability.lastUpdated() + 1);
-            
-            AvailabilityAPI.removeOneTimeAvailability(availability, done: {(response: OTAPIResponse) -> () in
-                
-                XCTAssertTrue(response.success == true);
-                
-                expectation.fulfill();
-            });
-            
-            waitForExpectationsWithTimeout(5.0, handler:nil);
-            
-            expectation = expectationWithDescription("Get my updated availability");
-            
-            AvailabilityAPI.getAllMyAvailability({(response: OTAPIResponse) -> () in
-                
-                XCTAssertTrue(response.success == true);
-                
-                if(response.success == true)
-                {
-                    var availability = response.data as! Array<IAvailabilityItem>;
-                    
-                    XCTAssertEqual(1, availability.count);
-                    
-                    if(availability.count > 0)
-                    {
-                        let availability:OneTimeAvailability = availability[0] as! OneTimeAvailability;
-                        
-                        XCTAssertEqual(start, availability.start());
-                        XCTAssertEqual(end, availability.end());
-                        XCTAssertEqual(created, availability.created());
-                        XCTAssertEqual(lastUpdated + 1, availability.lastUpdated());
-                        XCTAssertEqual(SyncItem.Status.Removed, availability.status());
-                    }
-                }
-                
-                expectation.fulfill();
-            });
-            
-            waitForExpectationsWithTimeout(5.0, handler:nil);
         }
     }
-    */
+    
+    func testRemoveAvailability() {
+        
+        // Setup test data on server.
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users","clear_availability"], resetCache: true);
+        
+        XCTAssertTrue(response.success);
+        
+        var expectation = expectationWithDescription("Remove availability");
+        
+        let start = Int(2058314400);
+        let end   = Int(2058314400 + (3600 * 2));
+        let created = 1427162923;
+        let lastUpdated = 1427162939;
+        
+        let removedTimestamp = lastUpdated + 2;
+        let removeAvailabilityData = OTRemoveOneTimeAvailabilityData(
+            lastUpdated: removedTimestamp, createdTimestamp: created
+        );
+        
+        OTAvailabilityAPI.removeOneTimeAvailability(removeAvailabilityData, done: { (response) -> Void in
+            XCTAssertTrue(response.success == true);
+            
+            expectation.fulfill();
+        });
+        
+        waitForExpectationsWithTimeout(5.0, handler:nil);
+    }
     
     func testGetConnectionsAvailability() {
+        
         // Setup test data on server.
         let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["setup_connection_availability"], resetCache: true);
         

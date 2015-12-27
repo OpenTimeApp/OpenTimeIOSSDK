@@ -6,21 +6,18 @@
 //  Copyright (c) 2014-2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-import UIKit
 import AFNetworking
-
-// Global var says whether or not caching is allowed.
-var enableCache = true;
 
 public class OTAPIRequestOperationManager: AFHTTPRequestOperationManager {
    
+    private static var _enableCache: Bool = true;
+    
     private var _maxCacheAgeInSeconds: Int = 0;
     private var _useCache = false;
     private var _clearCacheForPostAndPut = true;
     
-    public class func disableCache()
-    {
-        enableCache = false;
+    public class func disableCache() {
+        OTAPIRequestOperationManager._enableCache = false;
     }
     
     required public init()
@@ -38,7 +35,7 @@ public class OTAPIRequestOperationManager: AFHTTPRequestOperationManager {
     {
         self._maxCacheAgeInSeconds = Int(inMinutes * 60);
         // If caching is allowed the enable caching.
-        if(enableCache == true)
+        if(OTAPIRequestOperationManager._enableCache == true)
         {
             self._useCache = true;
         }
