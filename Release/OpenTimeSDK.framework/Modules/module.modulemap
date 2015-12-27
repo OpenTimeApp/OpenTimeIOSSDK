@@ -1,0 +1,10 @@
+framework module OpenTimeSDK {
+  umbrella header "OpenTimeSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module OpenTimeSDK.Swift {
+    header "OpenTimeSDK-Swift.h"
+}
