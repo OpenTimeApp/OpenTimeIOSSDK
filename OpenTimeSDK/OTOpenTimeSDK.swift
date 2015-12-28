@@ -57,10 +57,20 @@ public class OpenTimeSDK {
     }
     
     public func getUserID()->OpenTimeUserID {
-        return self._userID;
+        if(self._userID != nil) {
+            return self._userID;
+        }else{
+            print("Error: You did not set the OpenTime user id");
+            return -1;
+        }
     }
     
     public func getEncryptedPassword()->String {
-        return self._encryptedPassword;
+        if(self._encryptedPassword != nil) {
+            return self._encryptedPassword;
+        }else{
+            print("Error: You did not set the OpenTime user password");
+            return "";
+        }
     }
 }
