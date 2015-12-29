@@ -23,4 +23,12 @@ public class OTDeserializedConnection {
     public func getPerson() -> OTDeserializedPerson {
         return self._deserializedPerson;
     }
+    
+    public func getStatus() -> ConnectionStatus {
+        return self._status;
+    }
+    
+    public func getLastUpdated() -> OpenTimeTimeStamp {
+        return self._lastUpdated;
+    }
 }
