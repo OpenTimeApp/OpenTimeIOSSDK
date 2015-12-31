@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CommonCrypto
+import OTCommonCrypto
 
 public extension String {
     public func md5() -> String {
