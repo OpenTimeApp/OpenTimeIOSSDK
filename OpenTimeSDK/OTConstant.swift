@@ -8,7 +8,7 @@
 
 public class OTConstant {
     public static let API_KEY_NAME: String = "Api-Key";
-    public static let API_VERSION:String = "1.0.2";
+    public static let API_VERSION:String = "1.0.3";
     
     public static let SALT_1: String = "WzEpkuqYPX14LImjbWYzs1k6WMUBh3xAJZ66tOwM";
     public static let SALT_2: String = "Mi5Lk7JPVpOlIDtpWlTUb5gWPajbwkgji07rfhUW";
