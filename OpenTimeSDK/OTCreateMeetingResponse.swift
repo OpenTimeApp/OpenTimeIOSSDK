@@ -8,17 +8,17 @@
 
 public class OTCreateMeetingResponse : OTAPIResponse {
     
-    private var _meetingData: OTDeserializedCreateMeetingResponse?;
+    private var _meetingData: OTDeserializedCreateMeetingResponseData?;
     
     public init(success: Bool, message: String, rawData: AnyObject?){
         super.init(success: success, message: message);
         
         if(rawData != nil){
-            _meetingData = OTDeserializedCreateMeetingResponse(dictionary: rawData! as! NSDictionary);
+            _meetingData = OTDeserializedCreateMeetingResponseData(dictionary: rawData! as! NSDictionary);
         }
     }
     
-    public func getMeetingData() -> OTDeserializedCreateMeetingResponse? {
+    public func getMeetingData() -> OTDeserializedCreateMeetingResponseData? {
         return self._meetingData;
     }
 }

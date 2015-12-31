@@ -6,12 +6,16 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedCreateMeetingResponse {
+public class OTDeserializedCreateMeetingResponseData {
+    
+    private struct Keys {
+        static let MEETING_ID = "id";
+    }
     
     private var _meetingID: Int;
     
     public init(dictionary: NSDictionary){
-        self._meetingID = dictionary.valueForKey("id") as! Int;
+        self._meetingID = dictionary.valueForKey(Keys.MEETING_ID) as! Int;
     }
     
     public func getMeetingID() -> Int {

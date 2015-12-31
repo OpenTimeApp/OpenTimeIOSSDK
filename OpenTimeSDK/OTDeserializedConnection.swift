@@ -8,15 +8,21 @@
 
 public class OTDeserializedConnection {
     
+    private struct Keys {
+        static let STATUS       = "status";
+        static let LAST_UPDATED = "last_updated";
+        static let PERSON       = "person";
+    }
+    
     private var _status: ConnectionStatus;
     private var _lastUpdated: OpenTimeTimeStamp;
     private var _deserializedPerson: OTDeserializedPerson;
     
     public init(dictionary: NSDictionary){
-        self._status      = dictionary.valueForKey("status") as! Int;
-        self._lastUpdated = dictionary.valueForKey("last_updated") as! Int;
+        self._status      = dictionary.valueForKey(Keys.STATUS) as! Int;
+        self._lastUpdated = dictionary.valueForKey(Keys.LAST_UPDATED) as! Int;
         
-        let personDictionary = dictionary.valueForKey("person") as! NSDictionary;
+        let personDictionary = dictionary.valueForKey(Keys.PERSON) as! NSDictionary;
         self._deserializedPerson = OTDeserializedPerson(dictionary: personDictionary);
     }
     

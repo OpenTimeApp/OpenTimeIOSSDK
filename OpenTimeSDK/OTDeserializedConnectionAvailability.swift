@@ -8,26 +8,24 @@
 
 public class OTDeserializedConnectionAvailability{
     
-    private var _oneTime: Array<OTDeserializedOneTimeAvailability>;
+    private struct Keys {
+        static let USER_ID               = "user_id";
+        static let AVAILABILITY          = "availability";
+    }
+    
     private var _userID: OpenTimeUserID;
+    private var _availability: OTDeserializedAvailability;
     
     public init(dictionary: NSDictionary){
     
-        let availabilityData: NSDictionary = dictionary.objectForKey("availability") as! NSDictionary;
-        let oneTimeData: NSArray = availabilityData.objectForKey("one_time") as! NSArray;
+        let availabilityData: NSDictionary = dictionary.objectForKey(Keys.AVAILABILITY) as! NSDictionary;
+        self._userID  = dictionary.objectForKey(Keys.USER_ID) as! Int;
         
-        self._oneTime = Array<OTDeserializedOneTimeAvailability>();
-        self._userID  = dictionary.objectForKey("user_id") as! Int;
-        
-        for var availabilityIndex = 0; availabilityIndex < oneTimeData.count; availabilityIndex++ {
-            let element = oneTimeData.objectAtIndex(availabilityIndex) as! NSDictionary;
-            let oneTimeAvailability = OTDeserializedOneTimeAvailability(dictionary: element);
-            self._oneTime.append(oneTimeAvailability);
-        }
+        self._availability = OTDeserializedAvailability(dictionary: availabilityData);
     }
     
-    public func getOneTimeAvailabilityList() -> Array<OTDeserializedOneTimeAvailability> {
-        return self._oneTime;
+    public func getAvailability() -> OTDeserializedAvailability {
+        return self._availability;
     }
     
     public func getUserID() -> OpenTimeUserID {

@@ -131,7 +131,7 @@ class AvailabilityAPITest: XCTestCase {
                     
                     if(connections.count > 0) {
                         let connection: OTDeserializedConnectionAvailability = connections[0];
-                        var oneTimeAvailabilityList = connection.getOneTimeAvailabilityList();
+                        var oneTimeAvailabilityList = connection.getAvailability().getOneTimeAvailability();
                         
                         let oneTimeAvailability:OTDeserializedOneTimeAvailability = oneTimeAvailabilityList[0] as OTDeserializedOneTimeAvailability;
                         
