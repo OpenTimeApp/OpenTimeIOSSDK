@@ -8,29 +8,18 @@
 
 public class OTGetAllMyAvailabilityResponse : OTAPIResponse {
     
-    private var _oneTimeAvailabilityList: Array<OTDeserializedOneTimeAvailability>;
+    private var _availability: OTDeserializedAvailability?;
     
     public init(success: Bool, message: String, rawData: AnyObject?) {
-        
-        self._oneTimeAvailabilityList = Array<OTDeserializedOneTimeAvailability>();
         
         super.init(success: success, message: message);
         
         if(success == true && rawData != nil) {
-            
-            let oneTimeData: NSArray = rawData!.objectForKey("one_time") as! NSArray;
-            
-            for var index = 0; index < oneTimeData.count; index++ {
-                let element      = oneTimeData.objectAtIndex(index) as! NSDictionary;
-                
-                let oneTimeAvailability = OTDeserializedOneTimeAvailability(dictionary: element);
-                
-                self._oneTimeAvailabilityList.append(oneTimeAvailability);
-            }
+            self._availability = OTDeserializedAvailability(dictionary: rawData as! NSDictionary);
         }
     }
     
-    public func getList() -> Array<OTDeserializedOneTimeAvailability> {
-        return _oneTimeAvailabilityList;
+    public func getAvailability() -> OTDeserializedAvailability {
+        return self._availability!;
     }
 }

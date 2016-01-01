@@ -58,7 +58,8 @@ class AvailabilityAPITest: XCTestCase {
                 
                 if(response.success == true)
                 {
-                    var availability = response.getList();
+                    var availability = response.getAvailability().getOneTimeAvailability();
+                    var exceptions   = response.getAvailability().getExceptions();
                     
                     XCTAssertEqual(1, availability.count);
                     
@@ -72,6 +73,8 @@ class AvailabilityAPITest: XCTestCase {
                         XCTAssertEqual(lastUpdated, availability.getLastUpdated());
                         XCTAssertEqual(AvailabilityStatusOption.Active, availability.getStatus());
                     }
+                    
+                    XCTAssertEqual(1, exceptions.count);
                 }
                 
                 expectation.fulfill();
@@ -132,6 +135,7 @@ class AvailabilityAPITest: XCTestCase {
                     if(connections.count > 0) {
                         let connection: OTDeserializedConnectionAvailability = connections[0];
                         var oneTimeAvailabilityList = connection.getAvailability().getOneTimeAvailability();
+                        var exceptions              = connection.getAvailability().getExceptions();
                         
                         let oneTimeAvailability:OTDeserializedOneTimeAvailability = oneTimeAvailabilityList[0] as OTDeserializedOneTimeAvailability;
                         
@@ -140,6 +144,8 @@ class AvailabilityAPITest: XCTestCase {
                         XCTAssertEqual(1427238491, oneTimeAvailability.getCreatedTimestamp());
                         XCTAssertEqual(1427238491, oneTimeAvailability.getLastUpdated());
                         XCTAssertEqual(AvailabilityStatusOption.Active, oneTimeAvailability.getStatus());
+                        
+                        XCTAssertEqual(0, exceptions.count);
                     }
                 }
                 
