@@ -58,8 +58,8 @@ class AvailabilityAPITest: XCTestCase {
                 
                 if(response.success == true)
                 {
-                    var availability = response.getAvailability().getOneTimeAvailability();
-                    var exceptions   = response.getAvailability().getExceptions();
+                    var availability = response.getAvailability()!.getOneTimeAvailability();
+                    var exceptions   = response.getAvailability()!.getExceptions();
                     
                     XCTAssertEqual(1, availability.count);
                     

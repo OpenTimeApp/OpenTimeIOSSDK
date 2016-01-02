@@ -29,7 +29,21 @@ public class OTDeserializedPerson {
         self._firstName = dictionary.valueForKey(Keys.FIRST_NAME) as! String;
         self._lastName  = dictionary.valueForKey(Keys.LAST_NAME) as! String;
         self._emails    = (dictionary.valueForKey(Keys.EMAILS) as! NSArray) as! Array<String>;
-        self._phoneNumbers = (dictionary.valueForKey(Keys.CELL_PHONES) as! NSArray) as! Array<String>;
+        
+        self._phoneNumbers = Array<String>();
+        
+        self._setCellPhones(dictionary);
+    }
+    
+    private func _setCellPhones(dictionary: NSDictionary) {
+        let phoneNumbersNSArray = dictionary.valueForKey(Keys.CELL_PHONES) as! NSArray;
+        var phoneNumbers = Array<String>();
+        
+        for phoneNumberRaw in phoneNumbersNSArray {
+            phoneNumbers.append(String(phoneNumberRaw))
+        }
+        
+        self._phoneNumbers = phoneNumbers;
     }
     
     public func getFirstName() -> String {

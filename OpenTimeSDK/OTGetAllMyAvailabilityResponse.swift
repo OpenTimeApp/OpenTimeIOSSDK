@@ -19,7 +19,7 @@ public class OTGetAllMyAvailabilityResponse : OTAPIResponse {
         }
     }
     
-    public func getAvailability() -> OTDeserializedAvailability {
-        return self._availability!;
+    public func getAvailability() -> OTDeserializedAvailability? {
+        return self._availability;
     }
 }
