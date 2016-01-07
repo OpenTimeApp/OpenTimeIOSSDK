@@ -40,7 +40,7 @@ public struct OTPersonAPI {
                 
                 done(response: OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData));
                 
-            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            }, failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 
                 // Return response.
                 requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
@@ -89,7 +89,7 @@ public struct OTPersonAPI {
                     done(response: OTSigninResponse(success: response.success, message: response.message, rawData: nil));
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 
                 // Return response.
                 requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in

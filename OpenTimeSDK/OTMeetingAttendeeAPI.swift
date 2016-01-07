@@ -14,7 +14,7 @@ public class OTMeetingAttendeeAPI {
         // Setup request manager.
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
-        let url = OpenTimeSDK.getServer() + "/api/" + String(data.getMeetingID()) + "/attendee/" + String(data.getAttendeeUserID());
+        let url = OpenTimeSDK.getServer() + "/api/meeting/" + String(data.getMeetingID()) + "/attendee/" + String(data.getAttendeeUserID());
         
         requestManager.PUT(url,
             parameters: data.getParameters(),
@@ -24,7 +24,7 @@ public class OTMeetingAttendeeAPI {
         
                 done(response: OTSetMeetingAttendeeResponse(success: response.success, message: response.message));
                 
-            },failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+            },failure: { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTSetMeetingAttendeeResponse(success: response.success, message: response.message));
                 });

@@ -25,7 +25,7 @@ public class OTAvailabilityAPI: NSObject
                 
                 done(response: OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData));
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: nil));
                 });
@@ -45,7 +45,7 @@ public class OTAvailabilityAPI: NSObject
                 
                 done(response: response);
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
                 requestManager.apiResult(operation, error: error, done: done);
             }
         );
@@ -60,7 +60,7 @@ public class OTAvailabilityAPI: NSObject
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 requestManager.apiResult(operation, error: nil, done: done);
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
                 requestManager.apiResult(operation, error: error, done: done);
             }
         );
@@ -80,7 +80,7 @@ public class OTAvailabilityAPI: NSObject
                 
                 done(response: OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData));
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: nil));
                 });

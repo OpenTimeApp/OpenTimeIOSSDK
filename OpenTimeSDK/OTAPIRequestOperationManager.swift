@@ -96,7 +96,7 @@ public class OTAPIRequestOperationManager: AFHTTPRequestOperationManager {
         return operation;
     }
     
-    public override func POST(URLString: String, parameters: AnyObject!, success: ((AFHTTPRequestOperation!, AnyObject!) -> Void)!, failure: ((AFHTTPRequestOperation!, NSError!) -> Void)!) -> AFHTTPRequestOperation? {
+    public override func POST(URLString: String, parameters: AnyObject!, success: ((AFHTTPRequestOperation!, AnyObject!) -> Void)!, failure: ((AFHTTPRequestOperation?, NSError) -> Void)!) -> AFHTTPRequestOperation? {
         
         self.requestSerializer = AFJSONRequestSerializer();
         self.setupHeaders();
@@ -115,7 +115,7 @@ public class OTAPIRequestOperationManager: AFHTTPRequestOperationManager {
         }, failure: failure);
     }
     
-    public override func PUT(URLString: String, parameters: AnyObject!, success: ((AFHTTPRequestOperation!, AnyObject!) -> Void)!, failure: ((AFHTTPRequestOperation!, NSError!) -> Void)!) -> AFHTTPRequestOperation? {
+    public override func PUT(URLString: String, parameters: AnyObject!, success: ((AFHTTPRequestOperation!, AnyObject!) -> Void)!, failure: ((AFHTTPRequestOperation?, NSError) -> Void)!) -> AFHTTPRequestOperation? {
         
         self.requestSerializer = AFJSONRequestSerializer();
         self.setupHeaders();

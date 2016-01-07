@@ -20,7 +20,7 @@ public struct OTDeviceAPI
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 requestManager.apiResult(operation, error: nil, done: done);
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
                 requestManager.apiResult(operation, error: error, done: done);
             }
         );

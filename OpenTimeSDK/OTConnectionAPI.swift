@@ -35,7 +35,7 @@ public class OTConnectionAPI {
                 });
             },
             
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTSetConnectionResponse(success: response.success, message: response.message, connectionData: nil));
                 });
@@ -59,7 +59,7 @@ public class OTConnectionAPI {
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 requestManager.apiResult(operation, error: nil, done: done);
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
                 requestManager.apiResult(operation, error: error, done: done);
             }
         );
@@ -81,7 +81,7 @@ public class OTConnectionAPI {
                 
                 done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
                 });
@@ -108,7 +108,7 @@ public class OTConnectionAPI {
                 done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil))
                 });
@@ -142,7 +142,7 @@ public class OTConnectionAPI {
                 
                 done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
             },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
                 });

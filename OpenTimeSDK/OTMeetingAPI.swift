@@ -24,7 +24,7 @@ public class OTMeetingAPI {
                 done(response: OTCreateMeetingResponse(success: response.success, message: response.message, rawData: response.rawData!));
             },
             
-            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTCreateMeetingResponse(success: response.success, message: response.message, rawData: nil));
                 });
@@ -42,7 +42,7 @@ public class OTMeetingAPI {
                 done(response: OTGetAllMyMeetingsResponse(success: response.success, message: response.message, rawData: response.rawData!));
             },
             
-            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTGetAllMyMeetingsResponse(success: response.success, message: response.message, rawData: nil));
                 });

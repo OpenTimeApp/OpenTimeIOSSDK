@@ -49,7 +49,7 @@ public class OTPhoneHelper {
             
             var defaultFormatted: String!
             do {
-                defaultFormatted = try _phoneUtil.format(number, numberFormat: NBEPhoneNumberFormatINTERNATIONAL)
+                defaultFormatted = try _phoneUtil.format(number, numberFormat: NBEPhoneNumberFormat.INTERNATIONAL)
             } catch let error1 as NSError {
                 error = error1
                 defaultFormatted = nil

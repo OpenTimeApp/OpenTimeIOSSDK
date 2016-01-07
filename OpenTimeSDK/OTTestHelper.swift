@@ -30,8 +30,8 @@ public struct OTTestHelper {
                 let message = responseObject.valueForKey("message") as! String;
                 
                 done(response: OTAPIResponse(success: success, message: message));
-            }, failure:{ (operation: AFHTTPRequestOperation, error: NSError?) -> Void in
-                done(response: OTAPIResponse(success: false, message: error!.description));
+            }, failure:{ (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
+                done(response: OTAPIResponse(success: false, message: error.description));
             }
         );
     }
