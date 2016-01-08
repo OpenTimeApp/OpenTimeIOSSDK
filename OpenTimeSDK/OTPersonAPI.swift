@@ -98,4 +98,44 @@ public struct OTPersonAPI {
             }
         );
     }
+    
+    /**
+     Determines whether or not the given email and password combination exists on the server.
+     
+     - parameter email:    The email the user wants to sign in with.
+     - parameter password: The password the user wants to sign in with.
+     - parameter done:     The callback method to be called when the server responds.
+     
+     - returns: void
+     */
+    public static func updatePassword(request: OTUpdatePasswordRequest, done: (response: OTAPIResponse)->Void) {
+        
+        if(!request.checkInputs()) {
+            // Return response.
+            done(response: OTAPIResponse(success: false, message: request.getErrorMessage()));
+            return;
+        }
+        
+        // Setup query manager.
+        let requestManager = OTAPIAuthorizedRequestOperationManager();
+        
+        // Run query.
+        requestManager.POST(OpenTimeSDK.getServer() +  "/api/person/updatePassword",
+            parameters: request.getParameters(),
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                
+                // Parse response.
+                let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
+                
+                done(response: response);
+            },
+            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
+                
+                // Return response.
+                requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
+                    done(response: response);
+                });
+            }
+        );
+    }
 }

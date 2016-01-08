@@ -88,5 +88,33 @@ class PersonAPITest: XCTestCase {
         }
     }
     
+    func testUpdatePassword() {
+        
+        // Setup test data on server.
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        
+        // Verify test data was setup correctly.
+        XCTAssertTrue(response.success, response.message);
+        
+        if(response.success)
+        {
+            OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+            OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
+            
+            let expectation = expectationWithDescription("Update password");
+            
+            let request = OTUpdatePasswordRequest(password: "alsdfsjalsdfk", confirmPassword: "alsdfsjalsdfk");
+            
+            OTPersonAPI.updatePassword(request, done: { (response: OTAPIResponse) -> Void in
+                XCTAssertTrue(response.success == true);
+                
+                expectation.fulfill();
+            })
+            
+            waitForExpectationsWithTimeout(5.0, handler:nil);
+        }
+    }
+
+    
 }
 

@@ -62,6 +62,7 @@
 		03A137681BDD2FEB0005A721 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A137671BDD2FEB0005A721 /* Config.plist */; };
 		03BC97D21C35D3EC00E87B54 /* OTDeserializedAvailabilityException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BC97D11C35D3EC00E87B54 /* OTDeserializedAvailabilityException.swift */; };
 		03BC97D61C35DA8F00E87B54 /* OTDeserializedAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BC97D51C35DA8F00E87B54 /* OTDeserializedAvailability.swift */; };
+		03E5E4711C3F9E8500C69840 /* OTUpdatePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5E4701C3F9E8500C69840 /* OTUpdatePasswordRequest.swift */; };
 		03F294DB1BDD435700B8DBB0 /* OTPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DA1BDD435700B8DBB0 /* OTPasswordHelper.swift */; };
 		03F294DD1BDD437400B8DBB0 /* OTPhoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */; };
 		03F294DF1BDD438100B8DBB0 /* OTStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */; };
@@ -146,6 +147,7 @@
 		03A137671BDD2FEB0005A721 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		03BC97D11C35D3EC00E87B54 /* OTDeserializedAvailabilityException.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedAvailabilityException.swift; path = OpenTimeSDK/OTDeserializedAvailabilityException.swift; sourceTree = "<group>"; };
 		03BC97D51C35DA8F00E87B54 /* OTDeserializedAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedAvailability.swift; path = OpenTimeSDK/OTDeserializedAvailability.swift; sourceTree = "<group>"; };
+		03E5E4701C3F9E8500C69840 /* OTUpdatePasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTUpdatePasswordRequest.swift; path = OpenTimeSDK/OTUpdatePasswordRequest.swift; sourceTree = "<group>"; };
 		03F294DA1BDD435700B8DBB0 /* OTPasswordHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPasswordHelper.swift; sourceTree = "<group>"; };
 		03F294DC1BDD437400B8DBB0 /* OTPhoneHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPhoneHelper.swift; sourceTree = "<group>"; };
 		03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTStringHelper.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		03A136EC1BDC59EA0005A721 /* person */ = {
 			isa = PBXGroup;
 			children = (
+				03E5E46F1C3F9E6600C69840 /* password */,
 				03A136ED1BDC59F40005A721 /* register */,
 				03A136EE1BDC59FC0005A721 /* signin */,
 				03A137351BDD23E20005A721 /* OTPersonValidationHelper.swift */,
@@ -464,6 +467,14 @@
 				03A1369A1BDC57F00005A721 /* Info.plist */,
 			);
 			name = config;
+			sourceTree = "<group>";
+		};
+		03E5E46F1C3F9E6600C69840 /* password */ = {
+			isa = PBXGroup;
+			children = (
+				03E5E4701C3F9E8500C69840 /* OTUpdatePasswordRequest.swift */,
+			);
+			name = password;
 			sourceTree = "<group>";
 		};
 		7B9EBE0937C27DE369E18674 /* Pods */ = {
@@ -664,6 +675,7 @@
 				03F2953B1BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift in Sources */,
 				03A1375C1BDD23E20005A721 /* OTSerialHelper.swift in Sources */,
 				03A137511BDD23E20005A721 /* OTNewPersonData.swift in Sources */,
+				03E5E4711C3F9E8500C69840 /* OTUpdatePasswordRequest.swift in Sources */,
 				03A137471BDD23E20005A721 /* OTConnectionStatusOption.swift in Sources */,
 				032A71891C3053CC00217B03 /* OTDeserializedMeeting.swift in Sources */,
 				03A1375B1BDD23E20005A721 /* OTRemoveOneTimeAvailability.swift in Sources */,
