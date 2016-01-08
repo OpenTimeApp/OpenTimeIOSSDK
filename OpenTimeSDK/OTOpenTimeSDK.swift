@@ -16,7 +16,9 @@ public class OpenTimeSDK {
     private var _encryptedPassword: String!;
     private var _server: String;
     
-    private init(apiKey: String, inTestMode: Bool){
+    private init(apiKey: String, inTestMode: Bool, passwordFixed: Bool){
+        OTPasswordHelper.flagPasswordWasFixed(passwordFixed);
+        
         self._apiKey = apiKey;
         self._inTestMode = inTestMode;
         self._server = inTestMode ? OTConstant.OPENTIME_TEST_SERVER : OTConstant.OPENTIME_LIVE_SERVER
@@ -32,8 +34,8 @@ public class OpenTimeSDK {
         self._encryptedPassword = OTPasswordHelper.encryptHashedPassword(hashedPassword);
     }
     
-    public static func initSession(apiKey: String, inTestMode: Bool = false){
-        self.session = OpenTimeSDK(apiKey: apiKey, inTestMode: inTestMode);
+    public static func initSession(apiKey: String, inTestMode: Bool = false, passwordFixed: Bool){
+        self.session = OpenTimeSDK(apiKey: apiKey, inTestMode: inTestMode, passwordFixed: passwordFixed);
     }
     
     public static func getKey() -> String {

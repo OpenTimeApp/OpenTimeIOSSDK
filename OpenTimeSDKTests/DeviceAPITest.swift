@@ -14,7 +14,7 @@ class DeviceAPITest: XCTestCase {
     
     override func setUp() {
         super.setUp();
-        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: false);
     }
     
     func testSetDeviceKey() {

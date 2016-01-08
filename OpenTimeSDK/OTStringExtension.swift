@@ -10,7 +10,7 @@ import UIKit
 import CommonCrypto
 
 public extension String {
-    public func md5() -> String {
+    public func md5Broken() -> String {
         let data = (self as NSString).dataUsingEncoding(NSUTF8StringEncoding);
         let result = NSMutableData(length: Int(CC_MD5_DIGEST_LENGTH))
         let resultBytes = UnsafeMutablePointer<CUnsignedChar>(result!.mutableBytes)
@@ -25,6 +25,21 @@ public extension String {
         let withWhiteSpace: NSString = hash as NSString;
         let final = withWhiteSpace.stringByReplacingOccurrencesOfString(" ", withString: "");
         return final as String;
+    }
+    
+    public func md5Fixed() -> String {
+        
+        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
+        if let data = self.dataUsingEncoding(NSUTF8StringEncoding) {
+            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
+        }
+        
+        var digestHex = ""
+        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
+            digestHex += String(format: "%02x", digest[index])
+        }
+        
+        return digestHex
     }
 
 }
