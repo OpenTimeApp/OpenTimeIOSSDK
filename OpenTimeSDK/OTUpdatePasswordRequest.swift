@@ -38,9 +38,14 @@ public class OTUpdatePasswordRequest {
     }
     
     public func getParameters() -> NSDictionary {
-        let password = OTPasswordHelper.encryptPlainTextPassword(self._password);
+        
+        let mash1 = OTConstant.SALT_1 + self._password;
+        let hash1 = mash1.md5Fixed();
+        let mash2 = OTConstant.SALT_2 + hash1;
+        let hash2 = mash2.md5Fixed();
+        
         return [
-            "new_password":password
+            "new_password":hash2
         ];
     }
 }
