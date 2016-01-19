@@ -22,7 +22,7 @@ public class OTDeserializedMeeting {
     }
     
     private var _meetingID: OpenTimeMeetingID;
-    private var _orgID: OpenTimeOrgID;
+    private var _orgID: OpenTimeOrgID?;
     private var _creator: OpenTimeUserID;
     private var _created: OpenTimeTimeStamp
     private var _status: MeetingStatus;
@@ -34,7 +34,7 @@ public class OTDeserializedMeeting {
     
     public init(dictionary: NSDictionary){
         self._meetingID   = dictionary.valueForKey(Keys.MEETING_ID) as! OpenTimeMeetingID;
-        self._orgID       = dictionary.valueForKey(Keys.ORG_ID) as! OpenTimeOrgID;
+        self._orgID       = dictionary.valueForKey(Keys.ORG_ID) as? OpenTimeOrgID;
         self._creator     = dictionary.valueForKey(Keys.CREATOR) as! OpenTimeUserID;
         self._created     = dictionary.valueForKey(Keys.CREATED) as! OpenTimeTimeStamp;
         self._status      = dictionary.valueForKey(Keys.STATUS) as! MeetingStatus;
@@ -69,7 +69,7 @@ public class OTDeserializedMeeting {
         return self._meetingID;
     }
     
-    public func getOrgID() -> OpenTimeOrgID {
+    public func getOrgID() -> OpenTimeOrgID? {
         return self._orgID;
     }
     
