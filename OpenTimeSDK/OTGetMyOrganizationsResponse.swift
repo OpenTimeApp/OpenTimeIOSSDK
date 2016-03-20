@@ -8,18 +8,21 @@
 
 public class OTGetMyOrganizationsResponse : OTAPIResponse {
     
-    private var _organizations: Array<OTDeserializedOrganization>?;
+    private var _organizations: Array<OTDeserializedOrganization>;
     
     public init(success: Bool, message: String, rawData: AnyObject?){
+        
+        self._organizations = Array<OTDeserializedOrganization>();
+        
         super.init(success: success, message: message);
         
         if(success == true && rawData != nil) {
-            self._organizations = OTDeserializationHelper.deserializeList(rawData as! NSArray, type: OTDeserializedOrganization.self) as? Array<OTDeserializedOrganization>;
+            self._organizations = (OTDeserializationHelper.deserializeList(rawData as! NSArray, type: OTDeserializedOrganization.self) as? Array<OTDeserializedOrganization>)!;
         }
     }
     
     public func getOrganizations() -> Array<OTDeserializedOrganization> {
-        return self._organizations!;
+        return self._organizations;
     }
     
 }

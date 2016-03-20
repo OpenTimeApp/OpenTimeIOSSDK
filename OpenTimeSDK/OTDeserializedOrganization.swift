@@ -9,9 +9,9 @@
 public class OTDeserializedOrganization : OTDeserializer {
     
     public struct Keys {
-        static let ORG_ID   = "id";
-        static let NAME     = "name";
-        static let LOGO_URL = "logo";
+        public static let ORG_ID   = "id";
+        public static let NAME     = "name";
+        public static let LOGO_URL = "logo";
     }
     
     private var _orgID : OpenTimeOrgID;
