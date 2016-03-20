@@ -10,15 +10,7 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-class MeetingAttendeeAPITest: XCTestCase {
-
-    override func setUp() {
-        super.setUp();
-        
-        // Emulate that a user is signed in.
-        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: false);
-        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
-    }
+class OTMeetingAttendeeAPITest: OTAPITest {
     
     func testUpdate() {
         

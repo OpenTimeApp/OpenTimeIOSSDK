@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedLocation {
+public class OTDeserializedLocation : OTDeserializer {
     
     private struct Keys {
         static let LATITUDE  = "lat";
@@ -18,7 +18,7 @@ public class OTDeserializedLocation {
     private var _longitude: Double;
     private var _address: String;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._latitude  = dictionary.valueForKey(Keys.LATITUDE) as! Double;
         self._longitude = dictionary.valueForKey(Keys.LONGITUDE) as! Double;
         self._address   = dictionary.valueForKey(Keys.ADDRESS) as! String;

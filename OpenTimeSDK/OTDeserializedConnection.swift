@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedConnection {
+public class OTDeserializedConnection : OTDeserializer{
     
     private struct Keys {
         static let STATUS       = "status";
@@ -18,7 +18,7 @@ public class OTDeserializedConnection {
     private var _lastUpdated: OpenTimeTimeStamp;
     private var _deserializedPerson: OTDeserializedPerson;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._status      = dictionary.valueForKey(Keys.STATUS) as! Int;
         self._lastUpdated = dictionary.valueForKey(Keys.LAST_UPDATED) as! Int;
         

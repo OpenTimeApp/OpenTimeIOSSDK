@@ -13,7 +13,7 @@ public class OTGetAllMyMeetingsResponse : OTAPIResponse {
     public init(success: Bool, message: String, rawData: AnyObject?){
         
         if(rawData != nil){
-            self._meetings = OTDeserializedMeeting.deserializeList(rawData as! NSArray);
+            self._meetings = OTDeserializationHelper.deserializeList(rawData as! NSArray, type: OTDeserializedMeeting.self) as! Array<OTDeserializedMeeting>;
         }else{
             self._meetings = Array<OTDeserializedMeeting>()
         }

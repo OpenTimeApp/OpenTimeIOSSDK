@@ -141,7 +141,8 @@ public class OTAPIRequestOperationManager: AFHTTPRequestOperationManager {
     {
         self.requestSerializer.setValue(OpenTimeSDK.getKey(), forHTTPHeaderField: OTConstant.API_KEY_NAME);
         self.requestSerializer.setValue(OTConstant.API_VERSION, forHTTPHeaderField: "V");
-        self.requestSerializer.setValue(NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as? String, forHTTPHeaderField: "Lang");
+        let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as? String;
+        self.requestSerializer.setValue(lang, forHTTPHeaderField: "Lang");
     }
     
     public func apiResult(operation: AFHTTPRequestOperation!, error: NSError!, done: (response: OTAPIResponse)->Void)

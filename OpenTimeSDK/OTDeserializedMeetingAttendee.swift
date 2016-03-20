@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedMeetingAttendee {
+public class OTDeserializedMeetingAttendee : OTDeserializer {
     
     private struct Keys {
         static let USER_ID      = "user_id";
@@ -18,26 +18,10 @@ public class OTDeserializedMeetingAttendee {
     private var _status: MeetingAttendeeStatus;
     private var _lastUpdated: OpenTimeTimeStamp;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._userID      = dictionary.valueForKey(Keys.USER_ID) as! OpenTimeUserID;
         self._status      = dictionary.valueForKey(Keys.STATUS) as! MeetingAttendeeStatus;
         self._lastUpdated = dictionary.valueForKey(Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
-    }
-    
-    public static func deserializeList(rawData: NSArray) -> Array<OTDeserializedMeetingAttendee>{
-        
-        var list: Array<OTDeserializedMeetingAttendee> = Array<OTDeserializedMeetingAttendee>();
-        
-        for var attendeeIndex = 0; attendeeIndex < rawData.count; attendeeIndex++ {
-            
-            let rawAttendeeData = rawData.objectAtIndex(attendeeIndex) as! NSDictionary;
-            
-            let attendee = OTDeserializedMeetingAttendee(dictionary: rawAttendeeData);
-            
-            list.append(attendee);
-        }
-        
-        return list;
     }
     
     public func getUserID() -> OpenTimeUserID {

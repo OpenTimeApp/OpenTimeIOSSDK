@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedRegisteredPersonData {
+public class OTDeserializedRegisteredPersonData : OTDeserializer {
     
     private struct Keys {
         static let USER_ID = "user_id";
@@ -14,7 +14,7 @@ public class OTDeserializedRegisteredPersonData {
     
     private var _userID: OpenTimeUserID;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._userID = dictionary.valueForKey(Keys.USER_ID) as! OpenTimeUserID;
     }
     

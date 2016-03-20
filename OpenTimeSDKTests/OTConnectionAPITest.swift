@@ -10,13 +10,7 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-class ConnectionAPITest: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: false);
-        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
-    }
+class OTConnectionAPITest: OTAPITest {
     
     func testAddActiveConnection() {
         let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);

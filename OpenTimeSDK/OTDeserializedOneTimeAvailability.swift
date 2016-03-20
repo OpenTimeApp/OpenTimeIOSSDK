@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedOneTimeAvailability {
+public class OTDeserializedOneTimeAvailability : OTDeserializer {
     
     private struct Keys {
         static let TIME_CREATED = "time_created";
@@ -16,35 +16,18 @@ public class OTDeserializedOneTimeAvailability {
         static let LAST_UPDATED = "last_updated";
     }
     
-    
     private var _created: OpenTimeTimeStamp;
     private var _start: OpenTimeTimeStamp;
     private var _end: OpenTimeTimeStamp;
     private var _status: AvailabilityStatus;
     private var _lastUpdated: OpenTimeTimeStamp;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._created     = dictionary.objectForKey(Keys.TIME_CREATED) as! Int;
         self._start       = dictionary.objectForKey(Keys.START) as! Int;
         self._end         = dictionary.objectForKey(Keys.END) as! Int;
         self._status      = dictionary.objectForKey(Keys.STATUS) as! Int;
         self._lastUpdated = dictionary.objectForKey(Keys.LAST_UPDATED) as! Int;
-    }
-    
-    public static func deserializeList(rawData: NSArray) -> Array<OTDeserializedOneTimeAvailability> {
-        
-        var list: Array<OTDeserializedOneTimeAvailability> = Array<OTDeserializedOneTimeAvailability>();
-        
-        for var attendeeIndex = 0; attendeeIndex < rawData.count; attendeeIndex++ {
-            
-            let rawAttendeeData = rawData.objectAtIndex(attendeeIndex) as! NSDictionary;
-            
-            let attendee = OTDeserializedOneTimeAvailability(dictionary: rawAttendeeData);
-            
-            list.append(attendee);
-        }
-        
-        return list;
     }
     
     public func getCreatedTimestamp() -> OpenTimeTimeStamp {

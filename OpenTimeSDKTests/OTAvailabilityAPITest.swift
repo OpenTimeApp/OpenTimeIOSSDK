@@ -10,14 +10,7 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-class AvailabilityAPITest: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        OTAPIRequestOperationManager.disableCache();
-        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: false);
-        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
-    }
+class OTAvailabilityAPITest: OTAPITest {
     
     func testSetOneTimeAvailability()
     {

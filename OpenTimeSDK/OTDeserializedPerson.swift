@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class OTDeserializedPerson {
+public class OTDeserializedPerson : OTDeserializer {
     
     private struct Keys {
         static let USER_ID     = "user_id";
@@ -24,7 +24,7 @@ public class OTDeserializedPerson {
     private var _emails: Array<String>;
     private var _phoneNumbers: Array<String>;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._userID    = dictionary.valueForKey(Keys.USER_ID) as! OpenTimeUserID;
         self._firstName = dictionary.valueForKey(Keys.FIRST_NAME) as! String;
         self._lastName  = dictionary.valueForKey(Keys.LAST_NAME) as! String;

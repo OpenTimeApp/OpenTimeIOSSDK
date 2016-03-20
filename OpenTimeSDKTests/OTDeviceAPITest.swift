@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-class DeviceAPITest: XCTestCase {
+class OTDeviceAPITest: XCTestCase {
     
     override func setUp() {
         super.setUp();

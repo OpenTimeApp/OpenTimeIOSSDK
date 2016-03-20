@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedConnectionAvailability{
+public class OTDeserializedConnectionAvailability : OTDeserializer{
     
     private struct Keys {
         static let USER_ID               = "user_id";
@@ -16,7 +16,7 @@ public class OTDeserializedConnectionAvailability{
     private var _userID: OpenTimeUserID;
     private var _availability: OTDeserializedAvailability;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
     
         let availabilityData: NSDictionary = dictionary.objectForKey(Keys.AVAILABILITY) as! NSDictionary;
         self._userID  = dictionary.objectForKey(Keys.USER_ID) as! Int;

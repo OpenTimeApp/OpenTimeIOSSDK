@@ -10,13 +10,12 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-class PersonAPITest: XCTestCase {
+class OTPersonAPITest: XCTestCase {
     
     override func setUp() {
         super.setUp()
         OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: false);
     }
-    
     
     func testCreateUser() {
         let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["clear_users"], resetCache: true);

@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 /// Communicates with the OpenTime API for Person operations.
-public struct OTPersonAPI {
+public class OTPersonAPI {
     
     /**
         Creates a new user in OpenTime. The same person with different emails should never have more than one user account.

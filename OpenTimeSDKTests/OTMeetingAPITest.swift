@@ -10,13 +10,7 @@ import UIKit
 import XCTest
 import OpenTimeSDK
 
-class MeetingAPITest: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: false);
-        OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
-    }
+class OTMeetingAPITest: OTAPITest {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.

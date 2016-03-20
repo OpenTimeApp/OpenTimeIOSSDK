@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTDeserializedMeeting {
+public class OTDeserializedMeeting : OTDeserializer {
     
     private struct Keys {
         static let MEETING_ID   = "meeting_id";
@@ -32,7 +32,7 @@ public class OTDeserializedMeeting {
     private var _location: OTDeserializedLocation?;
     private var _attendees: Array<OTDeserializedMeetingAttendee>;
     
-    public init(dictionary: NSDictionary){
+    public required init(dictionary: NSDictionary){
         self._meetingID   = dictionary.valueForKey(Keys.MEETING_ID) as! OpenTimeMeetingID;
         self._orgID       = dictionary.valueForKey(Keys.ORG_ID) as? OpenTimeOrgID;
         self._creator     = dictionary.valueForKey(Keys.CREATOR) as! OpenTimeUserID;
@@ -42,23 +42,9 @@ public class OTDeserializedMeeting {
         self._start       = dictionary.valueForKey(Keys.START) as! OpenTimeTimeStamp;
         self._end         = dictionary.valueForKey(Keys.END) as! OpenTimeTimeStamp;
         self._location    = OTDeserializedMeeting._getDeserializedLocation(dictionary.valueForKey(Keys.LOCATION));
-        self._attendees   = OTDeserializedMeetingAttendee.deserializeList(dictionary.valueForKey(Keys.ATTENDEES) as! NSArray);
-    }
-    
-    public static func deserializeList(rawData: NSArray) -> Array<OTDeserializedMeeting>{
         
-        var list: Array<OTDeserializedMeeting> = Array<OTDeserializedMeeting>();
-        
-        for var meetingIndex = 0; meetingIndex < rawData.count; meetingIndex++ {
-            
-            let rawMeetingData = rawData.objectAtIndex(meetingIndex) as! NSDictionary;
-            
-            let attendee = OTDeserializedMeeting(dictionary: rawMeetingData);
-            
-            list.append(attendee);
-        }
-        
-        return list;
+        let rawAttendees = dictionary.valueForKey(Keys.ATTENDEES) as! NSArray;
+        self._attendees = OTDeserializationHelper.deserializeList(rawAttendees, type: OTDeserializedMeetingAttendee.self) as! Array<OTDeserializedMeetingAttendee>
     }
     
     private static func _getDeserializedLocation(rawData: AnyObject?) -> OTDeserializedLocation? {
