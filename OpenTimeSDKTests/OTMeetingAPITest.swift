@@ -34,7 +34,7 @@ class OTMeetingAPITest: OTAPITest {
             let end        = start + 3600;
             
             // Create object to send to server.
-            let createMeetingData = OTCreateMeetingData(
+            let createMeetingData = OTCreateMeetingData(orgID: 1,
                 creator: 1, start: start, end: end, lastUpdated: start, attendees: [1, 2]);
             
             OTMeetingAPI.create(createMeetingData, done: { (response) -> Void in

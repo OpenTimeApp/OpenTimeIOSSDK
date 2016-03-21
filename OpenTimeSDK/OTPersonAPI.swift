@@ -41,7 +41,7 @@ public class OTPersonAPI {
                 done(response: OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData));
                 
             }, failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                
+                print(operation!.responseString);
                 // Return response.
                 requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
                     done(response: OTRegisterPersonResponse(success: response.success, message: response.message, rawData: nil));
@@ -90,7 +90,7 @@ public class OTPersonAPI {
                 }
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                
+                print(operation!.responseString);
                 // Return response.
                 requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
                     done(response: OTSigninResponse(success: response.success, message: response.message, rawData: nil));
@@ -130,7 +130,7 @@ public class OTPersonAPI {
                 done(response: response);
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                
+                print(operation!.responseString);
                 // Return response.
                 requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
                     done(response: response);

@@ -8,16 +8,18 @@
 
 public class OTSetConnectionData {
     
+    private var _orgID: OpenTimeOrgID;
     private var _userID: OpenTimeUserID;
     private var _status: ConnectionStatus;
     private var _lastUpdated: OpenTimeTimeStamp;
     private var _returnConnection: Bool;
     
-    public init(userID: Int, status: Int, lastUpdated: OpenTimeTimeStamp){
-        _userID           = userID;
-        _status           = status;
-        _lastUpdated      = lastUpdated;
-        _returnConnection = false;
+    public init(orgID: OpenTimeOrgID, userID: OpenTimeUserID, status: ConnectionStatus, lastUpdated: OpenTimeTimeStamp){
+        self._orgID            = orgID;
+        self._userID           = userID;
+        self._status           = status;
+        self._lastUpdated      = lastUpdated;
+        self._returnConnection = false;
     }
     
     public func getUserID() -> OpenTimeUserID {
@@ -28,9 +30,10 @@ public class OTSetConnectionData {
         
         // Setup query parameters.
         let parameters = [
-            "status": self._status,
-            "last_updated": self._lastUpdated,
-            "return_connection": self._returnConnection
+            "org_id"            : self._orgID,
+            "status"            : self._status,
+            "last_updated"      : self._lastUpdated,
+            "return_connection" : self._returnConnection
         ];
         
         return parameters;
