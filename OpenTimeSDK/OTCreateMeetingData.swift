@@ -9,18 +9,21 @@
 public class OTCreateMeetingData {
     
     private var _attendees: Array<OpenTimeUserID>;
+    private var _orgID: OpenTimeOrgID;
     private var _creator: OpenTimeUserID;
     private var _start: OpenTimeTimeStamp;
     private var _end: OpenTimeTimeStamp;
     private var _lastUpdated: OpenTimeTimeStamp;
     
     public init(
+            orgID: OpenTimeOrgID,
             creator: OpenTimeUserID,
             start: OpenTimeTimeStamp,
             end: OpenTimeTimeStamp,
             lastUpdated: OpenTimeTimeStamp,
             attendees: Array<OpenTimeUserID>) {
-                
+        
+        self._orgID       = orgID;
         self._attendees   = attendees;
         self._creator     = creator;
         self._start       = start;
@@ -31,10 +34,11 @@ public class OTCreateMeetingData {
     public func getParameters() -> NSDictionary{
         
         let parameters = [
-            "start":_start,
-            "end":_end,
-            "created":_lastUpdated,
-            "attendee_list": _attendees
+            "org_id"       : self._orgID,
+            "start"        : self._start,
+            "end"          : self._end,
+            "created"      : self._lastUpdated,
+            "attendee_list": self._attendees
         ];
         
         return parameters;
