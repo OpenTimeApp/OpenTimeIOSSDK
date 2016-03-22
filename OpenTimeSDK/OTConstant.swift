@@ -14,5 +14,5 @@ public class OTConstant {
     public static let SALT_2: String = "Mi5Lk7JPVpOlIDtpWlTUb5gWPajbwkgji07rfhUW";
     
     public static let OPENTIME_TEST_SERVER = "http://dev.app.opentimeapp.com";
-    public static let OPENTIME_LIVE_SERVER = "https://app.opentimeapp.com";
+    public static let OPENTIME_LIVE_SERVER = "https://app2.opentimeapp.com";
 }

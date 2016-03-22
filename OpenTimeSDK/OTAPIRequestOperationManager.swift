@@ -23,6 +23,10 @@ public class OTAPIRequestOperationManager: AFHTTPRequestOperationManager {
     required public init()
     {
         super.init(baseURL: nil);
+        
+        if(OpenTimeSDK.session.getSecurityPolicy() != nil){
+            self.securityPolicy = OpenTimeSDK.session.getSecurityPolicy()!;
+        }
 
         self.setupHeaders();
     }

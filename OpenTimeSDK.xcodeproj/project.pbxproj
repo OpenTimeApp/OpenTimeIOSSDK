@@ -23,6 +23,8 @@
 		032A71891C3053CC00217B03 /* OTDeserializedMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A71881C3053CC00217B03 /* OTDeserializedMeeting.swift */; };
 		032A718B1C3053F900217B03 /* OTDeserializedMeetingAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A718A1C3053F900217B03 /* OTDeserializedMeetingAttendee.swift */; };
 		032A718D1C30541D00217B03 /* AvailabilityStatusOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A718C1C30541D00217B03 /* AvailabilityStatusOption.swift */; };
+		036D4D241CA1030300B84174 /* cert_invalid.der in Resources */ = {isa = PBXBuildFile; fileRef = 036D4D221CA1030300B84174 /* cert_invalid.der */; };
+		036D4D251CA1030300B84174 /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = 036D4D231CA1030300B84174 /* cert.der */; };
 		039C1B9D1C9E0E6B0088E15A /* OTOrganizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C1B9C1C9E0E6B0088E15A /* OTOrganizationAPI.swift */; };
 		039C1BA01C9E0F1F0088E15A /* OTGetMyOrganizationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C1B9F1C9E0F1F0088E15A /* OTGetMyOrganizationsResponse.swift */; };
 		039C1BA21C9E107F0088E15A /* OTDeserializedOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039C1BA11C9E107F0088E15A /* OTDeserializedOrganization.swift */; };
@@ -111,6 +113,8 @@
 		032A71881C3053CC00217B03 /* OTDeserializedMeeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedMeeting.swift; path = OpenTimeSDK/OTDeserializedMeeting.swift; sourceTree = "<group>"; };
 		032A718A1C3053F900217B03 /* OTDeserializedMeetingAttendee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedMeetingAttendee.swift; path = OpenTimeSDK/OTDeserializedMeetingAttendee.swift; sourceTree = "<group>"; };
 		032A718C1C30541D00217B03 /* AvailabilityStatusOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailabilityStatusOption.swift; path = OpenTimeSDK/AvailabilityStatusOption.swift; sourceTree = "<group>"; };
+		036D4D221CA1030300B84174 /* cert_invalid.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = cert_invalid.der; path = OpenTimeSDK/cert_invalid.der; sourceTree = SOURCE_ROOT; };
+		036D4D231CA1030300B84174 /* cert.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = cert.der; path = OpenTimeSDK/cert.der; sourceTree = SOURCE_ROOT; };
 		039C1B9C1C9E0E6B0088E15A /* OTOrganizationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTOrganizationAPI.swift; sourceTree = "<group>"; };
 		039C1B9F1C9E0F1F0088E15A /* OTGetMyOrganizationsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTGetMyOrganizationsResponse.swift; sourceTree = "<group>"; };
 		039C1BA11C9E107F0088E15A /* OTDeserializedOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedOrganization.swift; path = OpenTimeSDK/OTDeserializedOrganization.swift; sourceTree = "<group>"; };
@@ -507,6 +511,8 @@
 		03A1371B1BDD1A070005A721 /* config */ = {
 			isa = PBXGroup;
 			children = (
+				036D4D221CA1030300B84174 /* cert_invalid.der */,
+				036D4D231CA1030300B84174 /* cert.der */,
 				03A1372F1BDD23E20005A721 /* OpenTimeAlias.swift */,
 				03A136981BDC57F00005A721 /* OpenTimeSDK.h */,
 				03A1369A1BDC57F00005A721 /* Info.plist */,
@@ -632,6 +638,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036D4D241CA1030300B84174 /* cert_invalid.der in Resources */,
+				036D4D251CA1030300B84174 /* cert.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
