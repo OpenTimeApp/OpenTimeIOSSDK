@@ -8,7 +8,7 @@
 
 public class OTDeserializedMeeting : OTDeserializer {
     
-    private struct Keys {
+    public struct Keys {
         static let MEETING_ID   = "meeting_id";
         static let ORG_ID       = "org_id";
         static let CREATOR      = "creator";
