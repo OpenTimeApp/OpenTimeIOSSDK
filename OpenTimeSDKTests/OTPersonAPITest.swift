@@ -14,7 +14,7 @@ class OTPersonAPITest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: true);
+        OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
     }
     
     func testCreateUser() {
@@ -61,7 +61,7 @@ class OTPersonAPITest: XCTestCase {
             let email: String = "tester1@app.opentimeapp.com";
             let password: String = "I love testing";
             
-            let signinData = OTSigninData(email: email, password: password);
+            let signinData = OTSigninRequest(email: email, password: password);
             
             OTPersonAPI.signIn(signinData, done: { (response) -> Void in
                 XCTAssertTrue(response.success == true);
@@ -97,7 +97,7 @@ class OTPersonAPITest: XCTestCase {
         
         if(response.success)
         {
-            OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true, passwordFixed: true);
+            OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
             OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
             
             let expectation = expectationWithDescription("Update password");

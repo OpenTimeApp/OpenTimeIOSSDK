@@ -1,12 +1,12 @@
 //
-//  LoginData.swift
+//  OTSigninRequest.swift
 //  OpenTime
 //
 //  Created by Josh Woodcock on 10/23/15.
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTSigninData {
+public class OTSigninRequest {
     
     private var _email: String;
     private var _password: String;

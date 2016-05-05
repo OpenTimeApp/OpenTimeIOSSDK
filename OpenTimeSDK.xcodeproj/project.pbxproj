@@ -65,7 +65,7 @@
 		03A1375D1BDD23E20005A721 /* OTSetConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373A1BDD23E20005A721 /* OTSetConnectionData.swift */; };
 		03A1375E1BDD23E20005A721 /* OTSetConnectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373B1BDD23E20005A721 /* OTSetConnectionResponse.swift */; };
 		03A1375F1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373C1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift */; };
-		03A137601BDD23E20005A721 /* OTSigninData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373D1BDD23E20005A721 /* OTSigninData.swift */; };
+		03A137601BDD23E20005A721 /* OTSignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373D1BDD23E20005A721 /* OTSignInRequest.swift */; };
 		03A137611BDD23E20005A721 /* OTSigninResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1373E1BDD23E20005A721 /* OTSigninResponse.swift */; };
 		03A137661BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */; };
 		03A137681BDD2FEB0005A721 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A137671BDD2FEB0005A721 /* Config.plist */; };
@@ -159,7 +159,7 @@
 		03A1373A1BDD23E20005A721 /* OTSetConnectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSetConnectionData.swift; path = OpenTimeSDK/OTSetConnectionData.swift; sourceTree = "<group>"; };
 		03A1373B1BDD23E20005A721 /* OTSetConnectionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSetConnectionResponse.swift; path = OpenTimeSDK/OTSetConnectionResponse.swift; sourceTree = "<group>"; };
 		03A1373C1BDD23E20005A721 /* OTSetOneTimeAvailabilityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSetOneTimeAvailabilityData.swift; path = OpenTimeSDK/OTSetOneTimeAvailabilityData.swift; sourceTree = "<group>"; };
-		03A1373D1BDD23E20005A721 /* OTSigninData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSigninData.swift; path = OpenTimeSDK/OTSigninData.swift; sourceTree = "<group>"; };
+		03A1373D1BDD23E20005A721 /* OTSignInRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSignInRequest.swift; path = OpenTimeSDK/OTSignInRequest.swift; sourceTree = "<group>"; };
 		03A1373E1BDD23E20005A721 /* OTSigninResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTSigninResponse.swift; path = OpenTimeSDK/OTSigninResponse.swift; sourceTree = "<group>"; };
 		03A137651BDD2BAD0005A721 /* OpenTimeSDKTestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTimeSDKTestConstants.swift; sourceTree = "<group>"; };
 		03A137671BDD2FEB0005A721 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
@@ -453,7 +453,7 @@
 		03A136EE1BDC59FC0005A721 /* signin */ = {
 			isa = PBXGroup;
 			children = (
-				03A1373D1BDD23E20005A721 /* OTSigninData.swift */,
+				03A1373D1BDD23E20005A721 /* OTSignInRequest.swift */,
 				03A1373E1BDD23E20005A721 /* OTSigninResponse.swift */,
 			);
 			name = signin;
@@ -751,7 +751,7 @@
 				032A71781C2F9C3E00217B03 /* OTSetMeetingAttendeeData.swift in Sources */,
 				039C1BA61C9E13F70088E15A /* OTDeserializationHelper.swift in Sources */,
 				03A137481BDD23E20005A721 /* OTContactInfoData.swift in Sources */,
-				03A137601BDD23E20005A721 /* OTSigninData.swift in Sources */,
+				03A137601BDD23E20005A721 /* OTSignInRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

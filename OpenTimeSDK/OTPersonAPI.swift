@@ -59,7 +59,7 @@ public class OTPersonAPI {
     
         - returns: void
     */
-    public static func signIn(signinData: OTSigninData, done: (response: OTSigninResponse)->Void) {
+    public static func signIn(signinData: OTSigninRequest, done: (response: OTSigninResponse)->Void) {
         
         // Validate inputs.
         let inputsValid = signinData.checkInputs();

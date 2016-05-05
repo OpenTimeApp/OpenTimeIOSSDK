@@ -1,5 +1,5 @@
 //
-//  LoginResponse.swift
+//  OTSigninResponse.swift
 //  OpenTime
 //
 //  Created by Josh Woodcock on 10/23/15.
