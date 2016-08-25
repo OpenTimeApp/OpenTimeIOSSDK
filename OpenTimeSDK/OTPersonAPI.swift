@@ -38,7 +38,13 @@ public class OTPersonAPI {
                 // Parse response.
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData));
+                if(response.rawData != nil){
+                    done(response:  OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    let reply = OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData!);
+                    reply.makeEmpty();
+                   done(response: reply);
+                }
                 
             }, failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 print(operation!.responseString);
@@ -81,13 +87,20 @@ public class OTPersonAPI {
                 // Parse response.
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                // Build response.
-                if(response.success == true) {
-                    // Read person object.
-                    done(response: OTSigninResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                if(response.rawData != nil){
+                    // Build response.
+                    if(response.success == true) {
+                        // Read person object.
+                        done(response: OTSigninResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    }else{
+                        done(response: OTSigninResponse(success: response.success, message: response.message, rawData: nil));
+                    }
                 }else{
-                    done(response: OTSigninResponse(success: response.success, message: response.message, rawData: nil));
+                    let reply = OTSigninResponse(success: response.success, message: response.message, rawData: nil);
+                    reply.makeEmpty();
+                    done(response: reply);
                 }
+                
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 print(operation!.responseString);

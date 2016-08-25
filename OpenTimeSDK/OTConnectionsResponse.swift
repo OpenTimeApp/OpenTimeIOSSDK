@@ -6,7 +6,7 @@
 //  Copyright © 2015 Connecting Open Time, LLC. All rights reserved.
 //
 
-public class OTConnectionsResponse : OTAPIResponse {
+    public class OTConnectionsResponse : OTAPIResponse {
     
     private var _connections: Array<OTDeserializedConnection>;
     

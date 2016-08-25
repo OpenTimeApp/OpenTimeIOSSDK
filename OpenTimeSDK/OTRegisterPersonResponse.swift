@@ -10,7 +10,7 @@ import UIKit
 
 public class OTRegisterPersonResponse : OTAPIResponse {
     
-    private var _registeredPersonData: OTDeserializedRegisteredPersonData!;
+    private var _registeredPersonData: OTDeserializedRegisteredPersonData?;
     
     public init(success: Bool, message: String, rawData: AnyObject?) {
         if(success == true && rawData != nil) {
@@ -20,7 +20,7 @@ public class OTRegisterPersonResponse : OTAPIResponse {
         super.init(success: success, message: message);
     }
     
-    public func getPerson() -> OTDeserializedRegisteredPersonData {
+    public func getPerson() -> OTDeserializedRegisteredPersonData? {
         return self._registeredPersonData;
     }
 }

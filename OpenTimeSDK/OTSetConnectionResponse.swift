@@ -10,9 +10,12 @@ public class OTSetConnectionResponse : OTAPIResponse {
     
     private var _connection: OTDeserializedConnection?
     
-    public init(success: Bool, message: String, connectionData: OTDeserializedConnection?){
+    public init(success: Bool, message: String, rawData: AnyObject?){
         super.init(success: success, message: message);
-        _connection = connectionData;
+        
+        if(rawData != nil){
+            _connection = OTDeserializedConnection(dictionary: rawData! as! NSDictionary);
+        }
     }
     
     public func getConnection() -> OTDeserializedConnection? {

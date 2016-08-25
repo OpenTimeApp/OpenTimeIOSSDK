@@ -23,7 +23,13 @@ public class OTAvailabilityAPI: NSObject
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData));
+                if(response.rawData != nil){
+                    done(response: OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    let reply = OTGetAllMyAvailabilityResponse(success: false, message: "", rawData: nil);
+                    reply.makeEmpty();
+                    done(response: reply);
+                }
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
@@ -78,7 +84,13 @@ public class OTAvailabilityAPI: NSObject
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData));
+                if(response.rawData != nil){
+                    done(response: OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    let reply = OTGetConnectionsAvailabilityResponse(success:false, message: "", rawData: nil);
+                    reply.makeEmpty();
+                    done(response: reply);
+                }
             },
             failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in

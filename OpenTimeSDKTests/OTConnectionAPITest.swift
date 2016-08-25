@@ -184,7 +184,7 @@ class OTConnectionAPITest: OTAPITest {
             
             let expectation = expectationWithDescription("Get connection list");
             OTConnectionAPI.getWithContactInfo(data, done: { (response: OTConnectionsResponse) -> Void in
-                XCTAssertEqual(response.success, true);
+                XCTAssertEqual(response.success, true, response.message);
                 
                 if(response.success == true) {
                     
@@ -200,7 +200,7 @@ class OTConnectionAPITest: OTAPITest {
                         var emails = connections[0].getPerson().getEmails();
                         XCTAssertEqual(1, emails.count);
                         if(emails.count == 1) {
-                            XCTAssertEqual("tester2@app.opentimeapp.com", emails[0]);
+                            XCTAssertEqual("tester1@app.opentimeapp.com", emails[0]);
                         }
                     }
                 }

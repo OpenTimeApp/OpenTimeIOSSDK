@@ -18,7 +18,7 @@ public class OTAPIResponse {
     /// The message associated with the success or failed response.
     public var message: String;
     
-    public var rawData: AnyObject!;
+    public var rawData: AnyObject?;
     
     private var _errorType: ErrorType;
     
@@ -81,6 +81,12 @@ public class OTAPIResponse {
         let response = self._loadSerializedResponse(rawResponse, httpStatusCode: code);
         
         return response;
+    }
+    
+    public func makeEmpty() {
+        self._errorType = OTAPIResponse.ErrorType.Empty;
+        self.message    = OTAPIResponse._getUserMessage(self._errorType, serverMessage: "");
+        self.rawData    = nil;
     }
     
     /**

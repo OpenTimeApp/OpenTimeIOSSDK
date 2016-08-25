@@ -36,7 +36,10 @@ class OTPersonAPITest: XCTestCase {
             OTPersonAPI.make(data, done: { (response: OTRegisterPersonResponse) -> Void in
                 
                 XCTAssert(response.success == true);
-                XCTAssertEqual(1, response.getPerson().getUserID());
+                
+                if(response.success && response.getPerson() != nil){
+                    XCTAssertEqual(1, response.getPerson()!.getUserID());
+                }
                 
                 expectation.fulfill();
             });

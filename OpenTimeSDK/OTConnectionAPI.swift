@@ -24,20 +24,19 @@ public class OTConnectionAPI {
         requestManager.PUT(OpenTimeSDK.getServer() + "/api/connection/" + String(connectionData.getUserID()),
             parameters: connectionData.getParameters(),
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-                requestManager.apiResult(operation, error: nil, done: {(response: OTAPIResponse)->Void in
-                    
-                    if(response.success && response.rawData != nil){
-                        let connectionData = OTDeserializedConnection(dictionary: response.rawData as! NSDictionary);
-                        done(response: OTSetConnectionResponse(success: response.success, message: response.message, connectionData: connectionData));
-                    }else{
-                        done(response: OTSetConnectionResponse(success: response.success, message: response.message, connectionData: nil))
-                    }
-                });
+                
+                let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
+                
+                if(response.rawData != nil){
+                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, rawData: nil));
+                }
             },
             
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, connectionData: nil));
+                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );
@@ -79,7 +78,13 @@ public class OTConnectionAPI {
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                if(response.rawData != nil){
+                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    let reply = OTConnectionsResponse(success: false, message: "", rawData: nil);
+                    reply.makeEmpty();
+                    done(response: reply)
+                }
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
@@ -105,8 +110,13 @@ public class OTConnectionAPI {
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
-                
+                if(response.rawData != nil){
+                   done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    let reply = OTConnectionsResponse(success: false, message: "", rawData: nil);
+                    reply.makeEmpty();
+                    done(response: reply)
+                }
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
@@ -140,7 +150,13 @@ public class OTConnectionAPI {
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                if(response.rawData != nil){
+                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    let reply = OTConnectionsResponse(success: false, message: "", rawData: nil);
+                    reply.makeEmpty();
+                    done(response: reply)
+                }
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
