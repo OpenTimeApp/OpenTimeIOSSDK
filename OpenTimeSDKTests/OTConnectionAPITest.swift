@@ -24,7 +24,7 @@ class OTConnectionAPITest: OTAPITest {
             let setConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
             setConnectionData.shouldReturnConnection(true);
             OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
-                XCTAssertTrue(response.success);
+                XCTAssertTrue(response.success, response.message);
                 
                 XCTAssertNotNil(response.getConnection());
                 

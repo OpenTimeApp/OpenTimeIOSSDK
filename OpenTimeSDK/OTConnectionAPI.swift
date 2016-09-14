@@ -119,6 +119,9 @@ public class OTConnectionAPI {
                 }
             },
             failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
+                var errResponse: String = String(data: (error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData), encoding: NSUTF8StringEncoding)!
+                NSLog("%@", errResponse)
+                
                 requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
                     done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil))
                 });

@@ -67,7 +67,10 @@ class OTAvailabilityAPITest: OTAPITest {
                         XCTAssertEqual(AvailabilityStatusOption.Active, availability.getStatus());
                     }
                     
-                    XCTAssertEqual(1, exceptions.count);
+                    var start = exceptions[0].getStart();
+                    var start2 = exceptions[0].getEnd();
+                    
+                    XCTAssertEqual(2, exceptions.count);
                 }
                 
                 expectation.fulfill();
@@ -118,7 +121,7 @@ class OTAvailabilityAPITest: OTAPITest {
             let expectation = expectationWithDescription("Set one time availability");
             
             OTAvailabilityAPI.getConnectionsAvailability({ (response: OTGetConnectionsAvailabilityResponse) -> Void in
-                XCTAssertTrue(response.success);
+                XCTAssertTrue(response.success, response.message);
                 
                 if(response.success) {
                     let connections: Array<OTDeserializedConnectionAvailability> = response.getList();
