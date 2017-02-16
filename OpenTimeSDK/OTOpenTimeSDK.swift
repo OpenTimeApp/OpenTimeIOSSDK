@@ -93,7 +93,7 @@ public class OpenTimeSDK {
         
         let securityPolicy = AFSecurityPolicy(pinningMode: AFSSLPinningMode.publicKey)
         securityPolicy.pinnedCertificates = [certificateData];
-        securityPolicy.allowInvalidCertificates = false;
+        securityPolicy.allowInvalidCertificates = true;
         self._policy = securityPolicy;
     }
     

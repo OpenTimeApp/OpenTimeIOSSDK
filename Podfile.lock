@@ -20,14 +20,16 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - libPhoneNumber-iOS (0.8.10)
+  - libPhoneNumber-iOS (0.8.17)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.4)
-  - libPhoneNumber-iOS (~> 0.8.7)
+  - AFNetworking (~> 2.6.3)
+  - libPhoneNumber-iOS (~> 0.8.17)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  libPhoneNumber-iOS: 7bfd00f843fdcd82b5182b463e8eb3b27579f41d
+  libPhoneNumber-iOS: 9f083847f8cb9b81064cff2ed2c98cbf18d9f9f2
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 5cbe8d08cd1bc93cce6e73746f00eb8a2571c41d
+
+COCOAPODS: 1.2.0

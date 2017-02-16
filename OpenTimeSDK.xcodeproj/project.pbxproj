@@ -83,7 +83,7 @@
 		03F2953F1BDD60CB00B8DBB0 /* OTDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295381BDD60CB00B8DBB0 /* OTDeviceAPI.swift */; };
 		03F295401BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F295391BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift */; };
 		03F295411BDD60CB00B8DBB0 /* OTReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2953A1BDD60CB00B8DBB0 /* OTReachability.swift */; };
-		CED1E0DC3E80C1E296E9214A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B846C29894A963F70CE79683 /* Pods.framework */; };
+		451420C9C87BF460F7E71C90 /* Pods_OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EAA12EB8CBF951765FE88B /* Pods_OpenTimeSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,9 +177,10 @@
 		03F295381BDD60CB00B8DBB0 /* OTDeviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeviceAPI.swift; path = OpenTimeSDK/OTDeviceAPI.swift; sourceTree = "<group>"; };
 		03F295391BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTOpenTimeSDK.swift; path = OpenTimeSDK/OTOpenTimeSDK.swift; sourceTree = "<group>"; };
 		03F2953A1BDD60CB00B8DBB0 /* OTReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTReachability.swift; path = OpenTimeSDK/OTReachability.swift; sourceTree = "<group>"; };
+		0DCF5F766AC2497BAA1772A0 /* Pods-OpenTimeSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTimeSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenTimeSDK/Pods-OpenTimeSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		73EAA12EB8CBF951765FE88B /* Pods_OpenTimeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenTimeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B846C29894A963F70CE79683 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		DD28808AF859999D505CC26A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C5703A3159DAB72D080226F6 /* Pods-OpenTimeSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTimeSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenTimeSDK/Pods-OpenTimeSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED1E0DC3E80C1E296E9214A /* Pods.framework in Frameworks */,
+				451420C9C87BF460F7E71C90 /* Pods_OpenTimeSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +287,8 @@
 				03A136971BDC57F00005A721 /* OpenTimeSDK */,
 				03A136A31BDC57F00005A721 /* OpenTimeSDKTests */,
 				03A136961BDC57F00005A721 /* Products */,
-				7B9EBE0937C27DE369E18674 /* Pods */,
 				BB707A7C0B6250DD1C23A014 /* Frameworks */,
+				C9466572B3A9D2D6959C2F8D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -528,21 +529,22 @@
 			name = password;
 			sourceTree = "<group>";
 		};
-		7B9EBE0937C27DE369E18674 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */,
-				DD28808AF859999D505CC26A /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BB707A7C0B6250DD1C23A014 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B846C29894A963F70CE79683 /* Pods.framework */,
+				73EAA12EB8CBF951765FE88B /* Pods_OpenTimeSDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9466572B3A9D2D6959C2F8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DCF5F766AC2497BAA1772A0 /* Pods-OpenTimeSDK.debug.xcconfig */,
+				C5703A3159DAB72D080226F6 /* Pods-OpenTimeSDK.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,12 +565,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03A136A91BDC57F00005A721 /* Build configuration list for PBXNativeTarget "OpenTimeSDK" */;
 			buildPhases = (
-				9F1E31892A33DAEF5F77BE94 /* Check Pods Manifest.lock */,
+				F559F76AFD6CA28DDDE56CE2 /* [CP] Check Pods Manifest.lock */,
 				03A136901BDC57F00005A721 /* Sources */,
 				03A136911BDC57F00005A721 /* Frameworks */,
 				03A136921BDC57F00005A721 /* Headers */,
 				03A136931BDC57F00005A721 /* Resources */,
-				FB7514E0F02D2525FBDDDEC7 /* Copy Pods Resources */,
+				EF7A3FAFAFE0D24BB1CB3167 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -656,34 +658,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9F1E31892A33DAEF5F77BE94 /* Check Pods Manifest.lock */ = {
+		EF7A3FAFAFE0D24BB1CB3167 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenTimeSDK/Pods-OpenTimeSDK-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB7514E0F02D2525FBDDDEC7 /* Copy Pods Resources */ = {
+		F559F76AFD6CA28DDDE56CE2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -880,7 +882,7 @@
 		};
 		03A136AA1BDC57F00005A721 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCD916D803300B60E49363B6 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 0DCF5F766AC2497BAA1772A0 /* Pods-OpenTimeSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -901,7 +903,7 @@
 		};
 		03A136AB1BDC57F00005A721 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD28808AF859999D505CC26A /* Pods.release.xcconfig */;
+			baseConfigurationReference = C5703A3159DAB72D080226F6 /* Pods-OpenTimeSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
