@@ -18,8 +18,8 @@ public class OTDeserializedAvailability : OTDeserializer{
     
     public required init(dictionary: NSDictionary){
         
-        let exceptionsData: NSArray = dictionary.objectForKey(Keys.EXCEPTIONS) as! NSArray;
-        let oneTimeData: NSArray = dictionary.objectForKey(Keys.ONE_TIME_AVAILABILITY) as! NSArray;
+        let exceptionsData: NSArray = dictionary.object(forKey: Keys.EXCEPTIONS) as! NSArray;
+        let oneTimeData: NSArray = dictionary.object(forKey: Keys.ONE_TIME_AVAILABILITY) as! NSArray;
         
         self._oneTime = OTDeserializationHelper.deserializeList(oneTimeData, type: OTDeserializedOneTimeAvailability.self) as! Array<OTDeserializedOneTimeAvailability>;
         self._exceptions = OTDeserializationHelper.deserializeList(exceptionsData, type: OTDeserializedAvailabilityException.self) as! Array<OTDeserializedAvailabilityException>

@@ -13,37 +13,37 @@ import AFNetworking
 public class OTAPIResponse {
     
     /// Whether or not the request logically succeeded or logically failed.
-    public var success: Bool;
+    open var success: Bool;
     
     /// The message associated with the success or failed response.
-    public var message: String;
+    open var message: String;
     
-    public var rawData: AnyObject?;
+    open var rawData: AnyObject?;
     
     private var _errorType: ErrorType;
     
     // The type of response
     public enum ErrorType {
         // The default which means there is no error.
-        case None;
+        case none;
         
         // The server is responding with a 2** but the response body is empty.
-        case Empty;
+        case empty;
         
         // When there is no internet connection.
-        case NoNetworkConnection;
+        case noNetworkConnection;
         
         // For http 401 errors. The user credentials are invalid.
-        case AuthenticationFailed;
+        case authenticationFailed;
         
         // For http 403 errors. The API key is invalid.
-        case AuthorizationFailed;
+        case authorizationFailed;
         
         // 400 and 404 errors.
-        case ClientError;
+        case clientError;
         
         // For http 420 and 500 errors.
-        case ServerError;
+        case serverError;
     }
     
     /**
@@ -57,7 +57,7 @@ public class OTAPIResponse {
         self.success    = success;
         self.message    = message;
         self.rawData    = nil;
-        self._errorType = OTAPIResponse.ErrorType.None;
+        self._errorType = OTAPIResponse.ErrorType.none;
     }
     
     /**
@@ -69,9 +69,9 @@ public class OTAPIResponse {
         return self._errorType;
     }
     
-    public class func loadFromReqeustOperationWithResponse(operation: AFHTTPRequestOperation) -> OTAPIResponse{
+    public static func loadFromReqeustOperationWithResponse(_ operation: AFHTTPRequestOperation) -> OTAPIResponse{
         
-        let rawResponse = OTAPIRawResponse.deserialize(operation.responseObject);
+        let rawResponse = OTAPIRawResponse.deserialize(operation.responseObject as AnyObject!);
         
         var code = -1;
         if(operation.response != nil) {
@@ -84,7 +84,7 @@ public class OTAPIResponse {
     }
     
     public func makeEmpty() {
-        self._errorType = OTAPIResponse.ErrorType.Empty;
+        self._errorType = OTAPIResponse.ErrorType.empty;
         self.message    = OTAPIResponse._getUserMessage(self._errorType, serverMessage: "");
         self.rawData    = nil;
     }
@@ -96,7 +96,7 @@ public class OTAPIResponse {
         
         - returns: An OTAPIResponse object with at least the success and message fields populated.
     */
-    private class func _loadSerializedResponse(responseObject: OTAPIRawResponse!, httpStatusCode: Int)->OTAPIResponse
+    private class func _loadSerializedResponse(_ responseObject: OTAPIRawResponse!, httpStatusCode: Int)->OTAPIResponse
     {
         // Check the response from the server is empty.
         if(responseObject != nil)
@@ -112,7 +112,7 @@ public class OTAPIResponse {
         }else{
             // Return a failed response. This usually means there is an error with the server API.
             let response        = OTAPIResponse(success: false, message: "");
-            response._errorType = self.ErrorType.Empty;
+            response._errorType = self.ErrorType.empty;
             response.message    = self._getUserMessage(response._errorType, serverMessage: "");
             return response;
         }
@@ -125,7 +125,7 @@ public class OTAPIResponse {
     *
     * @return The type of error based on the response from the server.
     */
-    private class func _getErrorType(httpStatusCode: Int) -> OTAPIResponse.ErrorType
+    private class func _getErrorType(_ httpStatusCode: Int) -> OTAPIResponse.ErrorType
     {
         // Setup tye type scope.
         var type: ErrorType;
@@ -133,22 +133,22 @@ public class OTAPIResponse {
         // Map the error type from the http response code.
         switch (httpStatusCode) {
             case -1:
-                type = ErrorType.NoNetworkConnection;
+                type = ErrorType.noNetworkConnection;
                 break;
             case 400, 404, 405, 412, 422:
-                type = ErrorType.ClientError;
+                type = ErrorType.clientError;
                 break;
             case 401:
-                type = ErrorType.AuthenticationFailed;
+                type = ErrorType.authenticationFailed;
                 break;
             case 403:
-                type = ErrorType.AuthorizationFailed;
+                type = ErrorType.authorizationFailed;
                 break;
             case 420, 500:
-                type = ErrorType.ServerError;
+                type = ErrorType.serverError;
                 break;
             default:
-                type = ErrorType.None;
+                type = ErrorType.none;
                 break;
         }
     
@@ -163,22 +163,22 @@ public class OTAPIResponse {
     *
     * @return The message to be displayed to the user.
     */
-    private class func _getUserMessage(errorType: OTAPIResponse.ErrorType, serverMessage: String) -> String {
+    private class func _getUserMessage(_ errorType: OTAPIResponse.ErrorType, serverMessage: String) -> String {
         // Setup message scope.
         var message: String = serverMessage;
     
         // Map the user message from the error type.
         switch (errorType) {
-            case .ClientError, .AuthorizationFailed:
+            case .clientError, .authorizationFailed:
                 message = NSLocalizedString("message_client_error", comment: "") as String;
                 break;
-            case .ServerError, .Empty:
+            case .serverError, .empty:
                 message = NSLocalizedString("message_server_error", comment: "") as String;
                 break;
-            case .NoNetworkConnection:
+            case .noNetworkConnection:
                 message = NSLocalizedString("message_no_network", comment: "") as String;
                 break;
-            case .AuthenticationFailed, .None:
+            case .authenticationFailed, .none:
                 message = serverMessage;
                 break;
         }

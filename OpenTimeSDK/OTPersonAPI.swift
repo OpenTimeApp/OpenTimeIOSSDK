@@ -17,13 +17,13 @@ public class OTPersonAPI {
     
         - returns: void
     */
-    public static func make(personData: OTNewPersonData, done: (response: OTRegisterPersonResponse)->Void)
+    public static func make(_ personData: OTNewPersonData, done: @escaping (_ response: OTRegisterPersonResponse)->Void)
     {
         let inputsValid = personData.checkInputs();
         
         if(inputsValid.success == false) {
             // Return response.
-            done(response: OTRegisterPersonResponse(success: false, message: inputsValid.message, rawData: nil));
+            done(OTRegisterPersonResponse(success: false, message: inputsValid.message, rawData: nil));
             return;
         }
         
@@ -31,26 +31,24 @@ public class OTPersonAPI {
         let requestManager = OTAPIRequestOperationManager();
 
         // Run query.
-        requestManager.POST(OpenTimeSDK.getServer() + "/api/person",
+        _ = requestManager.post(OpenTimeSDK.getServer() + "/api/person",
             parameters: personData.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!,responseObject: Any) in
                 
                 // Parse response.
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response:  OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTRegisterPersonResponse(success: response.success, message: response.message, rawData: response.rawData!);
                     reply.makeEmpty();
-                   done(response: reply);
+                   done(reply);
                 }
                 
-            }, failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                print(operation!.responseString);
-                // Return response.
-                requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
-                    done(response: OTRegisterPersonResponse(success: response.success, message: response.message, rawData: nil));
+            }, failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: { (response: OTAPIResponse)->Void in
+                    done(OTRegisterPersonResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );
@@ -65,14 +63,14 @@ public class OTPersonAPI {
     
         - returns: void
     */
-    public static func signIn(signinData: OTSigninRequest, done: (response: OTSigninResponse)->Void) {
+    public static func signIn(_ signinData: OTSigninRequest, done: @escaping (_ response: OTSigninResponse)->Void) {
         
         // Validate inputs.
         let inputsValid = signinData.checkInputs();
         
         if(inputsValid.success == false) {
             // Return response.
-            done(response: OTSigninResponse(success: inputsValid.success, message: inputsValid.message, rawData: nil));
+            done(OTSigninResponse(success: inputsValid.success, message: inputsValid.message, rawData: nil));
             return;
         }
         
@@ -80,9 +78,9 @@ public class OTPersonAPI {
         let requestManager = OTAPIRequestOperationManager();
         
         // Run query.
-        requestManager.GET(OpenTimeSDK.getServer() +  "/api/person/signInWithEmail",
+        requestManager.get(OpenTimeSDK.getServer() +  "/api/person/signInWithEmail",
             parameters: signinData.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!,responseObject: Any) in
                 
                 // Parse response.
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
@@ -91,22 +89,21 @@ public class OTPersonAPI {
                     // Build response.
                     if(response.success == true) {
                         // Read person object.
-                        done(response: OTSigninResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                        done(OTSigninResponse(success: response.success, message: response.message, rawData: response.rawData!));
                     }else{
-                        done(response: OTSigninResponse(success: response.success, message: response.message, rawData: nil));
+                        done(OTSigninResponse(success: response.success, message: response.message, rawData: nil));
                     }
                 }else{
                     let reply = OTSigninResponse(success: response.success, message: response.message, rawData: nil);
                     reply.makeEmpty();
-                    done(response: reply);
+                    done(reply);
                 }
                 
             },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                print(operation!.responseString);
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
                 // Return response.
-                requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
-                    done(response: OTSigninResponse(success: response.success, message: response.message, rawData: nil));
+                requestManager.apiResult(operation, error: error as NSError!, done: { (response: OTAPIResponse)->Void in
+                    done(OTSigninResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );
@@ -121,11 +118,11 @@ public class OTPersonAPI {
      
      - returns: void
      */
-    public static func updatePassword(request: OTUpdatePasswordRequest, done: (response: OTAPIResponse)->Void) {
+    public static func updatePassword(_ request: OTUpdatePasswordRequest, done: @escaping (_ response: OTAPIResponse)->Void) {
         
         if(!request.checkInputs()) {
             // Return response.
-            done(response: OTAPIResponse(success: false, message: request.getErrorMessage()));
+            done(OTAPIResponse(success: false, message: request.getErrorMessage()));
             return;
         }
         
@@ -133,20 +130,18 @@ public class OTPersonAPI {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
         // Run query.
-        requestManager.POST(OpenTimeSDK.getServer() +  "/api/person/updatePassword",
+        _ = requestManager.post(OpenTimeSDK.getServer() +  "/api/person/updatePassword",
             parameters: request.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!,responseObject: Any) in
                 
                 // Parse response.
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: response);
+                done(response);
             },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                print(operation!.responseString);
-                // Return response.
-                requestManager.apiResult(operation, error: error, done: { (response: OTAPIResponse)->Void in
-                    done(response: response);
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: { (response: OTAPIResponse)->Void in
+                    done(response);
                 });
             }
         );

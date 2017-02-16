@@ -15,15 +15,15 @@ class OTConnectionAPITest: OTAPITest {
     let TEST_ORG_ID = 88;
     
     func testAddActiveConnection() {
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         if(response.success)
         {
             // Set a connection
-            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let expectToSetConnection = expectation(description: "Will set connection")
             let setConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
             setConnectionData.shouldReturnConnection(true);
-            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+            OTConnectionAPI.set(connectionData: setConnectionData, done: { (response) -> Void in
                 XCTAssertTrue(response.success, response.message);
                 
                 XCTAssertNotNil(response.getConnection());
@@ -39,78 +39,78 @@ class OTConnectionAPITest: OTAPITest {
                 
                 expectToSetConnection.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
     
     func testSetActiveConnectionAsInactive() {
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         if(response.success) {
             
             // Set a connection
-            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let expectToSetConnection = expectation(description: "Will set connection")
             let setConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
-            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+            OTConnectionAPI.set(connectionData: setConnectionData, done: { (response) -> Void in
                 XCTAssertTrue(response.success);
                 expectToSetConnection.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
             
             // Set active connection as inactive.
-            let expectationToSetConnectionAsInactive = expectationWithDescription("Set Active Connection as Inactive");
+            let expectationToSetConnectionAsInactive = expectation(description: "Set Active Connection as Inactive");
             let setInactiveConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Inactive, lastUpdated: Int(NSDate().timeIntervalSince1970));
-            OTConnectionAPI.set(setInactiveConnectionData, done: { (response: OTAPIResponse) -> Void in
+            OTConnectionAPI.set(connectionData: setInactiveConnectionData, done: { (response: OTAPIResponse) -> Void in
                 XCTAssertTrue(response.success);
                 expectationToSetConnectionAsInactive.fulfill();
             });
 
-            waitForExpectationsWithTimeout(5.0, handler:nil)
+            waitForExpectations(timeout: 5.0, handler:nil)
         }
     }
     
     func testRemoveConnection() {
         
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         if(response.success) {
             
             // Set a connection
-            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let expectToSetConnection = expectation(description: "Will set connection")
             let setConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
-            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+            OTConnectionAPI.set(connectionData: setConnectionData, done: { (response) -> Void in
                 XCTAssertTrue(response.success);
                 expectToSetConnection.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
             
             // Set active connection as inactive.
-            let expectationToRemoveConnection = expectationWithDescription("Remove Active Connection");
+            let expectationToRemoveConnection = expectation(description: "Remove Active Connection");
             OTConnectionAPI.remove(2, lastUpdated: Int(NSDate().timeIntervalSince1970) + 3, done: { (response) -> Void in
                 XCTAssertEqual(response.success, true);
                 
                 expectationToRemoveConnection.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil)
+            waitForExpectations(timeout: 5.0, handler:nil)
         }
     }
     
     func testGetAll() {
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         if(response.success) {
     
             // Set a connection
-            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let expectToSetConnection = expectation(description: "Will set connection")
             let setConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970));
-            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+            OTConnectionAPI.set(connectionData: setConnectionData, done: { (response) -> Void in
                 XCTAssertTrue(response.success);
                 expectToSetConnection.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
             
             
-            let expectation = expectationWithDescription("Set active connection");
+            let theExpectation = expectation(description: "Set active connection");
             OTConnectionAPI.getAll({ (response) -> Void in
                 XCTAssertEqual(response.success, true);
                 
@@ -132,31 +132,31 @@ class OTConnectionAPITest: OTAPITest {
                         }
                     }
                 }
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
             
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
             
         }
     }
     
     func testGetWithList() {
         
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         if(response.success) {
             
             // Set a connection
-            let expectToSetConnection = expectationWithDescription("Will set connection")
+            let expectToSetConnection = expectation(description: "Will set connection")
             let setConnectionData = OTSetConnectionData(orgID: TEST_ORG_ID, userID: 2, status: OTConnectionStatusOption.Active, lastUpdated: Int(NSDate().timeIntervalSince1970) + 1);
-            OTConnectionAPI.set(setConnectionData, done: { (response) -> Void in
+            OTConnectionAPI.set(connectionData: setConnectionData, done: { (response) -> Void in
                 XCTAssertTrue(response.success);
                 expectToSetConnection.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
             
             // Get the connections to see if is there.
-            let expectToGetConnections = expectationWithDescription("Will get list of connections");
+            let expectToGetConnections = expectation(description: "Will get list of connections");
             OTConnectionAPI.getList([2], done: { (response: OTConnectionsResponse) -> Void in
                 XCTAssertTrue(response.success);
                 if(response.success){
@@ -164,13 +164,13 @@ class OTConnectionAPITest: OTAPITest {
                 }
                 expectToGetConnections.fulfill();
             });
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
     
     func testGetWithContactInfoList() {
 
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         if(response.success) {
             
@@ -182,7 +182,7 @@ class OTConnectionAPITest: OTAPITest {
                 contactsAlreadyInOpenTime: [contactinfodata2]
             );
             
-            let expectation = expectationWithDescription("Get connection list");
+            let theExpectation = expectation(description: "Get connection list");
             OTConnectionAPI.getWithContactInfo(data, done: { (response: OTConnectionsResponse) -> Void in
                 XCTAssertEqual(response.success, true, response.message);
                 
@@ -205,10 +205,10 @@ class OTConnectionAPITest: OTAPITest {
                     }
                 }
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
         
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
 

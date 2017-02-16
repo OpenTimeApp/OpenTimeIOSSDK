@@ -34,12 +34,12 @@ public class OTSetConnectionData {
             "status"            : self._status,
             "last_updated"      : self._lastUpdated,
             "return_connection" : self._returnConnection
-        ];
+        ] as [String : Any];
         
-        return parameters;
+        return parameters as NSDictionary;
     }
     
-    public func shouldReturnConnection(shouldReturnConnection: Bool) {
+    public func shouldReturnConnection(_ shouldReturnConnection: Bool) {
         self._returnConnection = shouldReturnConnection;
     }
 }

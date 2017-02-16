@@ -18,28 +18,28 @@ public struct OTSerialHelper {
     
         - returns: Bool Whether or not the key exists in the response object.
     */
-    public static func keyExists(object: AnyObject!, key: String) -> Bool{
-        let keyExists = object.valueForKey(key) != nil;
+    public static func keyExists(_ object: AnyObject!, key: String) -> Bool{
+        let keyExists = object.value(forKey: key) != nil;
         return keyExists;
     }
     
-    public static func decodeJSONString(jsonString: String) -> NSDictionary {
+    public static func decodeJSONString(_ jsonString: String) -> NSDictionary {
         
         // Convert JSON string to a parsable data object.
-        let jsonData: NSData = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!;
+        let jsonData: Data = jsonString.data(using: String.Encoding.utf8, allowLossyConversion: true)!;
 
         // Parse the JSON string into a dictionary.
-        let parsedData: NSDictionary = (try! NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary;
+        let parsedData: NSDictionary = (try! JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary;
         
         return parsedData;
     }
     
-    public static func dataArrayToArray(dataArray: NSArray) -> Array<AnyObject> {
+    public static func dataArrayToArray(_ dataArray: NSArray) -> Array<AnyObject> {
         
         var anyObjectArray = Array<AnyObject>();
         
-        for var index = 0; index < dataArray.count; index++ {
-            let dataItem: AnyObject = dataArray.objectAtIndex(index);
+        for index in 0 ..< dataArray.count {
+            let dataItem: AnyObject = dataArray.object(at: index) as AnyObject;
             
             anyObjectArray.append(dataItem);
         }
@@ -47,12 +47,12 @@ public struct OTSerialHelper {
         return anyObjectArray;
     }
     
-    public static func dataArrayToArrayOfStrings(dataArray: NSArray) -> Array<String> {
+    public static func dataArrayToArrayOfStrings(_ dataArray: NSArray) -> Array<String> {
         
         var strings = Array<String>();
         
-        for var index = 0; index < dataArray.count; index++ {
-            let dataItem: AnyObject! = dataArray.objectAtIndex(index);
+        for index in 0 ..< dataArray.count {
+            let dataItem: AnyObject! = dataArray.object(at: index) as AnyObject!;
             if(dataItem != nil && (dataItem is String || dataItem is NSString)){
                 strings.append(dataItem as! String);
             }

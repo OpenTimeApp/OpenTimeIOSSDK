@@ -11,26 +11,26 @@ import AFNetworking
 
 public class OTOrganizationAPI {
     
-    public static func getMyOrganizations(done: (response: OTGetMyOrganizationsResponse)->Void){
+    public static func getMyOrganizations(_ done: @escaping (_ response: OTGetMyOrganizationsResponse)->Void){
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
-        requestManager.GET(OpenTimeSDK.getServer() + "/api/person/organizations",
+        requestManager.get(OpenTimeSDK.getServer() + "/api/person/organizations",
             parameters: [],
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) -> Void in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) -> Void in
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response: OTGetMyOrganizationsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTGetMyOrganizationsResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTGetMyOrganizationsResponse(success: false, message: "", rawData:nil);
                     reply.makeEmpty();
-                    done(response: reply);
+                    done(reply);
                 }
             },
             
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) -> Void in
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTGetMyOrganizationsResponse(success: response.success, message: response.message, rawData: nil));
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) -> Void in
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTGetMyOrganizationsResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         )

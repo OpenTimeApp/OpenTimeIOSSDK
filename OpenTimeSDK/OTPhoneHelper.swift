@@ -14,7 +14,7 @@ public class OTPhoneHelper {
     private static let _phoneUtil = NBPhoneNumberUtil();
     
     private static func _getCountry() -> String {
-        let countryCode: String = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as! String
+        let countryCode: String = (Locale.current as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String
         return countryCode;
     }
     
@@ -59,17 +59,17 @@ public class OTPhoneHelper {
                 return "";
             }
             
-            if((defaultFormatted as NSString).rangeOfString("-").location == NSNotFound) {
+            if((defaultFormatted as NSString).range(of: "-").location == NSNotFound) {
                 return defaultFormatted;
             }
             
-            var formatted = self._replaceFirst("-", replaceWith: " ", subject: defaultFormatted);
+            var formatted = self._replaceFirst(find: "-", replaceWith: " ", subject: defaultFormatted);
             
-            if((defaultFormatted as NSString).rangeOfString("-").location == NSNotFound) {
+            if((defaultFormatted as NSString).range(of: "-").location == NSNotFound) {
                 return formatted;
             }
             
-            formatted = self._replace("-", replaceWith: "", subject: formatted);
+            formatted = self._replace(find: "-", replaceWith: "", subject: formatted);
             
             number = nil;
             
@@ -87,10 +87,10 @@ public class OTPhoneHelper {
     }
     
     public static func getDialable(phoneNumber: String) -> String {
-        let badChars    = NSCharacterSet(charactersInString: "0123456789-+()");
-        let goodChars   = badChars.invertedSet;
-        let expandPhone = phoneNumber.componentsSeparatedByCharactersInSet(goodChars);
-        let cleanPhone  = expandPhone.joinWithSeparator("");
+        let badChars    = CharacterSet(charactersIn: "0123456789-+()");
+        let goodChars   = badChars.inverted;
+        let expandPhone = phoneNumber.components(separatedBy: goodChars);
+        let cleanPhone  = expandPhone.joined(separator: "");
         
         return cleanPhone;
     }
@@ -98,13 +98,12 @@ public class OTPhoneHelper {
     private static func _replaceFirst(find: String, replaceWith: Character, subject: String) -> String {
         
         if(subject != "") {
-            var explode = subject.componentsSeparatedByString(find);
+            var explode = subject.components(separatedBy: find);
             
             var joined = "";
             if(explode.count >= 2) {
                 joined = explode[0] + String(replaceWith) + explode[1];
-                
-                for(var i = 2; i < explode.count; i++) {
+                for i in 2..<explode.count {
                     joined += explode[i];
                 }
                 return joined;
@@ -121,7 +120,7 @@ public class OTPhoneHelper {
         let myDictionary = [find:replaceWith];
         var newString = subject;
         for (originalWord, newWord) in myDictionary {
-            newString = newString.stringByReplacingOccurrencesOfString(originalWord, withString:newWord, options: NSStringCompareOptions.LiteralSearch, range: nil)
+            newString = newString.replacingOccurrences(of: originalWord, with:newWord, options: NSString.CompareOptions.literal, range: nil)
         }
         
         return newString;
@@ -133,7 +132,7 @@ public class OTPhoneHelper {
             var number: NBPhoneNumber!
             number = try! self._phoneUtil.parse(phone, defaultRegion: country);
             
-            if(self._phoneUtil.isValidNumberForRegion(number, regionCode: country)) {
+            if(self._phoneUtil.isValidNumber(forRegion: number, regionCode: country)) {
                 number = nil;
                 return true;
             }else{

@@ -99,7 +99,7 @@
 /* Begin PBXFileReference section */
 		031C70191BFA218E00C79E28 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		031C701B1BFA268E00C79E28 /* OTDeserializedRegisteredPersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedRegisteredPersonData.swift; path = OpenTimeSDK/OTDeserializedRegisteredPersonData.swift; sourceTree = "<group>"; };
-		032A71591C2BA2DC00217B03 /* OTCreateMeetingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCreateMeetingData.swift; sourceTree = "<group>"; };
+		032A71591C2BA2DC00217B03 /* OTCreateMeetingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OTCreateMeetingData.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		032A715E1C2BAB0F00217B03 /* OTMeetingAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTMeetingAPI.swift; sourceTree = "<group>"; };
 		032A71601C2BAEB400217B03 /* OTCreateMeetingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTCreateMeetingResponse.swift; sourceTree = "<group>"; };
 		032A71621C2BAFBF00217B03 /* OTDeserializedCreateMeetingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedCreateMeetingResponse.swift; path = OpenTimeSDK/OTDeserializedCreateMeetingResponse.swift; sourceTree = "<group>"; };
@@ -139,9 +139,9 @@
 		03A137121BDD159E0005A721 /* OTPersonAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPersonAPITest.swift; sourceTree = "<group>"; };
 		03A137211BDD23E20005A721 /* OTAvailabilityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAvailabilityAPI.swift; path = OpenTimeSDK/OTAvailabilityAPI.swift; sourceTree = "<group>"; };
 		03A137221BDD23E20005A721 /* OTConnectionAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConnectionAPI.swift; path = OpenTimeSDK/OTConnectionAPI.swift; sourceTree = "<group>"; };
-		03A137231BDD23E20005A721 /* OTConnectionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConnectionsResponse.swift; path = OpenTimeSDK/OTConnectionsResponse.swift; sourceTree = "<group>"; };
+		03A137231BDD23E20005A721 /* OTConnectionsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = OTConnectionsResponse.swift; path = OpenTimeSDK/OTConnectionsResponse.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03A137241BDD23E20005A721 /* OTConnectionStatusOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConnectionStatusOption.swift; path = OpenTimeSDK/OTConnectionStatusOption.swift; sourceTree = "<group>"; };
-		03A137251BDD23E20005A721 /* OTContactInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTContactInfoData.swift; path = OpenTimeSDK/OTContactInfoData.swift; sourceTree = "<group>"; };
+		03A137251BDD23E20005A721 /* OTContactInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = OTContactInfoData.swift; path = OpenTimeSDK/OTContactInfoData.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03A137261BDD23E20005A721 /* OTDeserializedConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedConnection.swift; path = OpenTimeSDK/OTDeserializedConnection.swift; sourceTree = "<group>"; };
 		03A137271BDD23E20005A721 /* OTDeserializedConnectionAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedConnectionAvailability.swift; path = OpenTimeSDK/OTDeserializedConnectionAvailability.swift; sourceTree = "<group>"; };
 		03A137281BDD23E20005A721 /* OTDeserializedOneTimeAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeserializedOneTimeAvailability.swift; path = OpenTimeSDK/OTDeserializedOneTimeAvailability.swift; sourceTree = "<group>"; };
@@ -171,9 +171,9 @@
 		03F294DE1BDD438100B8DBB0 /* OTStringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTStringHelper.swift; sourceTree = "<group>"; };
 		03F2950B1BDD547100B8DBB0 /* OTTestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTTestHelper.swift; path = OpenTimeSDK/OTTestHelper.swift; sourceTree = "<group>"; };
 		03F295341BDD60CB00B8DBB0 /* OTAPIAuthorizedRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPIAuthorizedRequestOperationManager.swift; path = OpenTimeSDK/OTAPIAuthorizedRequestOperationManager.swift; sourceTree = "<group>"; };
-		03F295351BDD60CB00B8DBB0 /* OTAPIRawResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPIRawResponse.swift; path = OpenTimeSDK/OTAPIRawResponse.swift; sourceTree = "<group>"; };
-		03F295361BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPIRequestOperationManager.swift; path = OpenTimeSDK/OTAPIRequestOperationManager.swift; sourceTree = "<group>"; };
-		03F295371BDD60CB00B8DBB0 /* OTAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPIResponse.swift; path = OpenTimeSDK/OTAPIResponse.swift; sourceTree = "<group>"; };
+		03F295351BDD60CB00B8DBB0 /* OTAPIRawResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = OTAPIRawResponse.swift; path = OpenTimeSDK/OTAPIRawResponse.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03F295361BDD60CB00B8DBB0 /* OTAPIRequestOperationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = OTAPIRequestOperationManager.swift; path = OpenTimeSDK/OTAPIRequestOperationManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03F295371BDD60CB00B8DBB0 /* OTAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = OTAPIResponse.swift; path = OpenTimeSDK/OTAPIResponse.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03F295381BDD60CB00B8DBB0 /* OTDeviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeviceAPI.swift; path = OpenTimeSDK/OTDeviceAPI.swift; sourceTree = "<group>"; };
 		03F295391BDD60CB00B8DBB0 /* OTOpenTimeSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTOpenTimeSDK.swift; path = OpenTimeSDK/OTOpenTimeSDK.swift; sourceTree = "<group>"; };
 		03F2953A1BDD60CB00B8DBB0 /* OTReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTReachability.swift; path = OpenTimeSDK/OTReachability.swift; sourceTree = "<group>"; };
@@ -609,9 +609,11 @@
 				TargetAttributes = {
 					03A136941BDC57F00005A721 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 					03A1369E1BDC57F00005A721 = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -826,6 +828,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -867,6 +870,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -891,6 +895,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -910,6 +915,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
@@ -923,6 +929,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenTimeSDKTests/OpenTimeSDKTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -935,6 +942,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OpenTime.OpenTimeSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenTimeSDKTests/OpenTimeSDKTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};

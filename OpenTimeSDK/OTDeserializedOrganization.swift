@@ -19,9 +19,9 @@ public class OTDeserializedOrganization : OTDeserializer {
     private var _logoURL : String;
     
     public required init(dictionary: NSDictionary){
-        self._orgID   = dictionary.objectForKey(Keys.ORG_ID) as! OpenTimeOrgID;
-        self._name    = dictionary.objectForKey(Keys.NAME) as! String;
-        self._logoURL = dictionary.objectForKey(Keys.LOGO_URL) as! String;
+        self._orgID   = dictionary.object(forKey: Keys.ORG_ID) as! OpenTimeOrgID;
+        self._name    = dictionary.object(forKey: Keys.NAME) as! String;
+        self._logoURL = dictionary.object(forKey: Keys.LOGO_URL) as! String;
     }
     
     public func getOrgID() -> OpenTimeOrgID {

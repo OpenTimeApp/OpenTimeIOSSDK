@@ -11,90 +11,90 @@ import AFNetworking
 
 public class OTAvailabilityAPI: NSObject
 {
-    public class func getAllMyAvailability(done: (response: OTGetAllMyAvailabilityResponse)->Void)
+    public static func getAllMyAvailability(_ done: @escaping (_ response: OTGetAllMyAvailabilityResponse)->Void)
     {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
         requestManager.setCacheMaxAge(1);
         
-        requestManager.GET(OpenTimeSDK.getServer() + "/api/availability/all",
+        _ = requestManager.get(OpenTimeSDK.getServer() + "/api/availability/all",
             parameters: [String:AnyObject](),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response: OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTGetAllMyAvailabilityResponse(success: false, message: "", rawData: nil);
                     reply.makeEmpty();
-                    done(response: reply);
+                    done(reply);
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: nil));
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTGetAllMyAvailabilityResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );
     }
     
-    public class func removeOneTimeAvailability(availability: OTRemoveOneTimeAvailabilityData, done: (response: OTAPIResponse)->Void)
+    public static func removeOneTimeAvailability(_ availability: OTRemoveOneTimeAvailabilityData, done: @escaping (_ response: OTAPIResponse)->Void)
     {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
-        requestManager.DELETE(OpenTimeSDK.getServer() + "/api/availability/oneTime/" + String(availability.getCreatedTimestamp()),
+        _ = requestManager.delete(OpenTimeSDK.getServer() + "/api/availability/oneTime/" + String(availability.getCreatedTimestamp()),
             parameters: availability.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
-                done(response: response);
+                done(response);
             },
-            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
-                requestManager.apiResult(operation, error: error, done: done);
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: done);
             }
         );
     }
     
-    public class func setOneTimeAvailability(availability: OTSetOneTimeAvailabilityData, done: (response: OTAPIResponse)->Void)
+    public static func setOneTimeAvailability(_ availability: OTSetOneTimeAvailabilityData, done: @escaping (_ response: OTAPIResponse)->Void)
     {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
-        requestManager.PUT(OpenTimeSDK.getServer() + "/api/availability/oneTime/" + String(availability.getCreatedTimestamp()),
+        _ = requestManager.put(OpenTimeSDK.getServer() + "/api/availability/oneTime/" + String(availability.getCreatedTimestamp()),
             parameters: availability.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 requestManager.apiResult(operation, error: nil, done: done);
             },
-            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
-                requestManager.apiResult(operation, error: error, done: done);
+            failure: { (operation: AFHTTPRequestOperation?,error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: done);
             }
         );
     }
     
-    public class func getConnectionsAvailability(done: (response: OTGetConnectionsAvailabilityResponse)->Void)
+    public static func getConnectionsAvailability(_ done: @escaping (_ response: OTGetConnectionsAvailabilityResponse)->Void)
     {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
         requestManager.setCacheMaxAge(0.5);
         
-        requestManager.GET(OpenTimeSDK.getServer() + "/api/availability/forConnections",
+        _ = requestManager.get(OpenTimeSDK.getServer() + "/api/availability/forConnections",
             parameters: [String:AnyObject](),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response: OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTGetConnectionsAvailabilityResponse(success:false, message: "", rawData: nil);
                     reply.makeEmpty();
-                    done(response: reply);
+                    done(reply);
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: nil));
+            failure: { (operation: AFHTTPRequestOperation?,error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTGetConnectionsAvailabilityResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );

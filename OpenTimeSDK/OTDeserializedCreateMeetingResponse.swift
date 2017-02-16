@@ -15,7 +15,7 @@ public class OTDeserializedCreateMeetingResponseData : OTDeserializer{
     private var _meetingID: Int;
     
     public required init(dictionary: NSDictionary){
-        self._meetingID = dictionary.valueForKey(Keys.MEETING_ID) as! Int;
+        self._meetingID = dictionary.value(forKey: Keys.MEETING_ID) as! Int;
     }
     
     public func getMeetingID() -> Int {

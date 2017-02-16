@@ -32,10 +32,11 @@ public class OTGetConnectionsWithContactInfoData {
             "cell_phones" : phones
         ];
         
-        return data;
+        return data as NSDictionary;
     }
     
-    private func _getEmails(list: Array<OTContactInfoData>, var appendToList: Array<String>) -> Array<String> {
+    private func _getEmails(_ list: Array<OTContactInfoData>, appendToList: Array<String>) -> Array<String> {
+        var appendToList = appendToList
         
         for contact in list {
             let contactEmails = contact.getEmails();
@@ -48,7 +49,8 @@ public class OTGetConnectionsWithContactInfoData {
         return appendToList;
     }
     
-    private func _getCellPhones(list: Array<OTContactInfoData>, var appendToList: Array<String>) -> Array<String>{
+    private func _getCellPhones(_ list: Array<OTContactInfoData>, appendToList: Array<String>) -> Array<String>{
+        var appendToList = appendToList
 
         for contact in list {
             let contactPhones = contact.getCellPhones()

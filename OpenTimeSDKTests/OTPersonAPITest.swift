@@ -18,11 +18,11 @@ class OTPersonAPITest: XCTestCase {
     }
     
     func testCreateUser() {
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["clear_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["clear_users"], resetCache: true);
         
         if(response.success) {
             
-            let expectation = expectationWithDescription("Create Users");
+            let theExpectation = expectation(description: "Create Users");
             
             let data = OTNewPersonData(
                 firstName: "Mr",
@@ -41,17 +41,17 @@ class OTPersonAPITest: XCTestCase {
                     XCTAssertEqual(1, response.getPerson()!.getUserID());
                 }
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
             
-            waitForExpectationsWithTimeout(5.0, handler:nil)
+            waitForExpectations(timeout: 5.0, handler:nil)
         }
     }
     
     func testSignIn() {
         
         // Setup test data on server.
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
 
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
@@ -59,7 +59,7 @@ class OTPersonAPITest: XCTestCase {
         if(response.success)
         {
             
-            let expectation = expectationWithDescription("Sign in");
+            let theExpectation = expectation(description: "Sign in");
             
             let email: String = "tester1@app.opentimeapp.com";
             let password: String = "I love testing";
@@ -83,17 +83,17 @@ class OTPersonAPITest: XCTestCase {
                     }
                 }
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
     
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
     
     func testUpdatePassword() {
         
         // Setup test data on server.
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
@@ -103,17 +103,17 @@ class OTPersonAPITest: XCTestCase {
             OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
             OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
             
-            let expectation = expectationWithDescription("Update password");
+            let theExpectation = expectation(description: "Update password");
             
             let request = OTUpdatePasswordRequest(password: "alsdfsjalsdfk", confirmPassword: "alsdfsjalsdfk");
             
             OTPersonAPI.updatePassword(request, done: { (response: OTAPIResponse) -> Void in
                 XCTAssertTrue(response.success == true);
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             })
             
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
 

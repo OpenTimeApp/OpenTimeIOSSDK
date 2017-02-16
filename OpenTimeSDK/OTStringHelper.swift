@@ -8,26 +8,26 @@
 
 public class OTStringHelper {
     
-    public class func isValidEmail(email:String) -> Bool {
+    public static func isValidEmail(_ email:String) -> Bool {
         
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let emailTest: NSPredicate! = NSPredicate(format:"SELF MATCHES %@", emailRegEx);
         
         if(emailTest != nil)
         {
-            return emailTest.evaluateWithObject(email)
+            return emailTest.evaluate(with: email)
         }
         
         return false
     }
     
-    public class func ucFirst(text: String)->String
+    public static func ucFirst(_ text: String)->String
     {
         if(text.characters.count > 0) {
-            let myText = text.lowercaseString;
-            let firstLetter = text.substringToIndex(myText.startIndex.advancedBy(1));
-            let firstCharRange = Range<String.Index>(start: myText.startIndex, end: myText.startIndex.advancedBy(1));
-            let finalText = text.stringByReplacingCharactersInRange(firstCharRange, withString: firstLetter.uppercaseString);
+            let myText = text.lowercased();
+            let firstLetter = text.substring(to: myText.characters.index(myText.startIndex, offsetBy: 1));
+            let firstCharRange = (myText.startIndex ..< myText.characters.index(myText.startIndex, offsetBy: 1));
+            let finalText = text.replacingCharacters(in: firstCharRange, with: firstLetter.uppercased());
             return finalText;
         }else{
             return text;

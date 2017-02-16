@@ -11,14 +11,14 @@ internal class OpenTimeSDKTestConstants {
     private init (){}
     
     private static let CONFIG_PATH: String  = {
-        let bundle = NSBundle(forClass: OpenTimeSDKTestConstants().dynamicType);
+        let bundle = Bundle(for: type(of: OpenTimeSDKTestConstants()));
         
-        return bundle.pathForResource("Config", ofType: "plist") as String!;
+        return bundle.path(forResource: "Config", ofType: "plist") as String!;
     }();
     
     internal static let API_KEY: String = {
         let dictionary: NSDictionary! = NSDictionary(contentsOfFile: OpenTimeSDKTestConstants.CONFIG_PATH);
         
-        return dictionary.objectForKey("OPENTIME_KEY") as! String;
+        return dictionary.object(forKey: "OPENTIME_KEY") as! String;
     }();
 }

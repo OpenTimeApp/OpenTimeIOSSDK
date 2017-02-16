@@ -7,7 +7,7 @@
 //
 
 extension Array {
-    func has<T : Equatable>(obj: T) -> Bool {
+    func has<T : Equatable>(_ obj: T) -> Bool {
         let filtered = self.filter {$0 as? T == obj}
         return filtered.count > 0
     }

@@ -10,7 +10,7 @@ import AFNetworking
 
 public class OTConnectionAPI {
    
-    public class func set(connectionData: OTSetConnectionData, done: (response: OTSetConnectionResponse)->Void)
+    public static func set(connectionData: OTSetConnectionData, done: @escaping (_ response: OTSetConnectionResponse)->Void)
     {
         // Setup request manager.
         let requestManager = OTAPIAuthorizedRequestOperationManager();
@@ -21,28 +21,28 @@ public class OTConnectionAPI {
         }
 
         // Run query.
-        requestManager.PUT(OpenTimeSDK.getServer() + "/api/connection/" + String(connectionData.getUserID()),
+        _ = requestManager.put(OpenTimeSDK.getServer() + "/api/connection/" + String(connectionData.getUserID()),
             parameters: connectionData.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTSetConnectionResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
-                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, rawData: nil));
+                    done(OTSetConnectionResponse(success: response.success, message: response.message, rawData: nil));
                 }
             },
             
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTSetConnectionResponse(success: response.success, message: response.message, rawData: nil));
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTSetConnectionResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );
     }
     
-    public class func remove(id: Int, lastUpdated: Int, done: (response: OTAPIResponse)->Void)
+    public static func remove(_ id: Int, lastUpdated: Int, done: @escaping (_ response: OTAPIResponse)->Void) -> Void
     {
         // Setup request manager
         let requestManager = OTAPIAuthorizedRequestOperationManager();
@@ -52,19 +52,17 @@ public class OTConnectionAPI {
             "last_updated": lastUpdated,
         ];
         
-        // Start the request
-        requestManager.DELETE(OpenTimeSDK.getServer() + "/api/connection/" + String(id),
+        _ = requestManager.delete(
+            OpenTimeSDK.getServer() + "/api/connection/" + String(id),
             parameters: parameters,
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-                requestManager.apiResult(operation, error: nil, done: done);
-            },
-            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
-                requestManager.apiResult(operation, error: error, done: done);
-            }
-        );
+            success: { (operation: AFHTTPRequestOperation, error: Any) in
+            requestManager.apiResult(operation, error: nil, done: done);
+        }) { (operation: AFHTTPRequestOperation?, error: Error) in
+            requestManager.apiResult(operation, error: error as NSError!, done: done);
+        }
     }
     
-    public class func getAll(done: (response: OTConnectionsResponse)->Void)
+    public static func getAll(_ done: @escaping (_ response: OTConnectionsResponse)->Void) -> Void
     {
         // Setup request manager
         let requestManager = OTAPIAuthorizedRequestOperationManager();
@@ -72,29 +70,29 @@ public class OTConnectionAPI {
         requestManager.setCacheMaxAge(1);
         
         // Start the request
-        requestManager.GET(OpenTimeSDK.getServer() + "/api/connection/all",
+        requestManager.get(OpenTimeSDK.getServer() + "/api/connection/all",
             parameters: [String:AnyObject](),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTConnectionsResponse(success: false, message: "", rawData: nil);
                     reply.makeEmpty();
-                    done(response: reply)
+                    done(reply)
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );
     }
     
-    public class func getWithContactInfo(data: OTGetConnectionsWithContactInfoData, done: (response:OTConnectionsResponse)->Void)
+    public static func getWithContactInfo(_ data: OTGetConnectionsWithContactInfoData, done: @escaping (_ response:OTConnectionsResponse)->Void)
     {
         
         // Setup request manager
@@ -104,32 +102,30 @@ public class OTConnectionAPI {
         requestManager.setClearCacheForPostAndPut(false);
         
         // Start the request
-        requestManager.POST(OpenTimeSDK.getServer() + "/api/connection/withContactInfoList",
+        _ = requestManager.post(OpenTimeSDK.getServer() + "/api/connection/withContactInfoList",
             parameters: data.getParameters(),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                   done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                   done(OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTConnectionsResponse(success: false, message: "", rawData: nil);
                     reply.makeEmpty();
-                    done(response: reply)
+                    done(reply)
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                var errResponse: String = String(data: (error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as! NSData), encoding: NSUTF8StringEncoding)!
-                NSLog("%@", errResponse)
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
                 
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil))
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTConnectionsResponse(success: response.success, message: response.message, rawData: nil))
                 });
             }
         );
     }
     
-    public class func getList(list: Array<Int>, done: (response: OTConnectionsResponse)->Void)
+    public static func getList(_ list: Array<Int>, done: @escaping (_ response: OTConnectionsResponse)->Void)
     {
         // Setup request manager
         let requestManager = OTAPIAuthorizedRequestOperationManager();
@@ -139,7 +135,7 @@ public class OTConnectionAPI {
         for item in list {
             stringList.append(String(item));
         }
-        let joinedList = stringList.joinWithSeparator(",");
+        let joinedList = stringList.joined(separator: ",");
         
         // Build parameter list.
         let parameters = [
@@ -147,23 +143,23 @@ public class OTConnectionAPI {
         ];
         
         // Start the request
-        requestManager.GET(OpenTimeSDK.getServer() + "/api/connection/withList",
+        _ = requestManager.get(OpenTimeSDK.getServer() + "/api/connection/withList",
             parameters: parameters,
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 
                 let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
                 
                 if(response.rawData != nil){
-                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                    done(OTConnectionsResponse(success: response.success, message: response.message, rawData: response.rawData!));
                 }else{
                     let reply = OTConnectionsResponse(success: false, message: "", rawData: nil);
                     reply.makeEmpty();
-                    done(response: reply)
+                    done(reply)
                 }
             },
-            failure: { (operation: AFHTTPRequestOperation?, error: NSError) in
-                requestManager.apiResult(operation, error: error, done: {(response: OTAPIResponse)->Void in
-                    done(response: OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
+            failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: {(response: OTAPIResponse)->Void in
+                    done(OTConnectionsResponse(success: response.success, message: response.message, rawData: nil));
                 });
             }
         );

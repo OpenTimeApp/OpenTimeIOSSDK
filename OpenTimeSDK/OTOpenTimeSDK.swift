@@ -28,17 +28,17 @@ public class OpenTimeSDK {
         self._pinToCert("cert");
     }
     
-    public func setPlainTextCredentials(userID: OpenTimeUserID, password: String){
+    public func setPlainTextCredentials(_ userID: OpenTimeUserID, password: String){
         self._userID = userID;
         self._encryptedPassword = OTPasswordHelper.encryptPlainTextPassword(password);
     }
     
-    public func setHashedCredentials(userID: OpenTimeUserID, hashedPassword: String){
+    public func setHashedCredentials(_ userID: OpenTimeUserID, hashedPassword: String){
         self._userID = userID;
         self._encryptedPassword = OTPasswordHelper.encryptHashedPassword(hashedPassword);
     }
     
-    public static func initSession(apiKey: String, inTestMode: Bool = false){
+    public static func initSession(_ apiKey: String, inTestMode: Bool = false){
         self.session = OpenTimeSDK(apiKey: apiKey, inTestMode: inTestMode);
     }
     
@@ -50,7 +50,7 @@ public class OpenTimeSDK {
         }
     }
     
-    public func setServer(server: String){
+    public func setServer(_ server: String){
         self._server = server;
     }
     
@@ -85,13 +85,13 @@ public class OpenTimeSDK {
         self._pinToCert("cert_invalid");
     }
     
-    private func _pinToCert(name: String){
+    private func _pinToCert(_ name: String){
         
-        let bundle = NSBundle(forClass: self.dynamicType);
-        let certificatePath = bundle.pathForResource("cert", ofType: "der")!
+        let bundle = Bundle(for: type(of: self));
+        let certificatePath = bundle.path(forResource: "cert", ofType: "der")!
         let certificateData = NSData(contentsOfFile: certificatePath)!
         
-        let securityPolicy = AFSecurityPolicy(pinningMode: AFSSLPinningMode.PublicKey)
+        let securityPolicy = AFSecurityPolicy(pinningMode: AFSSLPinningMode.publicKey)
         securityPolicy.pinnedCertificates = [certificateData];
         securityPolicy.allowInvalidCertificates = false;
         self._policy = securityPolicy;

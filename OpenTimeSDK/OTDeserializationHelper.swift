@@ -8,17 +8,17 @@
 
 internal class OTDeserializationHelper {
     
-    internal static func deserializeList(rawData: NSArray, type: OTDeserializer.Type ) -> NSArray {
+    internal static func deserializeList(_ rawData: NSArray, type: OTDeserializer.Type ) -> NSArray {
         
         let list: NSMutableArray = NSMutableArray();
         
-        for var attendeeIndex = 0; attendeeIndex < rawData.count; attendeeIndex++ {
+        for attendeeIndex in 0 ..< rawData.count {
             
-            let rawAttendeeData = rawData.objectAtIndex(attendeeIndex) as! NSDictionary;
+            let rawAttendeeData = rawData.object(at: attendeeIndex) as! NSDictionary;
             
             let deserializer = type.init(dictionary: rawAttendeeData);
             
-            list.addObject(deserializer as! AnyObject);
+            list.add(deserializer as AnyObject);
         }
     
         return list as NSArray;

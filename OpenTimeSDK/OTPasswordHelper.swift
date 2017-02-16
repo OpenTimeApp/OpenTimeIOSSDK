@@ -8,7 +8,7 @@
 
 public class OTPasswordHelper {
     
-    public static func encryptPlainTextPassword(password: String)->String
+    public static func encryptPlainTextPassword(_ password: String)->String
     {
         // Double hash with salt so that the text stored in the ios database used to authenticate when a user opens the app isn't the same one being sent to the server.
         let hash1 = self._encryptString(password);
@@ -17,7 +17,7 @@ public class OTPasswordHelper {
         return hash2;
     }
     
-    private static func _encryptString(text: String)->String {
+    private static func _encryptString(_ text: String)->String {
         
         let mash = OTConstant.SALT_1 + text;
         let hash = mash.md5Fixed();
@@ -25,7 +25,7 @@ public class OTPasswordHelper {
         return hash;
     }
     
-    public static func encryptHashedPassword(password: String)->String
+    public static func encryptHashedPassword(_ password: String)->String
     {
         let mash = OTConstant.SALT_2 + password;
         let hash = mash.md5Fixed();

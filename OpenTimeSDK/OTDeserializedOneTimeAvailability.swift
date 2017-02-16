@@ -23,11 +23,11 @@ public class OTDeserializedOneTimeAvailability : OTDeserializer {
     private var _lastUpdated: OpenTimeTimeStamp;
     
     public required init(dictionary: NSDictionary){
-        self._created     = dictionary.objectForKey(Keys.TIME_CREATED) as! Int;
-        self._start       = dictionary.objectForKey(Keys.START) as! Int;
-        self._end         = dictionary.objectForKey(Keys.END) as! Int;
-        self._status      = dictionary.objectForKey(Keys.STATUS) as! Int;
-        self._lastUpdated = dictionary.objectForKey(Keys.LAST_UPDATED) as! Int;
+        self._created     = dictionary.object(forKey: Keys.TIME_CREATED) as! Int;
+        self._start       = dictionary.object(forKey: Keys.START) as! Int;
+        self._end         = dictionary.object(forKey: Keys.END) as! Int;
+        self._status      = dictionary.object(forKey: Keys.STATUS) as! Int;
+        self._lastUpdated = dictionary.object(forKey: Keys.LAST_UPDATED) as! Int;
     }
     
     public func getCreatedTimestamp() -> OpenTimeTimeStamp {

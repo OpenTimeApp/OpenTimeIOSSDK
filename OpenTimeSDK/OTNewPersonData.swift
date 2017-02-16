@@ -29,7 +29,7 @@ public class OTNewPersonData {
         
         let validFirstName = OTStringHelper.ucFirst(self._firstName);
         let validLastName  = OTStringHelper.ucFirst(self._lastName);
-        let validPhone     = OTPhoneHelper.format(self._cellPhone);
+        let validPhone     = OTPhoneHelper.format(phone: self._cellPhone);
         
         let parameters = [
             "email":self._email,
@@ -39,14 +39,14 @@ public class OTNewPersonData {
             "cell_phone": validPhone
         ];
         
-        return parameters;
+        return parameters as NSDictionary;
     }
     
     public func checkInputs() -> OTAPIResponse {
         
         let validFirstName = OTStringHelper.ucFirst(self._firstName);
         let validLastName  = OTStringHelper.ucFirst(self._lastName);
-        let validPhone     = OTPhoneHelper.format(self._cellPhone);
+        let validPhone     = OTPhoneHelper.format(phone: self._cellPhone);
         
         let response = OTPersonValidationHelper.createUserInputsValid(_email, phoneNumber: validPhone, firstName: validFirstName, lastName: validLastName, password: _password, confirmPassword: _confirmPassword);
         

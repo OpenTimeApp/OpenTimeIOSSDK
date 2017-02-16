@@ -25,7 +25,7 @@ public class OTRemoveOneTimeAvailabilityData {
             "last_updated":self._lastUpdated
         ];
         
-        return parameters;
+        return parameters as NSDictionary;
     }
     
     public func getCreatedTimestamp() -> OpenTimeTimeStamp {

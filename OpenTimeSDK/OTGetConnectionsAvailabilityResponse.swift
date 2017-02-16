@@ -20,11 +20,11 @@ public class OTGetConnectionsAvailabilityResponse: OTAPIResponse {
         }
     }
     
-    private func _deserializeConnectionsAvailability(rawData: NSArray){
+    private func _deserializeConnectionsAvailability(_ rawData: NSArray){
         
-        for var connectionIndex = 0; connectionIndex < rawData.count; connectionIndex++ {
+        for connectionIndex in 0 ..< rawData.count {
             
-            let connectionData: NSDictionary = rawData.objectAtIndex(connectionIndex) as! NSDictionary;
+            let connectionData: NSDictionary = rawData.object(at: connectionIndex) as! NSDictionary;
             
             let connectionListItem = OTDeserializedConnectionAvailability(dictionary: connectionData);
             

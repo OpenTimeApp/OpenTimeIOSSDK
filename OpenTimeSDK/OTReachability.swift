@@ -18,11 +18,11 @@ public class OTReachability {
     }
     
     public static func beginNetworkMonitoring() {
-        AFNetworkReachabilityManager.sharedManager().startMonitoring();
+        AFNetworkReachabilityManager.shared().startMonitoring();
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)){
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async{
             // Give teh ReachabilityManager at least 5 seconds to identify whether or not there is a network connection.
-            NSThread.sleepForTimeInterval(5.0);
+            Thread.sleep(forTimeInterval: 5.0);
             self._didTestNetworkConnection = true;
         }
     }

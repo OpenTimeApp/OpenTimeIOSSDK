@@ -39,8 +39,8 @@ public class OTCreateMeetingData {
             "end"          : self._end,
             "created"      : self._lastUpdated,
             "attendee_list": self._attendees
-        ];
+        ] as [String : Any];
         
-        return parameters;
+        return parameters as NSDictionary;
     }
 }

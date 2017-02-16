@@ -14,15 +14,15 @@ class OTMeetingAttendeeAPITest: OTAPITest {
     
     func testUpdate() {
         
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_meetings","make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_meetings","make_users"], resetCache: true);
         
         XCTAssertTrue(response.success);
         if(response.success) {
             
             // Create an expectation to be fulfilled.
-            let expectation = expectationWithDescription("Get a meeting");
+            let theExpectation = expectation(description: "Get a meeting");
             
-            OTMeetingAPI.getAllMyMeetings({ (response) -> Void in
+            OTMeetingAPI.getAllMyMeetings(done: { (response) -> Void in
                 
                 XCTAssertTrue(response.success == true);
                 if(response.success == true) {
@@ -46,7 +46,7 @@ class OTMeetingAttendeeAPITest: OTAPITest {
                         
                         OTMeetingAttendeeAPI.set(attendeeStatusUpdateData, done: { (response: OTSetMeetingAttendeeResponse) -> Void in
                             
-                            OTMeetingAPI.getAllMyMeetings({ (response: OTGetAllMyMeetingsResponse) -> Void in
+                            OTMeetingAPI.getAllMyMeetings(done: { (response: OTGetAllMyMeetingsResponse) -> Void in
                                 var updatedMeetings = response.getMeetings();
                                 
                                 XCTAssertTrue(updatedMeetings.count > 0);
@@ -62,19 +62,19 @@ class OTMeetingAttendeeAPITest: OTAPITest {
                                 }
                                 
                                 // Tell the test handler that the test is done.
-                                expectation.fulfill();
+                                theExpectation.fulfill();
                             });
                         })
                         
                     }else{
                         // Tell the test handler that the test is done.
-                        expectation.fulfill();
+                        theExpectation.fulfill();
                     }
                 }
             })
             
             // Start waiting for the test to be fulfilled for 5 seconds.
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
 }

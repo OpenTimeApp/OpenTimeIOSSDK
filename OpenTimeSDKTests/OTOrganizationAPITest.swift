@@ -14,7 +14,7 @@ class OTOrganizationAPITest : OTAPITest {
     
     func testMyOrganizations() {
         
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users"], resetCache: true);
 
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
@@ -22,7 +22,7 @@ class OTOrganizationAPITest : OTAPITest {
         if(response.success) {
 
             // Create an expectation to be fulfilled.
-            let expectation = expectationWithDescription("Get my organizations");
+            let theExpectation = expectation(description: "Get my organizations");
             
             OTOrganizationAPI.getMyOrganizations({ (response: OTGetMyOrganizationsResponse) -> Void in
                 
@@ -35,13 +35,13 @@ class OTOrganizationAPITest : OTAPITest {
                     
                     XCTAssertEqual(1, organization.getOrgID());
                     XCTAssertEqual("OpenTime", organization.getName());
-                    XCTAssertEqual("http://app.opentimeapp.com/img/logo/icon-transparent-filled.png", organization.getLogoURL());
+                    XCTAssertEqual("https://s3-us-west-2.amazonaws.com/test-opentime-org-images/icon-transparent-filled.png", organization.getLogoURL());
                 }
 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
         
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
     

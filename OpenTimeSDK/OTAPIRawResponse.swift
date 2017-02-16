@@ -64,7 +64,7 @@ public class OTAPIRawResponse {
     
         - returns: A raw response object with the values of the first level of the JSON object.
     */
-    public class func deserialize(responseObject: AnyObject!) -> OTAPIRawResponse {
+    public static func deserialize(_ responseObject: AnyObject!) -> OTAPIRawResponse {
         
         // Setup the raw response object.
         let rawResponse: OTAPIRawResponse = OTAPIRawResponse();
@@ -74,12 +74,12 @@ public class OTAPIRawResponse {
             
             // Try to get the success from the response object.
             if(OTSerialHelper.keyExists(responseObject, key: "success") == true) {
-                rawResponse._success = responseObject.objectForKey("success") as! Bool;
+                rawResponse._success = responseObject.object(forKey: "success") as! Bool;
             }
             
             // Try to get the message from the response object.
             if(OTSerialHelper.keyExists(responseObject, key: "message") == true) {
-                rawResponse._message = responseObject.objectForKey("message") as! String;
+                rawResponse._message = responseObject.object(forKey: "message") as! String;
             }
             
             // Try to get the data from the response object.
@@ -101,10 +101,10 @@ public class OTAPIRawResponse {
     
         - returns: The data element of the response object.
     */
-    private static func _getData(responseObject: AnyObject) -> AnyObject!
+    private static func _getData(_ responseObject: AnyObject) -> AnyObject!
     {
         // Try to get the data object.
-        let data: AnyObject! = responseObject["data"]!;
+        let data: AnyObject! = responseObject["data"]! as AnyObject!;
         
         // Set data property of the OTAPIResponse as a typed object.
         if(data is NSDictionary)

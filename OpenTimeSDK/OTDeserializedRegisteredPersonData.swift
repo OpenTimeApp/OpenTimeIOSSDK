@@ -15,7 +15,7 @@ public class OTDeserializedRegisteredPersonData : OTDeserializer {
     private var _userID: OpenTimeUserID;
     
     public required init(dictionary: NSDictionary){
-        self._userID = dictionary.valueForKey(Keys.USER_ID) as! OpenTimeUserID;
+        self._userID = dictionary.value(forKey: Keys.USER_ID) as! OpenTimeUserID;
     }
     
     public func getUserID() -> OpenTimeUserID {

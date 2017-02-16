@@ -19,7 +19,7 @@ class OTMeetingAPITest: OTAPITest {
     
     func testCreateMeeting()
     {
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users", "make_meetings"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users", "make_meetings"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
@@ -27,7 +27,7 @@ class OTMeetingAPITest: OTAPITest {
         if(response.success) {
             
             // Create an expectation to be fulfilled.
-            let expectation = expectationWithDescription("Create Meeting");
+            let theExpectation = expectation(description: "Create Meeting");
             
             // Setup the test data to send to server.
             let start: Int = Int(NSDate().timeIntervalSince1970) + 3600;
@@ -37,7 +37,7 @@ class OTMeetingAPITest: OTAPITest {
             let createMeetingData = OTCreateMeetingData(orgID: 1,
                 creator: 1, start: start, end: end, lastUpdated: start, attendees: [1, 2]);
             
-            OTMeetingAPI.create(createMeetingData, done: { (response) -> Void in
+            OTMeetingAPI.create(createMeetingData: createMeetingData, done: { (response) -> Void in
                 XCTAssertTrue(response.success);
                 
                 XCTAssertNotNil(response.getMeetingData());
@@ -46,15 +46,15 @@ class OTMeetingAPITest: OTAPITest {
                     XCTAssertEqual(2, response.getMeetingData()?.getMeetingID());
                 }
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
             
-            waitForExpectationsWithTimeout(5.0, handler: nil);
+            waitForExpectations(timeout: 5.0, handler: nil);
         }
     }
     
     func testGetAllMyMeetings() {
-        let response: OTAPIResponse = TestHelper.getDataResetResponse(self, scriptNames: ["make_users", "make_meetings"], resetCache: true);
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: ["make_users", "make_meetings"], resetCache: true);
         
         // Verify test data was setup correctly.
         XCTAssertTrue(response.success, response.message);
@@ -62,9 +62,9 @@ class OTMeetingAPITest: OTAPITest {
         if(response.success) {
             
             // Create an expectation to be fulfilled.
-            let expectation = expectationWithDescription("Get all my meetings");
+            let theExpectation = expectation(description: "Get all my meetings");
             
-            OTMeetingAPI.getAllMyMeetings({ (response: OTGetAllMyMeetingsResponse) -> Void in
+            OTMeetingAPI.getAllMyMeetings(done: { (response: OTGetAllMyMeetingsResponse) -> Void in
                 XCTAssertTrue(response.success);
                 XCTAssertEqual(1, response.getMeetings().count);
                 
@@ -104,10 +104,10 @@ class OTMeetingAPITest: OTAPITest {
                     }
                 }
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
             
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
 }

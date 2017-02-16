@@ -18,8 +18,8 @@ public class OTDeserializedConnectionAvailability : OTDeserializer{
     
     public required init(dictionary: NSDictionary){
     
-        let availabilityData: NSDictionary = dictionary.objectForKey(Keys.AVAILABILITY) as! NSDictionary;
-        self._userID  = dictionary.objectForKey(Keys.USER_ID) as! Int;
+        let availabilityData: NSDictionary = dictionary.object(forKey: Keys.AVAILABILITY) as! NSDictionary;
+        self._userID  = dictionary.object(forKey: Keys.USER_ID) as! Int;
         
         self._availability = OTDeserializedAvailability(dictionary: availabilityData);
     }

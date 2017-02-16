@@ -11,17 +11,17 @@ import AFNetworking
 
 public struct OTDeviceAPI
 {
-    public static func set(key: String, done: (response: OTAPIResponse)->Void)
+    public static func set(_ key: String, done: @escaping (_ response: OTAPIResponse)->Void)
     {
         let requestManager = OTAPIAuthorizedRequestOperationManager();
         
-        requestManager.PUT(OpenTimeSDK.getServer() + "/api/device/ios/" + key,
+        _ = requestManager.put(OpenTimeSDK.getServer() + "/api/device/ios/" + key,
             parameters: [String:AnyObject](),
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
                 requestManager.apiResult(operation, error: nil, done: done);
             },
-            failure: { (operation: AFHTTPRequestOperation?,error: NSError) in
-                requestManager.apiResult(operation, error: error, done: done);
+            failure: { (operation: AFHTTPRequestOperation?,error: Error) in
+                requestManager.apiResult(operation, error: error as NSError!, done: done);
             }
         );
     }

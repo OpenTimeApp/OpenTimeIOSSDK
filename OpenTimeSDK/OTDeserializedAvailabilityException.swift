@@ -17,8 +17,8 @@ public class OTDeserializedAvailabilityException : OTDeserializer {
     private var _end: OpenTimeUserID;
     
     public required init(dictionary: NSDictionary) {
-        self._start = dictionary.objectForKey(Keys.START) as! Int;
-        self._end   = dictionary.objectForKey(Keys.END) as! Int;
+        self._start = dictionary.object(forKey: Keys.START) as! Int;
+        self._end   = dictionary.object(forKey: Keys.END) as! Int;
     }
     
     public func getStart() -> OpenTimeTimeStamp {

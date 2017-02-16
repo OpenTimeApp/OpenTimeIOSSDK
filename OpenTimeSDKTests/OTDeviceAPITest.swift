@@ -18,7 +18,7 @@ class OTDeviceAPITest: XCTestCase {
     }
     
     func testSetDeviceKey() {
-        let resetExpectation = expectationWithDescription("Setup test");
+        let resetExpectation = expectation(description: "Setup test");
         
         var keptResponse: OTAPIResponse! = nil;
         OTTestHelper.resetAPIData(["make_users"], done: {(response: OTAPIResponse)->Void in
@@ -29,14 +29,14 @@ class OTDeviceAPITest: XCTestCase {
             resetExpectation.fulfill();
         }, clearCache: false);
         
-        waitForExpectationsWithTimeout(5.0, handler:nil);
+        waitForExpectations(timeout: 5.0, handler:nil);
         
         if(keptResponse != nil && keptResponse.success)
         {
             // Emulate that a user is signed in.
             OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
             
-            let expectation = expectationWithDescription("Set one time availability");
+            let theExpectation = expectation(description: "Set one time availability");
             
             let key: String = "9e548e83f56bd858cf5f3c7472cb98a1b553c7ebf8c3a747c68b817c2c201e17";
             
@@ -44,10 +44,10 @@ class OTDeviceAPITest: XCTestCase {
                 
                 XCTAssertTrue(response.success == true);
                 
-                expectation.fulfill();
+                theExpectation.fulfill();
             });
             
-            waitForExpectationsWithTimeout(5.0, handler:nil);
+            waitForExpectations(timeout: 5.0, handler:nil);
         }
     }
 

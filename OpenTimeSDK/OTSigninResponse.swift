@@ -15,7 +15,7 @@ public class OTSigninResponse : OTAPIResponse {
     public init(success: Bool, message: String, rawData: AnyObject?) {
         
         if(success == true && rawData != nil) {
-            let personDict = rawData!.objectForKey("person") as! NSDictionary;
+            let personDict = rawData!.object(forKey: "person") as! NSDictionary;
             self._person   = OTDeserializedPerson(dictionary: personDict);
         }
         

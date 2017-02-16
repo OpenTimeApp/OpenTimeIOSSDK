@@ -29,6 +29,6 @@ public class OTSigninRequest {
             "password":encryptedPW
         ];
         
-        return parameters;
+        return parameters as NSDictionary;
     }
 }

@@ -33,21 +33,21 @@ public class OTDeserializedMeeting : OTDeserializer {
     private var _attendees: Array<OTDeserializedMeetingAttendee>;
     
     public required init(dictionary: NSDictionary){
-        self._meetingID   = dictionary.valueForKey(Keys.MEETING_ID) as! OpenTimeMeetingID;
-        self._orgID       = dictionary.valueForKey(Keys.ORG_ID) as? OpenTimeOrgID;
-        self._creator     = dictionary.valueForKey(Keys.CREATOR) as! OpenTimeUserID;
-        self._created     = dictionary.valueForKey(Keys.CREATED) as! OpenTimeTimeStamp;
-        self._status      = dictionary.valueForKey(Keys.STATUS) as! MeetingStatus;
-        self._lastUpdated = dictionary.valueForKey(Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
-        self._start       = dictionary.valueForKey(Keys.START) as! OpenTimeTimeStamp;
-        self._end         = dictionary.valueForKey(Keys.END) as! OpenTimeTimeStamp;
-        self._location    = OTDeserializedMeeting._getDeserializedLocation(dictionary.valueForKey(Keys.LOCATION));
+        self._meetingID   = dictionary.value(forKey: Keys.MEETING_ID) as! OpenTimeMeetingID;
+        self._orgID       = dictionary.value(forKey: Keys.ORG_ID) as? OpenTimeOrgID;
+        self._creator     = dictionary.value(forKey: Keys.CREATOR) as! OpenTimeUserID;
+        self._created     = dictionary.value(forKey: Keys.CREATED) as! OpenTimeTimeStamp;
+        self._status      = dictionary.value(forKey: Keys.STATUS) as! MeetingStatus;
+        self._lastUpdated = dictionary.value(forKey: Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
+        self._start       = dictionary.value(forKey: Keys.START) as! OpenTimeTimeStamp;
+        self._end         = dictionary.value(forKey: Keys.END) as! OpenTimeTimeStamp;
+        self._location    = OTDeserializedMeeting._getDeserializedLocation(dictionary.value(forKey: Keys.LOCATION) as AnyObject?);
         
-        let rawAttendees = dictionary.valueForKey(Keys.ATTENDEES) as! NSArray;
+        let rawAttendees = dictionary.value(forKey: Keys.ATTENDEES) as! NSArray;
         self._attendees = OTDeserializationHelper.deserializeList(rawAttendees, type: OTDeserializedMeetingAttendee.self) as! Array<OTDeserializedMeetingAttendee>
     }
     
-    private static func _getDeserializedLocation(rawData: AnyObject?) -> OTDeserializedLocation? {
+    private static func _getDeserializedLocation(_ rawData: AnyObject?) -> OTDeserializedLocation? {
         return rawData != nil ? OTDeserializedLocation(dictionary: rawData as! NSDictionary) : nil;
     }
     

@@ -14,7 +14,7 @@ class TestHelper {
     
     static func getDataResetResponse(testCase: XCTestCase, scriptNames: Array<String>, resetCache: Bool) -> OTAPIResponse {
         
-        let resetExpectation = testCase.expectationWithDescription("Setup test");
+        let resetExpectation = testCase.expectation(description: "Setup test");
         
         var keptResponse: OTAPIResponse = OTAPIResponse(success: false, message: "No response");
         
@@ -26,7 +26,7 @@ class TestHelper {
             resetExpectation.fulfill();
         }, clearCache: true);
         
-        testCase.waitForExpectationsWithTimeout(5.0, handler:nil);
+        testCase.waitForExpectations(timeout: 5.0, handler:nil);
         
         return keptResponse;
     }

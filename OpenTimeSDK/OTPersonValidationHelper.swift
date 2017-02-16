@@ -20,7 +20,7 @@ public class OTPersonValidationHelper {
     
     - returns: OTAPIResponse with message explaining failure reason.
     */
-    public static func signInInputsValid(email: String, password: String)->OTAPIResponse
+    public static func signInInputsValid(_ email: String, password: String)->OTAPIResponse
     {
         // Validate email.
         let validEmail = self._validEmail(email);
@@ -53,7 +53,7 @@ public class OTPersonValidationHelper {
     
     - returns: OTAPIResponse with message explaining failure reason.
     */
-    public static func createUserInputsValid(email: String, phoneNumber: String, firstName: String, lastName: String, password: String, confirmPassword: String)->OTAPIResponse
+    public static func createUserInputsValid(_ email: String, phoneNumber: String, firstName: String, lastName: String, password: String, confirmPassword: String)->OTAPIResponse
     {
         // Validate email.
         let validEmail = self._validEmail(email);
@@ -89,7 +89,7 @@ public class OTPersonValidationHelper {
         return OTAPIResponse(success: true, message: "");
     }
     
-    private static func _validPhone(phone: String) -> OTAPIResponse {
+    private static func _validPhone(_ phone: String) -> OTAPIResponse {
         
         if(phone == "") {
             return OTAPIResponse(success: false, message: "Phone number cannot be blank");
@@ -107,7 +107,7 @@ public class OTPersonValidationHelper {
     
     - returns: OTAPIResponse with message explaining failure reason.
     */
-    private static func _validEmail(email: String)->OTAPIResponse
+    private static func _validEmail(_ email: String)->OTAPIResponse
     {
         // Verify email isn't blank.
         if(email == "")
@@ -135,17 +135,17 @@ public class OTPersonValidationHelper {
     
     - returns: OTAPIResponse with message explaining failure reason.
     */
-    private static func _validName(firstName: String, lastName: String)->OTAPIResponse
+    private static func _validName(_ firstName: String, lastName: String)->OTAPIResponse
     {
         // Verify the first name is not blank.
-        if(firstName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "")
+        if(firstName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "")
         {
             // Return failed result.
             return OTAPIResponse(success: false, message: NSLocalizedString("message_first_name_cannot_be_blank", comment: ""));
         }
         
         // Verify the last name is not blank.
-        if(lastName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) == "")
+        if(lastName.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "")
         {
             // Return failed result.
             return OTAPIResponse(success: false, message: NSLocalizedString("message_last_name_cannot_be_blank", comment: ""));
@@ -163,10 +163,10 @@ public class OTPersonValidationHelper {
     
     - returns: OTAPIResponse with message explaining failure reason.
     */
-    private static func _validPassword(password: String, confirmPassword: String)->OTAPIResponse
+    private static func _validPassword(_ password: String, confirmPassword: String)->OTAPIResponse
     {
         // Verify the password is at least 8 characters long.
-        if(password.characters.count < 8)
+        if(password.characters.count < self.PASSWORD_MIN_LEN)
         {
             var message = NSLocalizedString("message_min_password_len_not_met", comment: "");
             

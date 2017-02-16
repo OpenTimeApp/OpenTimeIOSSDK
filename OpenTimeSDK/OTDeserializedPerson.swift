@@ -25,22 +25,22 @@ public class OTDeserializedPerson : OTDeserializer {
     private var _phoneNumbers: Array<String>;
     
     public required init(dictionary: NSDictionary){
-        self._userID    = dictionary.valueForKey(Keys.USER_ID) as! OpenTimeUserID;
-        self._firstName = dictionary.valueForKey(Keys.FIRST_NAME) as! String;
-        self._lastName  = dictionary.valueForKey(Keys.LAST_NAME) as! String;
-        self._emails    = (dictionary.valueForKey(Keys.EMAILS) as! NSArray) as! Array<String>;
+        self._userID    = dictionary.value(forKey: Keys.USER_ID) as! OpenTimeUserID;
+        self._firstName = dictionary.value(forKey: Keys.FIRST_NAME) as! String;
+        self._lastName  = dictionary.value(forKey: Keys.LAST_NAME) as! String;
+        self._emails    = (dictionary.value(forKey: Keys.EMAILS) as! NSArray) as! Array<String>;
         
         self._phoneNumbers = Array<String>();
         
         self._setCellPhones(dictionary);
     }
     
-    private func _setCellPhones(dictionary: NSDictionary) {
-        let phoneNumbersNSArray = dictionary.valueForKey(Keys.CELL_PHONES) as! NSArray;
+    private func _setCellPhones(_ dictionary: NSDictionary) {
+        let phoneNumbersNSArray = dictionary.value(forKey: Keys.CELL_PHONES) as! NSArray;
         var phoneNumbers = Array<String>();
         
         for phoneNumberRaw in phoneNumbersNSArray {
-            phoneNumbers.append(String(phoneNumberRaw))
+            phoneNumbers.append(String(describing: phoneNumberRaw))
         }
         
         self._phoneNumbers = phoneNumbers;

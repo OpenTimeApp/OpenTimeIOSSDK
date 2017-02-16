@@ -18,8 +18,8 @@
             
             let connectionList: NSArray = rawData as! NSArray;
             
-            for var index = 0; index < connectionList.count; index++ {
-                let connectionData = connectionList.objectAtIndex(index) as! NSDictionary;
+            for index in 0 ..< connectionList.count {
+                let connectionData = connectionList.object(at: index) as! NSDictionary;
                 let connection = OTDeserializedConnection(dictionary: connectionData);
                 
                 self._connections.append(connection);

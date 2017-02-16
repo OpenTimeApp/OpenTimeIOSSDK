@@ -21,11 +21,11 @@ public class OTDeserializedConnection : OTDeserializer{
     private var _deserializedPerson: OTDeserializedPerson;
     
     public required init(dictionary: NSDictionary){
-        self._orgID       = dictionary.valueForKey(Keys.ORG_ID) as! OpenTimeOrgID;
-        self._status      = dictionary.valueForKey(Keys.STATUS) as! ConnectionStatus;
-        self._lastUpdated = dictionary.valueForKey(Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
+        self._orgID       = dictionary.value(forKey: Keys.ORG_ID) as! OpenTimeOrgID;
+        self._status      = dictionary.value(forKey: Keys.STATUS) as! ConnectionStatus;
+        self._lastUpdated = dictionary.value(forKey: Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
         
-        let personDictionary = dictionary.valueForKey(Keys.PERSON) as! NSDictionary;
+        let personDictionary = dictionary.value(forKey: Keys.PERSON) as! NSDictionary;
         self._deserializedPerson = OTDeserializedPerson(dictionary: personDictionary);
     }
     

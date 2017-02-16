@@ -19,9 +19,9 @@ public class OTDeserializedLocation : OTDeserializer {
     private var _address: String;
     
     public required init(dictionary: NSDictionary){
-        self._latitude  = dictionary.valueForKey(Keys.LATITUDE) as! Double;
-        self._longitude = dictionary.valueForKey(Keys.LONGITUDE) as! Double;
-        self._address   = dictionary.valueForKey(Keys.ADDRESS) as! String;
+        self._latitude  = dictionary.value(forKey: Keys.LATITUDE) as! Double;
+        self._longitude = dictionary.value(forKey: Keys.LONGITUDE) as! Double;
+        self._address   = dictionary.value(forKey: Keys.ADDRESS) as! String;
     }
     
     public func getLatitude() -> Double {

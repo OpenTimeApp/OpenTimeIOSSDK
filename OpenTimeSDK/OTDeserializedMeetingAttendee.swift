@@ -19,9 +19,9 @@ public class OTDeserializedMeetingAttendee : OTDeserializer {
     private var _lastUpdated: OpenTimeTimeStamp;
     
     public required init(dictionary: NSDictionary){
-        self._userID      = dictionary.valueForKey(Keys.USER_ID) as! OpenTimeUserID;
-        self._status      = dictionary.valueForKey(Keys.STATUS) as! MeetingAttendeeStatus;
-        self._lastUpdated = dictionary.valueForKey(Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
+        self._userID      = dictionary.value(forKey: Keys.USER_ID) as! OpenTimeUserID;
+        self._status      = dictionary.value(forKey: Keys.STATUS) as! MeetingAttendeeStatus;
+        self._lastUpdated = dictionary.value(forKey: Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
     }
     
     public func getUserID() -> OpenTimeUserID {
