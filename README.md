@@ -20,7 +20,7 @@ To get an API key please email josh.woodcock@opentimeapp.com
 2. Set the value of OPENTIME_KEY to your test key. It won't work with your live key.
 3. If you are contributing to the project use the following to ignore changes to the file so you don't commit your own API key:
 ```bash
-git update-index --assume-unchanged OpentimeSDKTests/Config.plist
+git update-index --assume-unchanged Example/Tests/Config.plist
 ```
 
 ### Run the tests
