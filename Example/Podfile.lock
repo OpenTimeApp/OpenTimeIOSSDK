@@ -1,0 +1,45 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - libPhoneNumber-iOS (0.8.17)
+  - OpenTimeSDK (0.1.0):
+    - AFNetworking (~> 2.6.3)
+    - libPhoneNumber-iOS (~> 0.8.17)
+    - SCrypto
+  - SCrypto (2.0.0)
+
+DEPENDENCIES:
+  - OpenTimeSDK (from `../`)
+
+EXTERNAL SOURCES:
+  OpenTimeSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  libPhoneNumber-iOS: 9f083847f8cb9b81064cff2ed2c98cbf18d9f9f2
+  OpenTimeSDK: 35919edbdf4bad852d4cab1b821ebb32cef762e8
+  SCrypto: 8287dcf6151df38f9bc0efad2ed982c54a96d1b8
+
+PODFILE CHECKSUM: 2d148955fea009566b8fa140e96a5c6cbe7912fa
+
+COCOAPODS: 1.2.0

@@ -1,0 +1,6 @@
+framework module Pods_OpenTimeSDK_Example {
+  umbrella header "Pods-OpenTimeSDK_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

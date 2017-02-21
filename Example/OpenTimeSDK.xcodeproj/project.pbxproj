@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0320FB591E5C3AF400E6648A /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0320FB581E5C3AF400E6648A /* OpenTimeSDK.framework */; };
+		0320FB691E5C3BB100E6648A /* OpenTimeSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0320FB581E5C3AF400E6648A /* OpenTimeSDK.framework */; };
+		0320FB6A1E5C3C3500E6648A /* OpenTimeSDKTestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A781E5C2642004E4BD3 /* OpenTimeSDKTestConstants.swift */; };
+		0320FB6B1E5C3C3500E6648A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A631E5C255E004E4BD3 /* TestHelper.swift */; };
+		0320FB6C1E5C3C3500E6648A /* OTAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A641E5C255E004E4BD3 /* OTAPITest.swift */; };
+		0320FB6D1E5C3C3500E6648A /* OTConnectionAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A651E5C255E004E4BD3 /* OTConnectionAPITest.swift */; };
+		0320FB6E1E5C3C3500E6648A /* OTDeviceAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A661E5C255E004E4BD3 /* OTDeviceAPITest.swift */; };
+		0320FB6F1E5C3C3500E6648A /* OTMeetingAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A671E5C255E004E4BD3 /* OTMeetingAPITest.swift */; };
+		0320FB701E5C3C3500E6648A /* OTMeetingAttendeeAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A681E5C255E004E4BD3 /* OTMeetingAttendeeAPITest.swift */; };
+		0320FB711E5C3C3500E6648A /* OTPersonAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A691E5C255E004E4BD3 /* OTPersonAPITest.swift */; };
+		0320FB721E5C3C3500E6648A /* OTAvailabilityAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A6A1E5C255E004E4BD3 /* OTAvailabilityAPITest.swift */; };
+		0320FB731E5C3C3500E6648A /* OTOrganizationAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A6B1E5C255E004E4BD3 /* OTOrganizationAPITest.swift */; };
+		0320FB751E5C3C8200E6648A /* Config.plist in Sources */ = {isa = PBXBuildFile; fileRef = 03E21A761E5C2632004E4BD3 /* Config.plist */; };
+		1081EA0958D63BC71934823C /* Pods_OpenTimeSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40226071EF9A01977A4C3E03 /* Pods_OpenTimeSDK_Example.framework */; };
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		61B3C8FBC7E2C258B155122E /* Pods_OpenTimeSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7653E9D175802854D1498FE /* Pods_OpenTimeSDK_Tests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0320FB641E5C3B8D00E6648A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = OpenTimeSDK_Example;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0320FB581E5C3AF400E6648A /* OpenTimeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTimeSDK.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OpenTimeSDK-fufejmvizfqbwzhlgpuomazenysv/Build/Products/Debug-iphonesimulator/OpenTimeSDK/OpenTimeSDK.framework"; sourceTree = "<group>"; };
+		0320FB5F1E5C3B8D00E6648A /* OpenTimeSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTimeSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0320FB631E5C3B8D00E6648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03E21A631E5C255E004E4BD3 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = ../Tests/TestHelper.swift; sourceTree = "<group>"; };
+		03E21A641E5C255E004E4BD3 /* OTAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPITest.swift; path = ../Tests/OTAPITest.swift; sourceTree = "<group>"; };
+		03E21A651E5C255E004E4BD3 /* OTConnectionAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConnectionAPITest.swift; path = ../Tests/OTConnectionAPITest.swift; sourceTree = "<group>"; };
+		03E21A661E5C255E004E4BD3 /* OTDeviceAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeviceAPITest.swift; path = ../Tests/OTDeviceAPITest.swift; sourceTree = "<group>"; };
+		03E21A671E5C255E004E4BD3 /* OTMeetingAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTMeetingAPITest.swift; path = ../Tests/OTMeetingAPITest.swift; sourceTree = "<group>"; };
+		03E21A681E5C255E004E4BD3 /* OTMeetingAttendeeAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTMeetingAttendeeAPITest.swift; path = ../Tests/OTMeetingAttendeeAPITest.swift; sourceTree = "<group>"; };
+		03E21A691E5C255E004E4BD3 /* OTPersonAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTPersonAPITest.swift; path = ../Tests/OTPersonAPITest.swift; sourceTree = "<group>"; };
+		03E21A6A1E5C255E004E4BD3 /* OTAvailabilityAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAvailabilityAPITest.swift; path = ../Tests/OTAvailabilityAPITest.swift; sourceTree = "<group>"; };
+		03E21A6B1E5C255E004E4BD3 /* OTOrganizationAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTOrganizationAPITest.swift; path = ../Tests/OTOrganizationAPITest.swift; sourceTree = "<group>"; };
+		03E21A761E5C2632004E4BD3 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		03E21A781E5C2642004E4BD3 /* OpenTimeSDKTestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenTimeSDKTestConstants.swift; path = ../Tests/OpenTimeSDKTestConstants.swift; sourceTree = "<group>"; };
+		40226071EF9A01977A4C3E03 /* Pods_OpenTimeSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenTimeSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5981EE5011B99EFF0107D90B /* OpenTimeSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OpenTimeSDK.podspec; path = ../OpenTimeSDK.podspec; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* OpenTimeSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTimeSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		62F6A42D7D3AD2A7F8562835 /* Pods-OpenTimeSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTimeSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenTimeSDK_Tests/Pods-OpenTimeSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		974AF83ABE44601373F895C5 /* Pods-OpenTimeSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTimeSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenTimeSDK_Example/Pods-OpenTimeSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C253103854CA9B926FAD6ABF /* Pods-OpenTimeSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTimeSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenTimeSDK_Tests/Pods-OpenTimeSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C3B6A9C9E466834B30651003 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C7653E9D175802854D1498FE /* Pods_OpenTimeSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenTimeSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C93DA0EB9D36EA199F51466B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FAE5813E459D244BA30EF41E /* Pods-OpenTimeSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenTimeSDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenTimeSDK_Example/Pods-OpenTimeSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0320FB5C1E5C3B8D00E6648A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0320FB691E5C3BB100E6648A /* OpenTimeSDK.framework in Frameworks */,
+				61B3C8FBC7E2C258B155122E /* Pods_OpenTimeSDK_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0320FB591E5C3AF400E6648A /* OpenTimeSDK.framework in Frameworks */,
+				1081EA0958D63BC71934823C /* Pods_OpenTimeSDK_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0320FB601E5C3B8D00E6648A /* OpenTimeSDK_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				03E21A751E5C25D8004E4BD3 /* config */,
+				03E21A781E5C2642004E4BD3 /* OpenTimeSDKTestConstants.swift */,
+				03E21A631E5C255E004E4BD3 /* TestHelper.swift */,
+				03E21A641E5C255E004E4BD3 /* OTAPITest.swift */,
+				03E21A651E5C255E004E4BD3 /* OTConnectionAPITest.swift */,
+				03E21A661E5C255E004E4BD3 /* OTDeviceAPITest.swift */,
+				03E21A671E5C255E004E4BD3 /* OTMeetingAPITest.swift */,
+				03E21A681E5C255E004E4BD3 /* OTMeetingAttendeeAPITest.swift */,
+				03E21A691E5C255E004E4BD3 /* OTPersonAPITest.swift */,
+				03E21A6A1E5C255E004E4BD3 /* OTAvailabilityAPITest.swift */,
+				03E21A6B1E5C255E004E4BD3 /* OTOrganizationAPITest.swift */,
+				0320FB631E5C3B8D00E6648A /* Info.plist */,
+			);
+			path = OpenTimeSDK_Tests;
+			sourceTree = "<group>";
+		};
+		03E21A751E5C25D8004E4BD3 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				03E21A761E5C2632004E4BD3 /* Config.plist */,
+			);
+			name = config;
+			path = ../Tests;
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example for OpenTimeSDK */,
+				607FACE81AFB9204008FA782 /* Tests */,
+				0320FB601E5C3B8D00E6648A /* OpenTimeSDK_Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				92CE5C8A81F771E3BC39823F /* Pods */,
+				903131A14EF09B92D02C7134 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* OpenTimeSDK_Example.app */,
+				0320FB5F1E5C3B8D00E6648A /* OpenTimeSDK_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* Example for OpenTimeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = "Example for OpenTimeSDK";
+			path = OpenTimeSDK;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACE81AFB9204008FA782 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				5981EE5011B99EFF0107D90B /* OpenTimeSDK.podspec */,
+				C93DA0EB9D36EA199F51466B /* README.md */,
+				C3B6A9C9E466834B30651003 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		903131A14EF09B92D02C7134 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0320FB581E5C3AF400E6648A /* OpenTimeSDK.framework */,
+				40226071EF9A01977A4C3E03 /* Pods_OpenTimeSDK_Example.framework */,
+				C7653E9D175802854D1498FE /* Pods_OpenTimeSDK_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92CE5C8A81F771E3BC39823F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				974AF83ABE44601373F895C5 /* Pods-OpenTimeSDK_Example.debug.xcconfig */,
+				FAE5813E459D244BA30EF41E /* Pods-OpenTimeSDK_Example.release.xcconfig */,
+				62F6A42D7D3AD2A7F8562835 /* Pods-OpenTimeSDK_Tests.debug.xcconfig */,
+				C253103854CA9B926FAD6ABF /* Pods-OpenTimeSDK_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0320FB5E1E5C3B8D00E6648A /* OpenTimeSDK_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0320FB661E5C3B8D00E6648A /* Build configuration list for PBXNativeTarget "OpenTimeSDK_Tests" */;
+			buildPhases = (
+				C7AA9DE37FD5D587E3707D04 /* [CP] Check Pods Manifest.lock */,
+				0320FB5B1E5C3B8D00E6648A /* Sources */,
+				0320FB5C1E5C3B8D00E6648A /* Frameworks */,
+				0320FB5D1E5C3B8D00E6648A /* Resources */,
+				236880D7F3424E00D7AA09FF /* [CP] Embed Pods Frameworks */,
+				FDCB76CABD50A877C93B8849 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0320FB651E5C3B8D00E6648A /* PBXTargetDependency */,
+			);
+			name = OpenTimeSDK_Tests;
+			productName = OpenTimeSDK_Tests;
+			productReference = 0320FB5F1E5C3B8D00E6648A /* OpenTimeSDK_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		607FACCF1AFB9204008FA782 /* OpenTimeSDK_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OpenTimeSDK_Example" */;
+			buildPhases = (
+				76F9D285A2EE8936BA1A2118 /* [CP] Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				657FFA24B5E40BF9D43638BE /* [CP] Embed Pods Frameworks */,
+				BACA809404474E04F5DDDBF9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenTimeSDK_Example;
+			productName = OpenTimeSDK;
+			productReference = 607FACD01AFB9204008FA782 /* OpenTimeSDK_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = CocoaPods;
+				TargetAttributes = {
+					0320FB5E1E5C3B8D00E6648A = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XCUVB76SU2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = XCUVB76SU2;
+						LastSwiftMigration = 0810;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "OpenTimeSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* OpenTimeSDK_Example */,
+				0320FB5E1E5C3B8D00E6648A /* OpenTimeSDK_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0320FB5D1E5C3B8D00E6648A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		236880D7F3424E00D7AA09FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenTimeSDK_Tests/Pods-OpenTimeSDK_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		657FFA24B5E40BF9D43638BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenTimeSDK_Example/Pods-OpenTimeSDK_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76F9D285A2EE8936BA1A2118 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BACA809404474E04F5DDDBF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenTimeSDK_Example/Pods-OpenTimeSDK_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7AA9DE37FD5D587E3707D04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FDCB76CABD50A877C93B8849 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenTimeSDK_Tests/Pods-OpenTimeSDK_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0320FB5B1E5C3B8D00E6648A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0320FB751E5C3C8200E6648A /* Config.plist in Sources */,
+				0320FB6A1E5C3C3500E6648A /* OpenTimeSDKTestConstants.swift in Sources */,
+				0320FB6B1E5C3C3500E6648A /* TestHelper.swift in Sources */,
+				0320FB6C1E5C3C3500E6648A /* OTAPITest.swift in Sources */,
+				0320FB6D1E5C3C3500E6648A /* OTConnectionAPITest.swift in Sources */,
+				0320FB6E1E5C3C3500E6648A /* OTDeviceAPITest.swift in Sources */,
+				0320FB6F1E5C3C3500E6648A /* OTMeetingAPITest.swift in Sources */,
+				0320FB701E5C3C3500E6648A /* OTMeetingAttendeeAPITest.swift in Sources */,
+				0320FB711E5C3C3500E6648A /* OTPersonAPITest.swift in Sources */,
+				0320FB721E5C3C3500E6648A /* OTAvailabilityAPITest.swift in Sources */,
+				0320FB731E5C3C3500E6648A /* OTOrganizationAPITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0320FB651E5C3B8D00E6648A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* OpenTimeSDK_Example */;
+			targetProxy = 0320FB641E5C3B8D00E6648A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDA1AFB9204008FA782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDF1AFB9204008FA782 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0320FB671E5C3B8D00E6648A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62F6A42D7D3AD2A7F8562835 /* Pods-OpenTimeSDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XCUVB76SU2;
+				INFOPLIST_FILE = OpenTimeSDK_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "OpenTime.OpenTimeSDK-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenTimeSDK_Example.app/OpenTimeSDK_Example";
+			};
+			name = Debug;
+		};
+		0320FB681E5C3B8D00E6648A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C253103854CA9B926FAD6ABF /* Pods-OpenTimeSDK_Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = XCUVB76SU2;
+				INFOPLIST_FILE = OpenTimeSDK_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "OpenTime.OpenTimeSDK-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenTimeSDK_Example.app/OpenTimeSDK_Example";
+			};
+			name = Release;
+		};
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 974AF83ABE44601373F895C5 /* Pods-OpenTimeSDK_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XCUVB76SU2;
+				INFOPLIST_FILE = OpenTimeSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAE5813E459D244BA30EF41E /* Pods-OpenTimeSDK_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XCUVB76SU2;
+				INFOPLIST_FILE = OpenTimeSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0320FB661E5C3B8D00E6648A /* Build configuration list for PBXNativeTarget "OpenTimeSDK_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0320FB671E5C3B8D00E6648A /* Debug */,
+				0320FB681E5C3B8D00E6648A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "OpenTimeSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OpenTimeSDK_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}

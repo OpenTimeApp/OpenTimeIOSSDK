@@ -1,0 +1,6 @@
+framework module OpenTimeSDK {
+  umbrella header "OpenTimeSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

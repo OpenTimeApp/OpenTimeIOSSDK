@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'OpenTimeSDK_Example' do
+  pod 'OpenTimeSDK', :path => '../'
+
+  target 'OpenTimeSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
