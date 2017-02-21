@@ -1,10 +1,9 @@
 # OpenTimeIOSSDK
 
 ## Getting started 
-You will need the following dependencies in your Pods file
+To install use
 
-    pod 'AFNetworking', '~> 2.4'
-    pod 'libPhoneNumber-iOS', '~> 0.8.7'
+    pod 'OpenTimeSDK', '~> 0.1.0'
 
 You must be on iOS 9.0 or later and specify it in your Pods file like so: 
 
