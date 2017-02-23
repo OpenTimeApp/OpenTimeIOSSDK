@@ -19,6 +19,6 @@ public class OTCreateMeetingResponse : OTAPIResponse {
     }
     
     public func getMeetingData() -> OTDeserializedCreateMeetingResponseData? {
-        return self._meetingData!;
+        return self._meetingData;
     }
 }

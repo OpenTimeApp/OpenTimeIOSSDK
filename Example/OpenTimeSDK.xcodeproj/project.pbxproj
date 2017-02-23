@@ -42,18 +42,18 @@
 /* Begin PBXFileReference section */
 		0320FB581E5C3AF400E6648A /* OpenTimeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTimeSDK.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OpenTimeSDK-fufejmvizfqbwzhlgpuomazenysv/Build/Products/Debug-iphonesimulator/OpenTimeSDK/OpenTimeSDK.framework"; sourceTree = "<group>"; };
 		0320FB5F1E5C3B8D00E6648A /* OpenTimeSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenTimeSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0320FB631E5C3B8D00E6648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03E21A631E5C255E004E4BD3 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = ../Tests/TestHelper.swift; sourceTree = "<group>"; };
-		03E21A641E5C255E004E4BD3 /* OTAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPITest.swift; path = ../Tests/OTAPITest.swift; sourceTree = "<group>"; };
-		03E21A651E5C255E004E4BD3 /* OTConnectionAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConnectionAPITest.swift; path = ../Tests/OTConnectionAPITest.swift; sourceTree = "<group>"; };
-		03E21A661E5C255E004E4BD3 /* OTDeviceAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeviceAPITest.swift; path = ../Tests/OTDeviceAPITest.swift; sourceTree = "<group>"; };
-		03E21A671E5C255E004E4BD3 /* OTMeetingAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTMeetingAPITest.swift; path = ../Tests/OTMeetingAPITest.swift; sourceTree = "<group>"; };
-		03E21A681E5C255E004E4BD3 /* OTMeetingAttendeeAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTMeetingAttendeeAPITest.swift; path = ../Tests/OTMeetingAttendeeAPITest.swift; sourceTree = "<group>"; };
-		03E21A691E5C255E004E4BD3 /* OTPersonAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTPersonAPITest.swift; path = ../Tests/OTPersonAPITest.swift; sourceTree = "<group>"; };
-		03E21A6A1E5C255E004E4BD3 /* OTAvailabilityAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAvailabilityAPITest.swift; path = ../Tests/OTAvailabilityAPITest.swift; sourceTree = "<group>"; };
-		03E21A6B1E5C255E004E4BD3 /* OTOrganizationAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTOrganizationAPITest.swift; path = ../Tests/OTOrganizationAPITest.swift; sourceTree = "<group>"; };
-		03E21A761E5C2632004E4BD3 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		03E21A781E5C2642004E4BD3 /* OpenTimeSDKTestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenTimeSDKTestConstants.swift; path = ../Tests/OpenTimeSDKTestConstants.swift; sourceTree = "<group>"; };
+		0320FB631E5C3B8D00E6648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
+		03E21A631E5C255E004E4BD3 /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestHelper.swift; path = Tests/TestHelper.swift; sourceTree = SOURCE_ROOT; };
+		03E21A641E5C255E004E4BD3 /* OTAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAPITest.swift; path = Tests/OTAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A651E5C255E004E4BD3 /* OTConnectionAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTConnectionAPITest.swift; path = Tests/OTConnectionAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A661E5C255E004E4BD3 /* OTDeviceAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTDeviceAPITest.swift; path = Tests/OTDeviceAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A671E5C255E004E4BD3 /* OTMeetingAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTMeetingAPITest.swift; path = Tests/OTMeetingAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A681E5C255E004E4BD3 /* OTMeetingAttendeeAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTMeetingAttendeeAPITest.swift; path = Tests/OTMeetingAttendeeAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A691E5C255E004E4BD3 /* OTPersonAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTPersonAPITest.swift; path = Tests/OTPersonAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A6A1E5C255E004E4BD3 /* OTAvailabilityAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTAvailabilityAPITest.swift; path = Tests/OTAvailabilityAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A6B1E5C255E004E4BD3 /* OTOrganizationAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OTOrganizationAPITest.swift; path = Tests/OTOrganizationAPITest.swift; sourceTree = SOURCE_ROOT; };
+		03E21A761E5C2632004E4BD3 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = Tests/Config.plist; sourceTree = SOURCE_ROOT; };
+		03E21A781E5C2642004E4BD3 /* OpenTimeSDKTestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenTimeSDKTestConstants.swift; path = Tests/OpenTimeSDKTestConstants.swift; sourceTree = SOURCE_ROOT; };
 		40226071EF9A01977A4C3E03 /* Pods_OpenTimeSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenTimeSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5981EE5011B99EFF0107D90B /* OpenTimeSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OpenTimeSDK.podspec; path = ../OpenTimeSDK.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* OpenTimeSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenTimeSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +94,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0320FB601E5C3B8D00E6648A /* OpenTimeSDK_Tests */ = {
+		0320FB601E5C3B8D00E6648A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				03E21A751E5C25D8004E4BD3 /* config */,
@@ -110,6 +110,7 @@
 				03E21A6B1E5C255E004E4BD3 /* OTOrganizationAPITest.swift */,
 				0320FB631E5C3B8D00E6648A /* Info.plist */,
 			);
+			name = Tests;
 			path = OpenTimeSDK_Tests;
 			sourceTree = "<group>";
 		};
@@ -127,8 +128,7 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OpenTimeSDK */,
-				607FACE81AFB9204008FA782 /* Tests */,
-				0320FB601E5C3B8D00E6648A /* OpenTimeSDK_Tests */,
+				0320FB601E5C3B8D00E6648A /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				92CE5C8A81F771E3BC39823F /* Pods */,
 				903131A14EF09B92D02C7134 /* Frameworks */,
@@ -164,13 +164,6 @@
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
