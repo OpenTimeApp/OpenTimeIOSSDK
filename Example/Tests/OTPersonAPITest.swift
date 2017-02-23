@@ -29,8 +29,8 @@ class OTPersonAPITest: XCTestCase {
                 lastName: "Tester",
                 email: "tester1@app.opentimeapp.com",
                 cellPhone: "+1 407-235-4361",
-                password: "I love testing",
-                confirmPassword: "I love testing"
+                password: "ilovetesting",
+                confirmPassword: "ilovetesting"
             );
             
             OTPersonAPI.make(data, done: { (response: OTRegisterPersonResponse) -> Void in
@@ -62,7 +62,7 @@ class OTPersonAPITest: XCTestCase {
             let theExpectation = expectation(description: "Sign in");
             
             let email: String = "tester1@app.opentimeapp.com";
-            let password: String = "I love testing";
+            let password: String = "ilovetesting";
             
             let signinData = OTSigninRequest(email: email, password: password);
             
@@ -101,7 +101,7 @@ class OTPersonAPITest: XCTestCase {
         if(response.success)
         {
             OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
-            OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
+            OpenTimeSDK.session.setPlainTextCredentials(1, password: "ilovetesting");
             
             let theExpectation = expectation(description: "Update password");
             

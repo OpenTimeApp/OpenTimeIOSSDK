@@ -33,7 +33,7 @@ Initialize OpenTime before you use it anywhere
     
 Set the credentials for the user like so: 
 
-    OpenTimeSDK.session.setPlainTextCredentials(1, password: "I love testing");
+    OpenTimeSDK.session.setPlainTextCredentials(1, password: "ilovetesting");
     
 Get the current user's availability like so:
     
