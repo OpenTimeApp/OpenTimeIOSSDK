@@ -41,8 +41,6 @@ public class OTDeserializedGroup : OTDeserializer {
         self._type = dictionary.value(forKey: Keys.TYPE) as! OpenTimeGroupType;
         self._status = dictionary.value(forKey: Keys.STATUS) as! OpenTimeGroupStatus;
         
-        let rawImage = dictionary.value(forKey: Keys.IMAGE);
-        
         self._image = dictionary.value(forKey: Keys.IMAGE) as? String;
         
         self._description = dictionary.value(forKey: Keys.DESCRIPTION) as! String;

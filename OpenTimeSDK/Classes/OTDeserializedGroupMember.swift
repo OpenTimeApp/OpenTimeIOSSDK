@@ -32,7 +32,7 @@ public class OTDeserializedGroupMember : OTDeserializer {
         self._lastUpdated = dictionary.value(forKey: Keys.LAST_UPDATED) as! OpenTimeTimeStamp;
         self._created = dictionary.value(forKey: Keys.CREATED) as! OpenTimeTimeStamp;
         
-        let rawUser = dictionary.value(forKey: Keys.USER) as! NSDictionary;
+        let rawUser = dictionary.value(forKey: Keys.USER) as? NSDictionary;
         if(rawUser != nil){
             self._user = OTDeserializedPerson(dictionary: rawUser);
         }
