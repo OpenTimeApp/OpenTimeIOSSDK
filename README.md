@@ -3,7 +3,7 @@
 ## Getting started 
 To install use
 
-    pod 'OpenTimeSDK', '~> 1.0.0'
+    pod 'OpenTimeSDK', '~> 1.1.0'
 
 You must be on iOS 9.0 or later and specify it in your Pods file like so: 
 

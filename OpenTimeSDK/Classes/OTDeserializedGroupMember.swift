@@ -34,7 +34,7 @@ public class OTDeserializedGroupMember : OTDeserializer {
         
         let rawUser = dictionary.value(forKey: Keys.USER) as? NSDictionary;
         if(rawUser != nil){
-            self._user = OTDeserializedPerson(dictionary: rawUser);
+            self._user = OTDeserializedPerson(dictionary: rawUser!);
         }
     }
     
