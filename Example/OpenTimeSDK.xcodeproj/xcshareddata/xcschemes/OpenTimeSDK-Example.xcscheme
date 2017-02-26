@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "0320FB5E1E5C3B8D00E6648A"
                BuildableName = "OpenTimeSDK_Tests.xctest"
                BlueprintName = "OpenTimeSDK_Tests"
                ReferencedContainer = "container:OpenTimeSDK.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BlueprintIdentifier = "0320FB5E1E5C3B8D00E6648A"
                BuildableName = "OpenTimeSDK_Tests.xctest"
                BlueprintName = "OpenTimeSDK_Tests"
                ReferencedContainer = "container:OpenTimeSDK.xcodeproj">

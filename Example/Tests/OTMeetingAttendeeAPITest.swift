@@ -29,7 +29,7 @@ class OTMeetingAttendeeAPITest: OTAPITest {
                     
                     var meetings = response.getMeetings()
                     
-                    XCTAssertEqual(1, meetings.count);
+                    XCTAssertEqual(2, meetings.count);
                     
                     if(meetings.count > 0) {
                         

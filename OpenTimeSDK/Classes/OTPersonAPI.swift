@@ -145,4 +145,31 @@ public class OTPersonAPI {
             }
         );
     }
+    
+    public static func getGroups(done: @escaping (_ response: OTGroupsResponse)->Void)->Void {
+        
+        // Setup query manager.
+        let requestManager = OTAPIAuthorizedRequestOperationManager();
+        
+        // Run query.
+        _ = requestManager.post(OpenTimeSDK.getServer() +  "/api/person/groups",
+            parameters: [],
+            success: { (operation: AFHTTPRequestOperation!, responseObject: Any) in
+                
+                let response = OTAPIResponse.loadFromReqeustOperationWithResponse(operation);
+                
+                if(response.success == true) {
+                    done(OTGroupsResponse(success: response.success, message: response.message, rawData: response.rawData!));
+                }else{
+                    done(OTGroupsResponse(success: response.success, message: response.message, rawData: nil));
+                }
+        },
+        failure: { (operation: AFHTTPRequestOperation?, error: Error) in
+            requestManager.apiResult(operation, error: error as NSError!, done: { (response: OTAPIResponse)->Void in
+                done(OTGroupsResponse(success: response.success, message: response.message, rawData: nil));
+            });
+        }
+        );
+
+    }
 }

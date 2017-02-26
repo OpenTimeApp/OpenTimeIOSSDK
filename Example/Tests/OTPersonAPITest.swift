@@ -117,6 +117,64 @@ class OTPersonAPITest: XCTestCase {
         }
     }
 
-    
+    func testGetGroups(){
+        
+        let scripts = [
+            "make_users",
+            "make_groups",
+            "make_group_availability",
+            "make_meetings"
+        ];
+        
+        let response: OTAPIResponse = TestHelper.getDataResetResponse(testCase: self, scriptNames: scripts, resetCache: true);
+        
+        XCTAssertTrue(response.success);
+        
+        if(response.success){
+            
+            let theExpectation = expectation(description: "A list of groups for the current user will be returned");
+            
+            OpenTimeSDK.initSession(OpenTimeSDKTestConstants.API_KEY, inTestMode: true);
+            OpenTimeSDK.session.setPlainTextCredentials(1, password: "ilovetesting");
+            
+            OTPersonAPI.getGroups(done: { (response: OTGroupsResponse) -> Void in
+                
+                XCTAssertTrue(response.success);
+                
+                if(response.success){
+                    XCTAssertEqual(1, response.getGroups().count);
+                    
+                    if(response.getGroups().count == 1){
+                        let groups = response.getGroups();
+                        let firstGroup = groups[0];
+                        
+                        XCTAssertEqual(2, firstGroup.getMembers().count);
+                        
+                        if(firstGroup.getMembers().count == 2){
+                            let members = firstGroup.getMembers();
+                            let firstMember = members[0];
+                            
+                            XCTAssertNotNil(firstMember.getUser());
+                            
+                            if(firstMember.getUser() != nil){
+                                let firstUser:OTDeserializedPerson! = firstMember.getUser();
+                                
+                                XCTAssertEqual(1, firstUser.getUserID());
+                                XCTAssertEqual("Mr", firstUser.getFirstName())
+                                XCTAssertEqual("Tester", firstUser.getLastName())
+                                XCTAssertEqual(0, firstUser.getEmails().count);
+                                XCTAssertEqual(0, firstUser.getPhones().count);
+                            }
+                        }
+                    }
+                }
+                
+                theExpectation.fulfill();
+            });
+            
+            waitForExpectations(timeout: 5.0, handler: nil);
+        }
+
+    }
 }
 

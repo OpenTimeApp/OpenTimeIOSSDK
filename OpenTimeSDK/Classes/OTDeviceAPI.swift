@@ -8,7 +8,7 @@
 
 import AFNetworking
 
-public struct OTDeviceAPI
+public class OTDeviceAPI
 {
     public static func set(_ key: String, done: @escaping (_ response: OTAPIResponse)->Void)
     {

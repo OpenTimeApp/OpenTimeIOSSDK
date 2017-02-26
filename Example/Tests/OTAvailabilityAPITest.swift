@@ -66,7 +66,7 @@ class OTAvailabilityAPITest: OTAPITest {
                     
                     }
                     
-                    XCTAssertEqual(1, exceptions.count);
+                    XCTAssertEqual(2, exceptions.count);
                 
                 }
                 

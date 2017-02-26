@@ -43,7 +43,7 @@ class OTMeetingAPITest: OTAPITest {
                 XCTAssertNotNil(response.getMeetingData());
                 
                 if(response.success == true && response.getMeetingData() != nil){
-                    XCTAssertEqual(2, response.getMeetingData()?.getMeetingID());
+                    XCTAssertEqual(3, response.getMeetingData()?.getMeetingID());
                 }
                 
                 theExpectation.fulfill();
@@ -66,7 +66,7 @@ class OTMeetingAPITest: OTAPITest {
             
             OTMeetingAPI.getAllMyMeetings(done: { (response: OTGetAllMyMeetingsResponse) -> Void in
                 XCTAssertTrue(response.success);
-                XCTAssertEqual(1, response.getMeetings().count);
+                XCTAssertEqual(2, response.getMeetings().count);
                 
                 if(response.success && response.getMeetings().count == 1){
                     

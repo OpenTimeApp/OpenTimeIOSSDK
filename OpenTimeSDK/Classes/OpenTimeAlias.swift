@@ -14,3 +14,7 @@ public typealias MeetingAttendeeStatus = Int;
 public typealias OpenTimeOrgID = Int;
 public typealias OpenTimeMeetingID = Int;
 public typealias AvailabilityStatus = Int;
+public typealias OpenTimeGroupType = Int;
+public typealias OpenTimeGroupID = Int;
+public typealias OpenTimeGroupStatus = Int;
+public typealias OpenTimeGroupMemberStatus = Int;

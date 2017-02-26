@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		002B8216AC26D1EAF294961AF5A3668A /* OTDeserializedMeetingAttendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58617D9CB3C31966224800E156E11C1 /* OTDeserializedMeetingAttendee.swift */; };
+		03BE777A1E633E1000E641CE /* OTGroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE77791E633E1000E641CE /* OTGroupsResponse.swift */; };
+		03BE777E1E633ED300E641CE /* OTDeserializedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE777D1E633ED300E641CE /* OTDeserializedGroup.swift */; };
+		03BE77801E63417200E641CE /* OTDeserializedGroupMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BE777F1E63417200E641CE /* OTDeserializedGroupMember.swift */; };
 		04BD7E4489B243C0769AFD64C49946E3 /* OTSignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C470F510E1981B6B939CD320E4AB7E /* OTSignInRequest.swift */; };
 		05BFF727684759CF4F151096C04AD4DF /* OTStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520742A3F356A63C87B29BD2F2556257 /* OTStringExtension.swift */; };
 		06F7E733F7189B0A9BB2E6658E62E2B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35993FA268933645DAC9BD252B9946E4 /* CoreGraphics.framework */; };
@@ -111,7 +114,7 @@
 		B5D4EBCD83C85BF560908DC73AFCC97A /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C3691891D86CA7657AC17DF4AAB8FD /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6FD89770E63F304CF7162F32B7D6E47 /* NBPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F0B631FA5C1315CC6B7E0C98513C3A /* NBPhoneNumber.m */; };
 		B8E64C71559B3F4120760CA40C78A8A8 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = BBBD9245D3974D616F416405BF275D64 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA34C288F5AD4FA78ECF873EEDC8F4D0 /* OTRemoveOneTimeAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2C4FC6A926AFA75A2CEE991799CEC /* OTRemoveOneTimeAvailability.swift */; };
+		BA34C288F5AD4FA78ECF873EEDC8F4D0 /* OTRemoveOneTimeAvailabilityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2C4FC6A926AFA75A2CEE991799CEC /* OTRemoveOneTimeAvailabilityData.swift */; };
 		BABDE6BCA4937C34A159F98D7A9D488B /* OTPasswordHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3810655BD1102F92ACD018A844622C8 /* OTPasswordHelper.swift */; };
 		BCA475C5817BB9806502E39BBC07CC83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF79C995D387AFA337CE34ECC55AF0DB /* Foundation.framework */; };
 		BD0F4E71758EA022A61BFDCDCE73EE10 /* OTPersonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF580D3D369B680D43145C77A4B8558 /* OTPersonAPI.swift */; };
@@ -215,8 +218,11 @@
 		01678596592F4BA645C7C837B213000B /* OTRegisterPersonResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTRegisterPersonResponse.swift; sourceTree = "<group>"; };
 		018DC954A46CD7CD14740FDFDD2A7736 /* OTConnectionAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTConnectionAPI.swift; sourceTree = "<group>"; };
 		01D9071AA30B986A165653067D84120F /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		03BE77791E633E1000E641CE /* OTGroupsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTGroupsResponse.swift; sourceTree = "<group>"; };
+		03BE777D1E633ED300E641CE /* OTDeserializedGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTDeserializedGroup.swift; sourceTree = "<group>"; };
+		03BE777F1E63417200E641CE /* OTDeserializedGroupMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTDeserializedGroupMember.swift; sourceTree = "<group>"; };
 		0408407E280B35C14D372D60E05936A4 /* NBNumberFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBNumberFormat.h; path = libPhoneNumber/NBNumberFormat.h; sourceTree = "<group>"; };
-		06AD8ACB8F7650EED0D6DA7246DA28B8 /* Pods-OpenTimeSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OpenTimeSDK_Tests.modulemap"; sourceTree = "<group>"; };
+		06AD8ACB8F7650EED0D6DA7246DA28B8 /* Pods-OpenTimeSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OpenTimeSDK_Tests.modulemap"; sourceTree = "<group>"; };
 		080D3BC891D69824AE0E09A11D650A52 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		097D78CD00BE7649CD53843480E17E85 /* OTAPIAuthorizedRequestOperationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTAPIAuthorizedRequestOperationManager.swift; sourceTree = "<group>"; };
 		0C9491508360ECE7286FF98A9840B078 /* NBMetadataCoreMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBMetadataCoreMapper.m; path = libPhoneNumber/NBMetadataCoreMapper.m; sourceTree = "<group>"; };
@@ -233,7 +239,7 @@
 		1A5F63772C2E5E04E5DDBCC9EE234C82 /* OTConnectionStatusOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTConnectionStatusOption.swift; sourceTree = "<group>"; };
 		1C2DD53291C47FDAFC56E624B29D7DCF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D2B26A171EBDFBD0E4BFED1FB78AA6E /* NBMetadataHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBMetadataHelper.h; path = libPhoneNumber/NBMetadataHelper.h; sourceTree = "<group>"; };
-		1F77C3AAC76723D85EE22155058AD24C /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		1F77C3AAC76723D85EE22155058AD24C /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		20EECD97E3DFB5D7DAAC4006362F2BF7 /* SCrypto.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SCrypto.xcconfig; sourceTree = "<group>"; };
 		222EC1C497A46C20C3AD654E1CF459EB /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
 		23634F0966611596D9AC1C3AE419D386 /* OTDeserializedConnectionAvailability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedConnectionAvailability.swift; sourceTree = "<group>"; };
@@ -246,7 +252,7 @@
 		2926A79D6A0CC01E337BD1EF71ACE3F4 /* OTReachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTReachability.swift; sourceTree = "<group>"; };
 		29BD3361FA0605CB9A73B07A9DED2448 /* Pods-OpenTimeSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OpenTimeSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2B9ED1E15BE76E19F02DF5CDF6507F70 /* libPhoneNumber-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libPhoneNumber-iOS-umbrella.h"; sourceTree = "<group>"; };
-		2E19F6DF9CAE8533D9BB176580070649 /* OpenTimeSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OpenTimeSDK.modulemap; sourceTree = "<group>"; };
+		2E19F6DF9CAE8533D9BB176580070649 /* OpenTimeSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = OpenTimeSDK.modulemap; sourceTree = "<group>"; };
 		2F3AA70BE03B0CA1CC9F14C02922C7C4 /* OTDeserializedConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedConnection.swift; sourceTree = "<group>"; };
 		30105AAF78DE3B866CE8BE2BAABAA30F /* AvailabilityStatusOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AvailabilityStatusOption.swift; sourceTree = "<group>"; };
 		31D3D86B34C0C1D127E28603D6CBB558 /* OTContactInfoData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTContactInfoData.swift; sourceTree = "<group>"; };
@@ -263,7 +269,7 @@
 		420FF6740A16786699EF51F88C7625FC /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		436BFA151C5B90390E04566C72F359D6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FDBD01623915DCCA7A31CA146FE8B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46A0E8D54205CF2B4D127524F286A05D /* SCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SCrypto.framework; path = SCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A0E8D54205CF2B4D127524F286A05D /* SCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		472F9276CD5A10B0B39CB316C6BB2673 /* OTSetConnectionData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTSetConnectionData.swift; sourceTree = "<group>"; };
 		47FC0BD8B27E62A318090D05519392FC /* Pods-OpenTimeSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OpenTimeSDK_Example-umbrella.h"; sourceTree = "<group>"; };
 		4A7D0FE85CD9C9A973FE3FC2CEE96702 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
@@ -275,7 +281,7 @@
 		5A9434D2FAA67B8FB0AD8E71E251F482 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		5AFE87643018E23388C48EC1B4F822A7 /* OTMeetingAttendeeAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTMeetingAttendeeAPI.swift; sourceTree = "<group>"; };
 		5B77F6608AA32C9E45193E06E7A61812 /* OTTestHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTTestHelper.swift; sourceTree = "<group>"; };
-		5EE2C4FC6A926AFA75A2CEE991799CEC /* OTRemoveOneTimeAvailability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTRemoveOneTimeAvailability.swift; sourceTree = "<group>"; };
+		5EE2C4FC6A926AFA75A2CEE991799CEC /* OTRemoveOneTimeAvailabilityData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTRemoveOneTimeAvailabilityData.swift; sourceTree = "<group>"; };
 		5F975D8A352ECF86D374ABE15A9EE7FE /* NBPhoneNumber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBPhoneNumber.h; path = libPhoneNumber/NBPhoneNumber.h; sourceTree = "<group>"; };
 		608938B2C85764428DCF150B3753230E /* Pods-OpenTimeSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OpenTimeSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		60A55C09E5F01F8C18006FC841F7CC9C /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
@@ -296,7 +302,7 @@
 		738DC81F8C355838364B47A120187D1A /* libPhoneNumber-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "libPhoneNumber-iOS.xcconfig"; sourceTree = "<group>"; };
 		75565B166E82096212479D9BDBFEB9C0 /* NBPhoneNumberUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBPhoneNumberUtil.h; path = libPhoneNumber/NBPhoneNumberUtil.h; sourceTree = "<group>"; };
 		783DA7F57F9AE5DE9CD7C6DF9DA45047 /* NBMetadataHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBMetadataHelper.m; path = libPhoneNumber/NBMetadataHelper.m; sourceTree = "<group>"; };
-		7B61A77B7031E4ED4D4A2CE357B1BF86 /* libPhoneNumber_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = libPhoneNumber_iOS.framework; path = "libPhoneNumber-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B61A77B7031E4ED4D4A2CE357B1BF86 /* libPhoneNumber_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libPhoneNumber_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C266ABC951C8DA2179973F692B5E70B /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		7EAFA9F7E65EBE439A52C738CCBDC4BF /* NBMetadataCoreMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBMetadataCoreMapper.h; path = libPhoneNumber/NBMetadataCoreMapper.h; sourceTree = "<group>"; };
 		80711E58C48EB0C90349F7C66C32790C /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
@@ -304,7 +310,7 @@
 		822FB5DFC9BD3884284D2B3320D37228 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		83E84EA44FFB5F9DA4FBF832A4BFE2EB /* OTMeetingAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTMeetingAPI.swift; sourceTree = "<group>"; };
 		841FB51632FD056D14F27B260A2B22C1 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		84D423BD4600830653B660A6E7CA7B91 /* Pods-OpenTimeSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OpenTimeSDK_Example.modulemap"; sourceTree = "<group>"; };
+		84D423BD4600830653B660A6E7CA7B91 /* Pods-OpenTimeSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OpenTimeSDK_Example.modulemap"; sourceTree = "<group>"; };
 		8529CE5C0061B983B9834486DF3B3BCD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86E62405CEEEC42BF6AAB34DEC5038E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87F0B631FA5C1315CC6B7E0C98513C3A /* NBPhoneNumber.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBPhoneNumber.m; path = libPhoneNumber/NBPhoneNumber.m; sourceTree = "<group>"; };
@@ -313,7 +319,7 @@
 		8F81DC324700F91D81AD42530D803DB0 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		8FA60067A5F9C5F9719B20C9DED60E3B /* OTDeserializedOneTimeAvailability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedOneTimeAvailability.swift; sourceTree = "<group>"; };
 		938A5853C5B9AEBDD80AC6DB4443BF05 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9473053FDC06358F58EE1301A2E24AD6 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		953D2ADA2FE5363881891634A615FA28 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		95F335E2EBA2553C8C6AFB9C7FF9BEC7 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
@@ -325,7 +331,7 @@
 		9BDBD6128BC60B03500F093AA215E892 /* Pods-OpenTimeSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OpenTimeSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9C93ED06596DD3CEEA2729B864E4E670 /* OTDeserializedMeeting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedMeeting.swift; sourceTree = "<group>"; };
 		9C9A9BBD11328AC9BB66725BA4C90766 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
-		9D8A85E015D12C97A1B0667E4D912A65 /* SCrypto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SCrypto.modulemap; sourceTree = "<group>"; };
+		9D8A85E015D12C97A1B0667E4D912A65 /* SCrypto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SCrypto.modulemap; sourceTree = "<group>"; };
 		9F62DBD2E809536E53EEE9E8183B651C /* OTDeserializedCreateMeetingResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedCreateMeetingResponse.swift; sourceTree = "<group>"; };
 		A15A51488AC0091DCFD306ABE08C7965 /* OTAPIRawResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTAPIRawResponse.swift; sourceTree = "<group>"; };
 		A3ACD73E2BF1EDABE1FBA4749979FA63 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
@@ -336,8 +342,8 @@
 		AC5FB94F7FE6B1D0BC89205CFB1BC74B /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
 		AC68191DFCA7E4118952D8A019009FD0 /* OTDeserializedRegisteredPersonData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedRegisteredPersonData.swift; sourceTree = "<group>"; };
 		AE352B62BDE11E0D4DFF6F22907D6518 /* OTNewPersonData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTNewPersonData.swift; sourceTree = "<group>"; };
-		AE369629FD1751C914DB2247913DFFAA /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0839F05B35BD8CE8821F6F0138EF2AE /* libPhoneNumber-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "libPhoneNumber-iOS.modulemap"; sourceTree = "<group>"; };
+		AE369629FD1751C914DB2247913DFFAA /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0839F05B35BD8CE8821F6F0138EF2AE /* libPhoneNumber-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "libPhoneNumber-iOS.modulemap"; sourceTree = "<group>"; };
 		B1904DA052E5BAFF801CE06402EE8C4C /* OTDeserializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializer.swift; sourceTree = "<group>"; };
 		B1E7B1F264FEA40D25C3F4443652099A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
 		B1F20612D5DFB83ADAFF94D2FE181887 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -349,7 +355,7 @@
 		B7647970CD76E2E9A13FCD2CD1A4274C /* Pods-OpenTimeSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OpenTimeSDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		B8469BB26AD22866D4BD240F01FAAFC5 /* Pods-OpenTimeSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OpenTimeSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B85E4760CC3A4A2A7CA4914FB5006F61 /* SCrypto.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SCrypto.h; path = Source/SCrypto.h; sourceTree = "<group>"; };
-		BB396DCB5BE12B82725D5EC1ABE323E2 /* Pods_OpenTimeSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OpenTimeSDK_Tests.framework; path = "Pods-OpenTimeSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB396DCB5BE12B82725D5EC1ABE323E2 /* Pods_OpenTimeSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenTimeSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBBD9245D3974D616F416405BF275D64 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		BD8DC98F2D3757AAAE5352D421DB0308 /* NBMetadataCore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NBMetadataCore.m; path = libPhoneNumber/NBMetadataCore.m; sourceTree = "<group>"; };
 		BDE426C66FA2E34B4F32FD6BB03780C2 /* OTOpenTimeSDK.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTOpenTimeSDK.swift; sourceTree = "<group>"; };
@@ -368,7 +374,7 @@
 		CE983ED2E5A9F2E30EFFD063B23D2813 /* OpenTimeAlias.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OpenTimeAlias.swift; sourceTree = "<group>"; };
 		D2A7D3FC57265399C6338534CF5F60EE /* Pods-OpenTimeSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OpenTimeSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D320B5F2BB2C53C9D36329B360FB46DB /* Pods-OpenTimeSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OpenTimeSDK_Tests-resources.sh"; sourceTree = "<group>"; };
-		D3C6EFDABCB5B78896F02A82FDC85391 /* OpenTimeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OpenTimeSDK.framework; path = OpenTimeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C6EFDABCB5B78896F02A82FDC85391 /* OpenTimeSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTimeSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42506C190FE1673B9CBB43414578258 /* OTStringHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTStringHelper.swift; sourceTree = "<group>"; };
 		D4C3691891D86CA7657AC17DF4AAB8FD /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		D9B6F6776648798A32F8D51C98B32697 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
@@ -379,7 +385,7 @@
 		E08DD8A6556A03E38EA000FE6F700857 /* NBAsYouTypeFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBAsYouTypeFormatter.h; path = libPhoneNumber/NBAsYouTypeFormatter.h; sourceTree = "<group>"; };
 		E14C7647BDF09CCBCB680C3CC5B60FAE /* OTDeserializedPerson.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OTDeserializedPerson.swift; sourceTree = "<group>"; };
 		E815CAF0E4266965F36B0F97359BF540 /* libPhoneNumber-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "libPhoneNumber-iOS-dummy.m"; sourceTree = "<group>"; };
-		EB716F3C3858220FA94B6577EBC7B0FE /* Pods_OpenTimeSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OpenTimeSDK_Example.framework; path = "Pods-OpenTimeSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB716F3C3858220FA94B6577EBC7B0FE /* Pods_OpenTimeSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenTimeSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC13B8F52F3AD7DBF93A3E0E842D54C5 /* SCrypto-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCrypto-prefix.pch"; sourceTree = "<group>"; };
 		EE81CCDA3CA60F0D93B249EFE8F2D236 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		EF79C995D387AFA337CE34ECC55AF0DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -458,6 +464,358 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03BE77531E63355F00E641CE /* apis */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77771E633DF000E641CE /* group */,
+				03BE776F1E6337A800E641CE /* person */,
+				03BE776C1E63375400E641CE /* organization */,
+				03BE77681E63371200E641CE /* device */,
+				03BE775E1E63365B00E641CE /* meeting */,
+				03BE775D1E63364800E641CE /* contact */,
+				03BE775A1E63360000E641CE /* availability */,
+				03BE77591E6335F700E641CE /* connnection */,
+			);
+			name = apis;
+			sourceTree = "<group>";
+		};
+		03BE77541E63356900E641CE /* deserializers */ = {
+			isa = PBXGroup;
+			children = (
+				03BE777B1E633EBD00E641CE /* group */,
+				03BE77671E6336F600E641CE /* person */,
+				03BE77661E6336EE00E641CE /* organization */,
+				03BE77651E6336DF00E641CE /* location */,
+				03BE77641E6336D200E641CE /* meeting */,
+				03BE77631E6336AA00E641CE /* connection */,
+				03BE77621E63369A00E641CE /* availability */,
+			);
+			name = deserializers;
+			sourceTree = "<group>";
+		};
+		03BE77551E63357F00E641CE /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				520742A3F356A63C87B29BD2F2556257 /* OTStringExtension.swift */,
+				F830B052FD030F120557603F6967AC24 /* OTArrayExtension.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		03BE77561E63358D00E641CE /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				2926A79D6A0CC01E337BD1EF71ACE3F4 /* OTReachability.swift */,
+				BDE426C66FA2E34B4F32FD6BB03780C2 /* OTOpenTimeSDK.swift */,
+				AA377F16097C3303A0EFCA6CD895256D /* OTConstant.swift */,
+				391BF31FBE2943B8862E8B27327AB636 /* OTAPIResponse.swift */,
+				1A1ADA9DC7A349B8F35A54E4C5C4A8F2 /* OTAPIRequestOperationManager.swift */,
+				A15A51488AC0091DCFD306ABE08C7965 /* OTAPIRawResponse.swift */,
+				097D78CD00BE7649CD53843480E17E85 /* OTAPIAuthorizedRequestOperationManager.swift */,
+			);
+			name = sdk;
+			sourceTree = "<group>";
+		};
+		03BE77571E63359600E641CE /* aliases */ = {
+			isa = PBXGroup;
+			children = (
+				CE983ED2E5A9F2E30EFFD063B23D2813 /* OpenTimeAlias.swift */,
+			);
+			name = aliases;
+			sourceTree = "<group>";
+		};
+		03BE77581E6335B000E641CE /* options */ = {
+			isa = PBXGroup;
+			children = (
+				12456FD1CFAC456309937F8614AE7A57 /* OTMeetingStatusOption.swift */,
+				30105AAF78DE3B866CE8BE2BAABAA30F /* AvailabilityStatusOption.swift */,
+				7225BE19B6EED91523DABB3CC0516415 /* MeetingAttendeeStatusOption.swift */,
+				1A5F63772C2E5E04E5DDBCC9EE234C82 /* OTConnectionStatusOption.swift */,
+			);
+			name = options;
+			sourceTree = "<group>";
+		};
+		03BE77591E6335F700E641CE /* connnection */ = {
+			isa = PBXGroup;
+			children = (
+				03BE775C1E63361600E641CE /* request */,
+				03BE775B1E63360F00E641CE /* response */,
+				018DC954A46CD7CD14740FDFDD2A7736 /* OTConnectionAPI.swift */,
+			);
+			name = connnection;
+			sourceTree = "<group>";
+		};
+		03BE775A1E63360000E641CE /* availability */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77751E63389700E641CE /* one_time */,
+				CE7A6E7BCDB26889ADCF5164440F5D20 /* OTAvailabilityAPI.swift */,
+			);
+			name = availability;
+			sourceTree = "<group>";
+		};
+		03BE775B1E63360F00E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				57C6A2B410C8D159FFE91F11DD66D128 /* OTSetConnectionResponse.swift */,
+				FC1E4D080C05AB68E0D6775E7DC11A42 /* OTGetConnectionsAvailabilityResponse.swift */,
+				C9D3501B1FB953F9CFDF85D1338712BB /* OTConnectionsResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE775C1E63361600E641CE /* request */ = {
+			isa = PBXGroup;
+			children = (
+				472F9276CD5A10B0B39CB316C6BB2673 /* OTSetConnectionData.swift */,
+				F47860FF7A9CC0356B598EA9FBC2F943 /* OTGetConnectionsWithContactInfoData.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		03BE775D1E63364800E641CE /* contact */ = {
+			isa = PBXGroup;
+			children = (
+				31D3D86B34C0C1D127E28603D6CBB558 /* OTContactInfoData.swift */,
+			);
+			name = contact;
+			sourceTree = "<group>";
+		};
+		03BE775E1E63365B00E641CE /* meeting */ = {
+			isa = PBXGroup;
+			children = (
+				03BE776E1E63377600E641CE /* attendee */,
+				03BE77601E63366D00E641CE /* response */,
+				03BE775F1E63366300E641CE /* request */,
+				83E84EA44FFB5F9DA4FBF832A4BFE2EB /* OTMeetingAPI.swift */,
+			);
+			name = meeting;
+			sourceTree = "<group>";
+		};
+		03BE775F1E63366300E641CE /* request */ = {
+			isa = PBXGroup;
+			children = (
+				8953C754F93D5EDAC072FD62585F1BCE /* OTCreateMeetingData.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		03BE77601E63366D00E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				6D2DD29EFA7053256CFB9FD8B13DF555 /* OTGetAllMyMeetingsResponse.swift */,
+				CE4AA781ECEFF938E5133DBAE0013A4F /* OTCreateMeetingResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE77611E63368E00E641CE /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B77F6608AA32C9E45193E06E7A61812 /* OTTestHelper.swift */,
+				D42506C190FE1673B9CBB43414578258 /* OTStringHelper.swift */,
+				0EE427C01D1162E940ACBE9DA4776855 /* OTSerialHelper.swift */,
+				FC4081A78F998E03A815954DA45FE0C4 /* OTPhoneHelper.swift */,
+				F640C565200358B0DA624EF47F3320EC /* OTPersonValidationHelper.swift */,
+				C3810655BD1102F92ACD018A844622C8 /* OTPasswordHelper.swift */,
+				328E84D7C8FCB1DEC4BCE7243E70801D /* OTDeserializationHelper.swift */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		03BE77621E63369A00E641CE /* availability */ = {
+			isa = PBXGroup;
+			children = (
+				8FA60067A5F9C5F9719B20C9DED60E3B /* OTDeserializedOneTimeAvailability.swift */,
+				590B4063785883E8FDEA1783201DDA69 /* OTDeserializedAvailabilityException.swift */,
+				60BCF4ED2D0F87E0B89BE1D1B572F4FA /* OTDeserializedAvailability.swift */,
+				23634F0966611596D9AC1C3AE419D386 /* OTDeserializedConnectionAvailability.swift */,
+			);
+			name = availability;
+			sourceTree = "<group>";
+		};
+		03BE77631E6336AA00E641CE /* connection */ = {
+			isa = PBXGroup;
+			children = (
+				2F3AA70BE03B0CA1CC9F14C02922C7C4 /* OTDeserializedConnection.swift */,
+			);
+			name = connection;
+			sourceTree = "<group>";
+		};
+		03BE77641E6336D200E641CE /* meeting */ = {
+			isa = PBXGroup;
+			children = (
+				F58617D9CB3C31966224800E156E11C1 /* OTDeserializedMeetingAttendee.swift */,
+				9C93ED06596DD3CEEA2729B864E4E670 /* OTDeserializedMeeting.swift */,
+				9F62DBD2E809536E53EEE9E8183B651C /* OTDeserializedCreateMeetingResponse.swift */,
+			);
+			name = meeting;
+			sourceTree = "<group>";
+		};
+		03BE77651E6336DF00E641CE /* location */ = {
+			isa = PBXGroup;
+			children = (
+				F44DECE92718FD5FCA180DDA15CAE279 /* OTDeserializedLocation.swift */,
+			);
+			name = location;
+			sourceTree = "<group>";
+		};
+		03BE77661E6336EE00E641CE /* organization */ = {
+			isa = PBXGroup;
+			children = (
+				DC84D1D4DD13A4C357EE044A6B79774C /* OTDeserializedOrganization.swift */,
+			);
+			name = organization;
+			sourceTree = "<group>";
+		};
+		03BE77671E6336F600E641CE /* person */ = {
+			isa = PBXGroup;
+			children = (
+				AC68191DFCA7E4118952D8A019009FD0 /* OTDeserializedRegisteredPersonData.swift */,
+				E14C7647BDF09CCBCB680C3CC5B60FAE /* OTDeserializedPerson.swift */,
+			);
+			name = person;
+			sourceTree = "<group>";
+		};
+		03BE77681E63371200E641CE /* device */ = {
+			isa = PBXGroup;
+			children = (
+				253D8C701D76BFE4BECC2988E651DA90 /* OTDeviceAPI.swift */,
+			);
+			name = device;
+			sourceTree = "<group>";
+		};
+		03BE77691E63372400E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				AA19FBA9AE37641450A9104DFCDB7627 /* OTGetAllMyAvailabilityResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE776A1E63372800E641CE /* request */ = {
+			isa = PBXGroup;
+			children = (
+				56FBA3BB9A5E88518045F282A136D9DA /* OTSetOneTimeAvailabilityData.swift */,
+				5EE2C4FC6A926AFA75A2CEE991799CEC /* OTRemoveOneTimeAvailabilityData.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		03BE776C1E63375400E641CE /* organization */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77721E6337E100E641CE /* request */,
+				03BE776D1E63376800E641CE /* response */,
+				3AF437A2D0A9B792DBBECD5E25E01ED1 /* OTOrganizationAPI.swift */,
+			);
+			name = organization;
+			sourceTree = "<group>";
+		};
+		03BE776D1E63376800E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				B32B133C7F076D53C50B4ABC118444FF /* OTGetMyOrganizationsResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE776E1E63377600E641CE /* attendee */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77731E63387300E641CE /* request */,
+				03BE77741E63388000E641CE /* response */,
+				5AFE87643018E23388C48EC1B4F822A7 /* OTMeetingAttendeeAPI.swift */,
+			);
+			name = attendee;
+			sourceTree = "<group>";
+		};
+		03BE776F1E6337A800E641CE /* person */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77701E6337C800E641CE /* request */,
+				03BE77711E6337D000E641CE /* response */,
+				FBF580D3D369B680D43145C77A4B8558 /* OTPersonAPI.swift */,
+			);
+			name = person;
+			sourceTree = "<group>";
+		};
+		03BE77701E6337C800E641CE /* request */ = {
+			isa = PBXGroup;
+			children = (
+				615D27A85F58D11A4C5AED6C3CA9825F /* OTUpdatePasswordRequest.swift */,
+				F3C470F510E1981B6B939CD320E4AB7E /* OTSignInRequest.swift */,
+				AE352B62BDE11E0D4DFF6F22907D6518 /* OTNewPersonData.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		03BE77711E6337D000E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				B53C20AF8A2DE72F79832CBA27304AED /* OTSigninResponse.swift */,
+				01678596592F4BA645C7C837B213000B /* OTRegisterPersonResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE77721E6337E100E641CE /* request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		03BE77731E63387300E641CE /* request */ = {
+			isa = PBXGroup;
+			children = (
+				C58C9637DDDB85ADD3D95FBF68395425 /* OTSetMeetingAttendeeData.swift */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		03BE77741E63388000E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				FED08374613ED801AF9CB329C9701934 /* OTSetMeetingAttendeeResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE77751E63389700E641CE /* one_time */ = {
+			isa = PBXGroup;
+			children = (
+				03BE776A1E63372800E641CE /* request */,
+				03BE77691E63372400E641CE /* response */,
+			);
+			name = one_time;
+			sourceTree = "<group>";
+		};
+		03BE77771E633DF000E641CE /* group */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77781E633DF500E641CE /* response */,
+			);
+			name = group;
+			sourceTree = "<group>";
+		};
+		03BE77781E633DF500E641CE /* response */ = {
+			isa = PBXGroup;
+			children = (
+				03BE77791E633E1000E641CE /* OTGroupsResponse.swift */,
+			);
+			name = response;
+			sourceTree = "<group>";
+		};
+		03BE777B1E633EBD00E641CE /* group */ = {
+			isa = PBXGroup;
+			children = (
+				03BE777D1E633ED300E641CE /* OTDeserializedGroup.swift */,
+				03BE777F1E63417200E641CE /* OTDeserializedGroupMember.swift */,
+			);
+			name = group;
+			sourceTree = "<group>";
+		};
 		0ABEB2CA6A8618FFF5CA3026C6B49F17 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,7 +870,6 @@
 				A3C98001C8342A51747397FD93517A0F /* Support Files */,
 				9DF1B7235425AD02A7BC2A25E3843DB4 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -554,7 +911,6 @@
 			children = (
 				CFABC70D30CBFC0AC98FFEA5E4926B21 /* Classes */,
 			);
-			name = OpenTimeSDK;
 			path = OpenTimeSDK;
 			sourceTree = "<group>";
 		};
@@ -713,7 +1069,6 @@
 				1467856B270BA4F9403351E505695E30 /* NBPhoneNumberUtil.m */,
 				967E076F208D6021569C4FF66D065982 /* Support Files */,
 			);
-			name = "libPhoneNumber-iOS";
 			path = "libPhoneNumber-iOS";
 			sourceTree = "<group>";
 		};
@@ -745,69 +1100,15 @@
 		CFABC70D30CBFC0AC98FFEA5E4926B21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				30105AAF78DE3B866CE8BE2BAABAA30F /* AvailabilityStatusOption.swift */,
-				7225BE19B6EED91523DABB3CC0516415 /* MeetingAttendeeStatusOption.swift */,
-				CE983ED2E5A9F2E30EFFD063B23D2813 /* OpenTimeAlias.swift */,
-				097D78CD00BE7649CD53843480E17E85 /* OTAPIAuthorizedRequestOperationManager.swift */,
-				A15A51488AC0091DCFD306ABE08C7965 /* OTAPIRawResponse.swift */,
-				1A1ADA9DC7A349B8F35A54E4C5C4A8F2 /* OTAPIRequestOperationManager.swift */,
-				391BF31FBE2943B8862E8B27327AB636 /* OTAPIResponse.swift */,
-				F830B052FD030F120557603F6967AC24 /* OTArrayExtension.swift */,
-				CE7A6E7BCDB26889ADCF5164440F5D20 /* OTAvailabilityAPI.swift */,
-				018DC954A46CD7CD14740FDFDD2A7736 /* OTConnectionAPI.swift */,
-				C9D3501B1FB953F9CFDF85D1338712BB /* OTConnectionsResponse.swift */,
-				1A5F63772C2E5E04E5DDBCC9EE234C82 /* OTConnectionStatusOption.swift */,
-				AA377F16097C3303A0EFCA6CD895256D /* OTConstant.swift */,
-				31D3D86B34C0C1D127E28603D6CBB558 /* OTContactInfoData.swift */,
-				8953C754F93D5EDAC072FD62585F1BCE /* OTCreateMeetingData.swift */,
-				CE4AA781ECEFF938E5133DBAE0013A4F /* OTCreateMeetingResponse.swift */,
-				328E84D7C8FCB1DEC4BCE7243E70801D /* OTDeserializationHelper.swift */,
-				60BCF4ED2D0F87E0B89BE1D1B572F4FA /* OTDeserializedAvailability.swift */,
-				590B4063785883E8FDEA1783201DDA69 /* OTDeserializedAvailabilityException.swift */,
-				2F3AA70BE03B0CA1CC9F14C02922C7C4 /* OTDeserializedConnection.swift */,
-				23634F0966611596D9AC1C3AE419D386 /* OTDeserializedConnectionAvailability.swift */,
-				9F62DBD2E809536E53EEE9E8183B651C /* OTDeserializedCreateMeetingResponse.swift */,
-				F44DECE92718FD5FCA180DDA15CAE279 /* OTDeserializedLocation.swift */,
-				9C93ED06596DD3CEEA2729B864E4E670 /* OTDeserializedMeeting.swift */,
-				F58617D9CB3C31966224800E156E11C1 /* OTDeserializedMeetingAttendee.swift */,
-				8FA60067A5F9C5F9719B20C9DED60E3B /* OTDeserializedOneTimeAvailability.swift */,
-				DC84D1D4DD13A4C357EE044A6B79774C /* OTDeserializedOrganization.swift */,
-				E14C7647BDF09CCBCB680C3CC5B60FAE /* OTDeserializedPerson.swift */,
-				AC68191DFCA7E4118952D8A019009FD0 /* OTDeserializedRegisteredPersonData.swift */,
+				03BE77611E63368E00E641CE /* helpers */,
+				03BE77581E6335B000E641CE /* options */,
+				03BE77571E63359600E641CE /* aliases */,
+				03BE77561E63358D00E641CE /* sdk */,
+				03BE77551E63357F00E641CE /* extensions */,
+				03BE77541E63356900E641CE /* deserializers */,
 				B1904DA052E5BAFF801CE06402EE8C4C /* OTDeserializer.swift */,
-				253D8C701D76BFE4BECC2988E651DA90 /* OTDeviceAPI.swift */,
-				AA19FBA9AE37641450A9104DFCDB7627 /* OTGetAllMyAvailabilityResponse.swift */,
-				6D2DD29EFA7053256CFB9FD8B13DF555 /* OTGetAllMyMeetingsResponse.swift */,
-				FC1E4D080C05AB68E0D6775E7DC11A42 /* OTGetConnectionsAvailabilityResponse.swift */,
-				F47860FF7A9CC0356B598EA9FBC2F943 /* OTGetConnectionsWithContactInfoData.swift */,
-				B32B133C7F076D53C50B4ABC118444FF /* OTGetMyOrganizationsResponse.swift */,
-				83E84EA44FFB5F9DA4FBF832A4BFE2EB /* OTMeetingAPI.swift */,
-				5AFE87643018E23388C48EC1B4F822A7 /* OTMeetingAttendeeAPI.swift */,
-				12456FD1CFAC456309937F8614AE7A57 /* OTMeetingStatusOption.swift */,
-				AE352B62BDE11E0D4DFF6F22907D6518 /* OTNewPersonData.swift */,
-				BDE426C66FA2E34B4F32FD6BB03780C2 /* OTOpenTimeSDK.swift */,
-				3AF437A2D0A9B792DBBECD5E25E01ED1 /* OTOrganizationAPI.swift */,
-				C3810655BD1102F92ACD018A844622C8 /* OTPasswordHelper.swift */,
-				FBF580D3D369B680D43145C77A4B8558 /* OTPersonAPI.swift */,
-				F640C565200358B0DA624EF47F3320EC /* OTPersonValidationHelper.swift */,
-				FC4081A78F998E03A815954DA45FE0C4 /* OTPhoneHelper.swift */,
-				2926A79D6A0CC01E337BD1EF71ACE3F4 /* OTReachability.swift */,
-				01678596592F4BA645C7C837B213000B /* OTRegisterPersonResponse.swift */,
-				5EE2C4FC6A926AFA75A2CEE991799CEC /* OTRemoveOneTimeAvailability.swift */,
-				0EE427C01D1162E940ACBE9DA4776855 /* OTSerialHelper.swift */,
-				472F9276CD5A10B0B39CB316C6BB2673 /* OTSetConnectionData.swift */,
-				57C6A2B410C8D159FFE91F11DD66D128 /* OTSetConnectionResponse.swift */,
-				C58C9637DDDB85ADD3D95FBF68395425 /* OTSetMeetingAttendeeData.swift */,
-				FED08374613ED801AF9CB329C9701934 /* OTSetMeetingAttendeeResponse.swift */,
-				56FBA3BB9A5E88518045F282A136D9DA /* OTSetOneTimeAvailabilityData.swift */,
-				F3C470F510E1981B6B939CD320E4AB7E /* OTSignInRequest.swift */,
-				B53C20AF8A2DE72F79832CBA27304AED /* OTSigninResponse.swift */,
-				520742A3F356A63C87B29BD2F2556257 /* OTStringExtension.swift */,
-				D42506C190FE1673B9CBB43414578258 /* OTStringHelper.swift */,
-				5B77F6608AA32C9E45193E06E7A61812 /* OTTestHelper.swift */,
-				615D27A85F58D11A4C5AED6C3CA9825F /* OTUpdatePasswordRequest.swift */,
+				03BE77531E63355F00E641CE /* apis */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -839,7 +1140,6 @@
 				23D03075BA8D425EC3214E9B1BA947F0 /* SCrypto.swift */,
 				7D7E2F875E2D188EAD7CE6997CEC5E03 /* Support Files */,
 			);
-			name = SCrypto;
 			path = SCrypto;
 			sourceTree = "<group>";
 		};
@@ -1056,6 +1356,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					1ED8BE8BD6A53853974A60E1AC8B1019 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1119,6 +1424,7 @@
 				DECB2231BE777F721EE826F2AB41DB83 /* OTAPIAuthorizedRequestOperationManager.swift in Sources */,
 				3A8EF5652F3F64ADA87F10077C1AD55F /* OTAPIRawResponse.swift in Sources */,
 				4C945ADBC7824C2EA78FF8DB17C595A0 /* OTAPIRequestOperationManager.swift in Sources */,
+				03BE777A1E633E1000E641CE /* OTGroupsResponse.swift in Sources */,
 				11B5B100845C20EB9FF955DAA4AFFAD0 /* OTAPIResponse.swift in Sources */,
 				4829649D460AF694DAF413CE65A44A05 /* OTArrayExtension.swift in Sources */,
 				17E68FF5986F0124FB1C7CC63095F1DF /* OTAvailabilityAPI.swift in Sources */,
@@ -1161,14 +1467,16 @@
 				5DFBFB3050AE33390E816C317BA9CE89 /* OTPhoneHelper.swift in Sources */,
 				5A8DC509743BE963C648FC8EFB8E27AA /* OTReachability.swift in Sources */,
 				36C6531D68218762A3A5D37DA254005E /* OTRegisterPersonResponse.swift in Sources */,
-				BA34C288F5AD4FA78ECF873EEDC8F4D0 /* OTRemoveOneTimeAvailability.swift in Sources */,
+				BA34C288F5AD4FA78ECF873EEDC8F4D0 /* OTRemoveOneTimeAvailabilityData.swift in Sources */,
 				26A8663B2BAE553EF7ECBACD108D0FEE /* OTSerialHelper.swift in Sources */,
 				6D59B499E2E5448E0134FDC17D222F6C /* OTSetConnectionData.swift in Sources */,
 				950B143F1599A2E1BC821AC35E920CE5 /* OTSetConnectionResponse.swift in Sources */,
 				F3BC648C9DB01CE5649CBFE4C544D5F5 /* OTSetMeetingAttendeeData.swift in Sources */,
 				0FE342972E5172F08299227632B1A98B /* OTSetMeetingAttendeeResponse.swift in Sources */,
 				3EC1180182A688AB1FDD195D80808654 /* OTSetOneTimeAvailabilityData.swift in Sources */,
+				03BE777E1E633ED300E641CE /* OTDeserializedGroup.swift in Sources */,
 				04BD7E4489B243C0769AFD64C49946E3 /* OTSignInRequest.swift in Sources */,
+				03BE77801E63417200E641CE /* OTDeserializedGroupMember.swift in Sources */,
 				D6D399E46B7E02E9F5527B59F649822D /* OTSigninResponse.swift in Sources */,
 				05BFF727684759CF4F151096C04AD4DF /* OTStringExtension.swift in Sources */,
 				1137B185CAC7F3CE5F0D06147C3FDF75 /* OTStringHelper.swift in Sources */,
@@ -1335,6 +1643,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10DF3D3EBDB40F6474395FFAD77B054F /* AFNetworking.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1546,6 +1855,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10DF3D3EBDB40F6474395FFAD77B054F /* AFNetworking.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1567,6 +1877,7 @@
 				PRODUCT_NAME = AFNetworking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
