@@ -42,11 +42,8 @@ public class OTDeserializedGroup : OTDeserializer {
         self._status = dictionary.value(forKey: Keys.STATUS) as! OpenTimeGroupStatus;
         
         let rawImage = dictionary.value(forKey: Keys.IMAGE);
-        if(rawImage != nil){
-             self._image = dictionary.value(forKey: Keys.IMAGE) as! String;
-        }else{
-            self._image = nil;
-        }
+        
+        self._image = dictionary.value(forKey: Keys.IMAGE) as? String;
         
         self._description = dictionary.value(forKey: Keys.DESCRIPTION) as! String;
         
